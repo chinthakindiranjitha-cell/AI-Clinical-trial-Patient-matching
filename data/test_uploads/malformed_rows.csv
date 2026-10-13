@@ -1,0 +1,4 @@
+patient_id,age,gender,race,conditions
+PAT-801,65,male,White,Heart Failure
+PAT-802,not_a_number,female,Asian,Non-Small Cell Lung Cancer
+PAT-803,145,invalid_sex,White,Diabetes

@@ -70,6 +70,29 @@ export async function evaluateMatch(payload) {
   return handleResponse(res);
 }
 
+export async function uploadPatientFile(file) {
+  const formData = new FormData();
+  formData.append('file', file);
+
+  const res = await fetch(`${BASE_URL}/patients/upload`, {
+    method: 'POST',
+    body: formData
+  });
+  return handleResponse(res);
+}
+
+export async function confirmPatientImport(records, duplicateResolution = 'assign_new_id') {
+  const res = await fetch(`${BASE_URL}/patients/confirm-import`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      records,
+      duplicate_resolution: duplicateResolution
+    })
+  });
+  return handleResponse(res);
+}
+
 export async function resetSeedData() {
   const res = await fetch(`${BASE_URL}/reset-data`, {
     method: 'POST'

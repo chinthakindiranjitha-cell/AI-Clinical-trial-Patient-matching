@@ -58,10 +58,24 @@ class DataStore {
     return this.patients.find((p) => p.patient_id.toLowerCase() === id.toLowerCase()) || null;
   }
 
+  getNextPatientId() {
+    let maxNum = 0;
+    for (const p of this.patients) {
+      const match = p.patient_id && p.patient_id.match(/PAT-(\d+)/i);
+      if (match) {
+        const num = parseInt(match[1], 10);
+        if (!isNaN(num) && num > maxNum) {
+          maxNum = num;
+        }
+      }
+    }
+    const nextNum = maxNum + 1;
+    return `PAT-${String(nextNum).padStart(3, '0')}`;
+  }
+
   addPatient(patientData) {
     if (!patientData.patient_id) {
-      const nextNum = this.patients.length + 1;
-      patientData.patient_id = `PAT-${String(nextNum).padStart(3, '0')}`;
+      patientData.patient_id = this.getNextPatientId();
     }
 
     const existingIdx = this.patients.findIndex((p) => p.patient_id === patientData.patient_id);
@@ -78,6 +92,45 @@ class DataStore {
     }
 
     return enriched;
+  }
+
+  addPatientsBatch(records, duplicateResolution = 'assign_new_id') {
+    const imported = [];
+    const updated = [];
+    const skipped = [];
+
+    for (const rec of records) {
+      let targetId = rec.patient_id;
+      const existing = this.getPatientById(targetId);
+
+      if (existing) {
+        if (duplicateResolution === 'skip_duplicate') {
+          skipped.push(rec);
+          continue;
+        } else if (duplicateResolution === 'assign_new_id') {
+          targetId = this.getNextPatientId();
+          rec.patient_id = targetId;
+        }
+        // if 'update_existing', we keep targetId
+      }
+
+      const saved = this.addPatient({ ...rec, patient_id: targetId });
+      if (existing && duplicateResolution === 'update_existing') {
+        updated.push(saved);
+      } else {
+        imported.push(saved);
+      }
+    }
+
+    return {
+      imported_count: imported.length,
+      updated_count: updated.length,
+      skipped_count: skipped.length,
+      total_cohort_count: this.patients.length,
+      imported,
+      updated,
+      skipped
+    };
   }
 
   // Trials Methods

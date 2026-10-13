@@ -1,7 +1,35 @@
 const express = require('express');
+const multer = require('multer');
+const path = require('path');
 const router = express.Router();
 const store = require('../store');
 const { evaluateMatching } = require('../matching');
+const {
+  parseCsv,
+  extractDocumentText,
+  extractClinicalFacts
+} = require('../parsers');
+
+// Multer memory storage (files processed in RAM, no disk remnants)
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: 10 * 1024 * 1024 // 10MB limit
+  },
+  fileFilter: (req, file, cb) => {
+    const ext = path.extname(file.originalname).toLowerCase();
+    const allowedExts = ['.csv', '.txt', '.docx', '.pdf'];
+    if (allowedExts.includes(ext)) {
+      cb(null, true);
+    } else {
+      const err = new Error(
+        `Unsupported file type '${ext}'. Allowed formats: .csv, .txt, .docx, .pdf (Max: 10MB)`
+      );
+      err.status = 400;
+      cb(err);
+    }
+  }
+});
 
 // Health Check
 router.get('/health', (req, res) => {
@@ -40,6 +68,119 @@ router.post('/patients', (req, res) => {
     }
     const created = store.addPatient(data);
     res.status(201).json({ patient: created });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Multi-Format Patient Upload & Preview Endpoint
+router.post('/patients/upload', (req, res) => {
+  upload.single('file')(req, res, async (err) => {
+    if (err) {
+      if (err.code === 'LIMIT_FILE_SIZE') {
+        return res.status(413).json({
+          error: 'File size exceeds maximum allowed limit of 10MB.'
+        });
+      }
+      return res.status(err.status || 400).json({
+        error: err.message || 'File upload error.'
+      });
+    }
+
+    if (!req.file) {
+      return res.status(400).json({
+        error: 'No file uploaded. Please attach a .csv, .txt, .docx, or .pdf file.'
+      });
+    }
+
+    const filename = req.file.originalname;
+    const ext = path.extname(filename).toLowerCase().replace('.', '');
+
+    try {
+      if (ext === 'csv') {
+        // Parse CSV
+        const parsed = parseCsv(req.file.buffer);
+
+        // Check for existing ID collisions
+        const annotatedValid = parsed.valid_records.map((rec) => {
+          const isDuplicate = rec.patient_id ? !!store.getPatientById(rec.patient_id) : false;
+          return {
+            ...rec,
+            is_duplicate_id: isDuplicate
+          };
+        });
+
+        const hasDuplicates = annotatedValid.some((r) => r.is_duplicate_id);
+
+        return res.json({
+          format: 'CSV',
+          filename,
+          size_bytes: req.file.size,
+          summary: parsed.summary,
+          has_duplicate_ids: hasDuplicates,
+          valid_records: annotatedValid,
+          rejected_records: parsed.rejected_records
+        });
+      } else {
+        // Document Note: TXT, DOCX, PDF
+        const docResult = await extractDocumentText(req.file.buffer, filename);
+        const extraction = extractClinicalFacts(docResult.text);
+
+        // Provide a suggested candidate ID
+        const suggestedId = store.getNextPatientId();
+        extraction.draft_patient.patient_id = suggestedId;
+
+        return res.json({
+          format: docResult.format,
+          filename,
+          size_bytes: req.file.size,
+          pages: docResult.pages || 1,
+          raw_text: extraction.raw_text,
+          extracted_facts: extraction.extracted_facts,
+          draft_patient: extraction.draft_patient,
+          extraction_method: extraction.extraction_method,
+          suggested_id: suggestedId
+        });
+      }
+    } catch (parseErr) {
+      // Check if scanned document error
+      if (parseErr.message && parseErr.message.includes('Scanned document detected')) {
+        return res.status(422).json({
+          error: parseErr.message
+        });
+      }
+      return res.status(400).json({
+        error: `Processing error for ${filename}: ${parseErr.message}`
+      });
+    }
+  });
+});
+
+// Confirmation & Commit Endpoint
+router.post('/patients/confirm-import', (req, res) => {
+  try {
+    const { records, duplicate_resolution = 'assign_new_id' } = req.body || {};
+
+    if (!Array.isArray(records) || records.length === 0) {
+      return res.status(400).json({ error: 'No patient records provided to import.' });
+    }
+
+    // Validate minimal schema requirements for every record
+    for (let i = 0; i < records.length; i++) {
+      const r = records[i];
+      if (!r.demographics || typeof r.demographics.age !== 'number') {
+        return res.status(400).json({
+          error: `Record #${i + 1} (${r.patient_id || 'unassigned'}) missing valid demographics age.`
+        });
+      }
+    }
+
+    const result = store.addPatientsBatch(records, duplicate_resolution);
+    res.status(201).json({
+      success: true,
+      message: `Successfully processed ${result.imported_count + result.updated_count} patient records.`,
+      ...result
+    });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
