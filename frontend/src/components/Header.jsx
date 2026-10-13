@@ -63,13 +63,11 @@ export default function Header({
           <div className="hidden md:flex items-center space-x-1.5 px-2.5 py-1 rounded-full text-xs font-medium border bg-slate-50">
             {backendConnected ? (
               <>
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span className="text-slate-700">API Connected</span>
+                
               </>
             ) : (
               <>
-                <span className="w-2 h-2 rounded-full bg-rose-500"></span>
-                <span className="text-rose-600 font-semibold">API Offline</span>
+              
               </>
             )}
           </div>

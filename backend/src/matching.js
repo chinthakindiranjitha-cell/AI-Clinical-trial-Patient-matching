@@ -62,7 +62,8 @@ function evaluateMatching({ patient_id, trial_id, dataset = 'all', import_batch_
           trial_id: t.trial_id,
           title: t.title,
           phase: t.phase,
-          therapeutic_area: t.therapeutic_area
+          therapeutic_area: t.therapeutic_area,
+          description: t.description || null
         }
       });
     }

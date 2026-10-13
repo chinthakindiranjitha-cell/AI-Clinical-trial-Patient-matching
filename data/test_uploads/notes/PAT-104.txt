@@ -18,3 +18,9 @@ RECRUITMENT CONTACT:
   - Outreach Status: Follow-up Required
   - Clinical Notes: Requires follow-up call regarding study visit transportation.
 
+SOURCE ORGANIZATION:
+  - Organization Name: University of Miami Hospital & Clinics
+  - Site Address: 1400 NW 12th Ave, Miami, FL 33136
+  - Official Phone: +1-305-689-5511
+  - Site Email: trials@umiami.edu
+  - Website: https://umiamihealth.org

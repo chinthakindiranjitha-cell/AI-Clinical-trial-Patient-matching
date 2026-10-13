@@ -77,9 +77,17 @@ export default function TrialSelector({ trials = [], selectedTrial, onSelectTria
             </span>
           </div>
 
-          <p className="text-xs text-slate-600 mt-2 leading-relaxed">
-            {selectedTrial.description}
-          </p>
+          {selectedTrial.description && (
+            <div className="mt-3 p-3.5 bg-slate-50 rounded-lg border border-slate-200">
+              <div className="flex items-center space-x-1.5 text-xs font-bold text-slate-700 mb-1">
+                <Info className="w-3.5 h-3.5 text-sky-600 shrink-0" />
+                <span className="uppercase tracking-wider text-[11px] text-slate-600">Protocol Overview & Clinical Objectives</span>
+              </div>
+              <p className="text-xs text-slate-700 leading-relaxed font-normal">
+                {selectedTrial.description}
+              </p>
+            </div>
+          )}
 
           {/* Toggle Criteria View */}
           <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
