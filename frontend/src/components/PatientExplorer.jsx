@@ -82,41 +82,7 @@ export default function PatientExplorer({
     );
   };
 
-  const getRecruitmentStatusBadge = (status) => {
-    switch (status) {
-      case 'Interested':
-        return (
-          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-            Interested
-          </span>
-        );
-      case 'Contacted':
-        return (
-          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-sky-50 text-sky-700 border border-sky-200">
-            Contacted
-          </span>
-        );
-      case 'Follow-up Required':
-        return (
-          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">
-            Follow-up
-          </span>
-        );
-      case 'Declined':
-        return (
-          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-50 text-rose-700 border border-rose-200">
-            Declined
-          </span>
-        );
-      case 'Not Contacted':
-      default:
-        return (
-          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-slate-100 text-slate-600 border border-slate-200">
-            Not Contacted
-          </span>
-        );
-    }
-  };
+
 
   return (
     <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5 space-y-4">
@@ -295,7 +261,7 @@ export default function PatientExplorer({
                 <th className="py-2.5 px-3">Demographics</th>
                 <th className="py-2.5 px-3">Conditions</th>
                 <th className="py-2.5 px-3">Key Biomarkers</th>
-                <th className="py-2.5 px-3">Recruitment Outreach</th>
+                <th className="py-2.5 px-3">Source Organization</th>
                 <th className="py-2.5 px-3 text-right">Actions</th>
               </tr>
             </thead>
@@ -351,12 +317,12 @@ export default function PatientExplorer({
                     </td>
                     <td className="py-2.5 px-3 whitespace-nowrap">
                       <div>
-                        {getRecruitmentStatusBadge(contact.recruitment_status)}
-                        {contact.contact_person && (
-                          <div className="text-[10px] text-slate-500 mt-0.5 truncate max-w-[120px]">
-                            {contact.contact_person}
-                          </div>
-                        )}
+                        <div className="font-semibold text-slate-800 text-xs truncate max-w-[150px]">
+                          {patient.organization?.name || 'Not available'}
+                        </div>
+                        <div className="text-[10px] text-slate-500 truncate max-w-[150px]">
+                          {patient.organization?.phone || (patient.organization?.city ? patient.organization.city : 'No direct line')}
+                        </div>
                       </div>
                     </td>
                     <td className="py-2.5 px-3 text-right whitespace-nowrap">

@@ -41,6 +41,14 @@ export interface RecruitmentContact {
   notes?: string | null;
 }
 
+export interface SourceOrganization {
+  name?: string | null;
+  address?: string | null;
+  phone?: string | null;
+  email?: string | null;
+  website?: string | null;
+}
+
 export interface PatientRecord {
   patient_id: string;
   demographics: Demographics;
@@ -53,6 +61,7 @@ export interface PatientRecord {
   dataset_source?: 'demo' | 'imported';
   import_batch_id?: string | null;
   recruitment_contact?: RecruitmentContact | null;
+  organization?: SourceOrganization | null;
   created_at?: string;
   updated_at?: string;
 }

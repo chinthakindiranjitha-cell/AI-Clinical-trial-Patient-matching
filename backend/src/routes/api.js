@@ -402,6 +402,11 @@ router.get('/match/export', (req, res) => {
       'Violated Count',
       'Unknown Count',
       'Clinical Rationale',
+      'Organization Name',
+      'Organization Address',
+      'Organization Phone',
+      'Organization Email',
+      'Organization Website',
       'Contact Person',
       'Relationship',
       'Phone',
@@ -416,6 +421,7 @@ router.get('/match/export', (req, res) => {
 
     for (const r of matchEval.results) {
       const contact = r.patient_summary?.recruitment_contact || {};
+      const org = r.patient_summary?.organization || {};
       const rowCols = [
         exportTimestamp,
         trial.trial_id,
@@ -433,6 +439,11 @@ router.get('/match/export', (req, res) => {
         r.summary?.violated_count || 0,
         r.summary?.unknown_count || 0,
         r.clinical_rationale,
+        org.name || 'Not available',
+        org.address || 'Not available',
+        org.phone || 'Not available',
+        org.email || 'Not available',
+        org.website || 'Not available',
         contact.contact_person || 'Not provided',
         contact.relationship || 'N/A',
         contact.phone || 'N/A',

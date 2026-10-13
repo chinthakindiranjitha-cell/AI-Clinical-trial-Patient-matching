@@ -115,6 +115,17 @@
       },
       "description": "Patient recruitment contact details and clinical trial outreach status"
     },
+    "organization": {
+      "type": ["object", "null"],
+      "properties": {
+        "name": { "type": ["string", "null"], "description": "Source healthcare institution or trial site name" },
+        "address": { "type": ["string", "null"], "description": "Physical facility address" },
+        "phone": { "type": ["string", "null"], "description": "Official institutional contact telephone" },
+        "email": { "type": ["string", "null"], "description": "Official institutional contact email" },
+        "website": { "type": ["string", "null"], "description": "Official institution website" }
+      },
+      "description": "Source healthcare organization contact details associated with the patient record"
+    },
     "created_at": {
       "type": "string",
       "format": "date-time"
