@@ -21,7 +21,7 @@ export default function Header({
             <div className="flex items-center space-x-2">
               <h1 className="text-lg font-bold text-slate-900 tracking-tight">ClinMatch</h1>
               <span className="text-xs px-2 py-0.5 rounded-full font-medium bg-sky-100 text-sky-800 border border-sky-200">
-                MVP
+
               </span>
             </div>
             <p className="text-xs text-slate-500 hidden sm:block">
@@ -36,11 +36,10 @@ export default function Header({
             <button
               type="button"
               onClick={() => onSelectTab('matching')}
-              className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all ${
-                activeTab === 'matching'
-                  ? 'bg-white text-slate-900 shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900'
-              }`}
+              className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all ${activeTab === 'matching'
+                ? 'bg-white text-slate-900 shadow-xs'
+                : 'text-slate-600 hover:text-slate-900'
+                }`}
             >
               <Activity className="w-3.5 h-3.5 text-sky-600" />
               <span>Trial Matching</span>
@@ -48,11 +47,10 @@ export default function Header({
             <button
               type="button"
               onClick={() => onSelectTab('analytics')}
-              className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all ${
-                activeTab === 'analytics'
-                  ? 'bg-white text-slate-900 shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900'
-              }`}
+              className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all ${activeTab === 'analytics'
+                ? 'bg-white text-slate-900 shadow-xs'
+                : 'text-slate-600 hover:text-slate-900'
+                }`}
             >
               <BarChart3 className="w-3.5 h-3.5 text-indigo-600" />
               <span>Diversity Analytics</span>

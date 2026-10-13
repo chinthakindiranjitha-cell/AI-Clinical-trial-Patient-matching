@@ -46,9 +46,16 @@ function evaluateMatching({ patient_id, trial_id, dataset = 'all', import_batch_
           gender: p.demographics.gender,
           race: p.demographics.race,
           ethnicity: p.demographics.ethnicity,
+          postal_code: p.demographics.postal_code,
           conditions: p.conditions,
+          biomarkers: p.biomarkers || {},
+          medications: p.medications || [],
+          allergies: p.allergies || [],
+          smoking_status: p.smoking_status || null,
+          notes_summary: p.notes_summary || null,
           dataset_source: p.dataset_source || 'demo',
           import_batch_id: p.import_batch_id || null,
+          organization: p.organization || null,
           recruitment_contact: p.recruitment_contact || null
         },
         trial_summary: {

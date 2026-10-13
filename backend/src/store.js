@@ -29,6 +29,13 @@ class DataStore {
           availability: null,
           recruitment_status: 'Not Contacted',
           notes: null
+        },
+        organization: p.organization || {
+          name: p.organization_name || null,
+          address: p.organization_address || null,
+          phone: p.organization_phone || null,
+          email: p.organization_email || null,
+          website: p.organization_website || null
         }
       }));
       this.trials = JSON.parse(fs.readFileSync(SEED_TRIALS_PATH, 'utf8'));
@@ -126,6 +133,13 @@ class DataStore {
         recruitment_status: 'Not Contacted',
         notes: null
       },
+      organization: patientData.organization || {
+        name: patientData.organization_name || null,
+        address: patientData.organization_address || null,
+        phone: patientData.organization_phone || null,
+        email: patientData.organization_email || null,
+        website: patientData.organization_website || null
+      },
       created_at: patientData.created_at || new Date().toISOString(),
       updated_at: new Date().toISOString()
     };
@@ -175,6 +189,13 @@ class DataStore {
           availability: null,
           recruitment_status: 'Not Contacted',
           notes: null
+        },
+        organization: rec.organization || {
+          name: rec.organization_name || null,
+          address: rec.organization_address || null,
+          phone: rec.organization_phone || null,
+          email: rec.organization_email || null,
+          website: rec.organization_website || null
         }
       };
 

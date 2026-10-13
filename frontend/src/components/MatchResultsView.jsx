@@ -14,7 +14,8 @@ import {
   Download,
   FileSpreadsheet,
   FileCode,
-  Phone
+  Phone,
+  Eye
 } from 'lucide-react';
 import { getExportUrl } from '../services/api';
 
@@ -298,25 +299,23 @@ export default function MatchResultsView({
                               ({res.patient_summary?.age}y, {res.patient_summary?.gender},{' '}
                               {res.patient_summary?.race || 'Race unspecified'})
                             </span>
-                            {/* Recruitment Follow-up Badge */}
-                            {contact.recruitment_status && (
-                              <span
-                                className={`inline-flex items-center space-x-1 px-2 py-0.5 rounded text-[10px] font-semibold border ${
-                                  contact.recruitment_status === 'Interested'
-                                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                                    : contact.recruitment_status === 'Contacted'
-                                    ? 'bg-sky-50 text-sky-700 border-sky-200'
-                                    : contact.recruitment_status === 'Follow-up Required'
-                                    ? 'bg-amber-50 text-amber-700 border-amber-200'
-                                    : contact.recruitment_status === 'Declined'
-                                    ? 'bg-rose-50 text-rose-700 border-rose-200'
-                                    : 'bg-slate-100 text-slate-600 border-slate-200'
-                                }`}
-                              >
-                                <Phone className="w-2.5 h-2.5" />
-                                <span>{contact.recruitment_status}</span>
-                              </span>
-                            )}
+                            {/* View Patient Details Eye Button */}
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (onViewMatchDetails) {
+                                  onViewMatchDetails(res);
+                                } else if (onViewPatientDetails) {
+                                  onViewPatientDetails(res);
+                                }
+                              }}
+                              title={`View full eligibility criteria evaluation for ${res.patient_id}`}
+                              className="inline-flex items-center space-x-1 px-2 py-0.5 text-[11px] font-semibold text-sky-700 bg-sky-50 hover:bg-sky-100 border border-sky-200 rounded-md transition-colors"
+                            >
+                              <Eye className="w-3.5 h-3.5 text-sky-600" />
+                              <span>View Details</span>
+                            </button>
                           </div>
                           <p className="text-xs text-slate-600 mt-1 line-clamp-1">
                             {res.clinical_rationale}

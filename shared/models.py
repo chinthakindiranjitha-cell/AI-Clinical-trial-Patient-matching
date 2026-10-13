@@ -49,6 +49,14 @@ class RecruitmentContact(BaseModel):
     notes: Optional[str] = None
 
 
+class SourceOrganization(BaseModel):
+    name: Optional[str] = None
+    address: Optional[str] = None
+    phone: Optional[str] = None
+    email: Optional[str] = None
+    website: Optional[str] = None
+
+
 class PatientRecord(BaseModel):
     patient_id: str
     demographics: Demographics
@@ -61,6 +69,7 @@ class PatientRecord(BaseModel):
     dataset_source: Optional[Literal["demo", "imported"]] = "demo"
     import_batch_id: Optional[str] = None
     recruitment_contact: Optional[RecruitmentContact] = None
+    organization: Optional[SourceOrganization] = None
     created_at: Optional[str] = None
     updated_at: Optional[str] = None
 

@@ -52,6 +52,13 @@ function parseCsv(buffer) {
   const recruitStatusIdx = headers.indexOf('recruitment_status');
   const recruitNotesIdx = headers.indexOf('recruitment_notes') !== -1 ? headers.indexOf('recruitment_notes') : headers.indexOf('contact_notes');
 
+  // Source Organization columns
+  const orgNameIdx = headers.indexOf('organization_name') !== -1 ? headers.indexOf('organization_name') : (headers.indexOf('organization') !== -1 ? headers.indexOf('organization') : headers.indexOf('org_name'));
+  const orgAddressIdx = headers.indexOf('organization_address') !== -1 ? headers.indexOf('organization_address') : headers.indexOf('org_address');
+  const orgPhoneIdx = headers.indexOf('organization_phone') !== -1 ? headers.indexOf('organization_phone') : headers.indexOf('org_phone');
+  const orgEmailIdx = headers.indexOf('organization_email') !== -1 ? headers.indexOf('organization_email') : headers.indexOf('org_email');
+  const orgWebsiteIdx = headers.indexOf('organization_website') !== -1 ? headers.indexOf('organization_website') : (headers.indexOf('website') !== -1 ? headers.indexOf('website') : headers.indexOf('org_website'));
+
   const validRecords = [];
   const rejectedRecords = [];
   const seenIds = new Set();
@@ -157,6 +164,14 @@ function parseCsv(buffer) {
       notes: recruitNotes
     };
 
+    const organization = {
+      name: orgNameIdx !== -1 && cols[orgNameIdx] ? cols[orgNameIdx].trim() : null,
+      address: orgAddressIdx !== -1 && cols[orgAddressIdx] ? cols[orgAddressIdx].trim() : null,
+      phone: orgPhoneIdx !== -1 && cols[orgPhoneIdx] ? cols[orgPhoneIdx].trim() : null,
+      email: orgEmailIdx !== -1 && cols[orgEmailIdx] ? cols[orgEmailIdx].trim() : null,
+      website: orgWebsiteIdx !== -1 && cols[orgWebsiteIdx] ? cols[orgWebsiteIdx].trim() : null
+    };
+
     validRecords.push({
       patient_id: patientId, // may be null, store will assign if not set
       demographics: {
@@ -172,7 +187,8 @@ function parseCsv(buffer) {
       allergies,
       smoking_status: smokingStatus,
       notes_summary: notesSummary,
-      recruitment_contact: recruitmentContact
+      recruitment_contact: recruitmentContact,
+      organization: organization
     });
   }
 
