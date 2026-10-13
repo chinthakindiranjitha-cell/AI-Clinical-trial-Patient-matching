@@ -1,0 +1,3 @@
+patient_id,age,race,conditions
+PAT-901,invalid_age,White,Type 2 Diabetes Mellitus
+PAT-902,45,Asian,Heart Failure

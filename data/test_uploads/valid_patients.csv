@@ -1,0 +1,4 @@
+patient_id,age,gender,race,ethnicity,conditions,biomarkers,medications,allergies,notes_summary
+PAT-101,61,male,Asian,Not Hispanic or Latino,Type 2 Diabetes Mellitus;Essential Hypertension,"HbA1c:8.8;eGFR:52;systolic_bp:130",Metformin;Lisinopril,Sulfa,61-year-old male with poorly controlled diabetes.
+PAT-102,52,female,White,Not Hispanic or Latino,Invasive Breast Cancer,"HER2_status:negative;ER_status:negative;PR_status:negative",,Penicillin,52yo female with triple-negative breast cancer.
+PAT-001,58,male,Black or African American,Not Hispanic or Latino,Type 2 Diabetes Mellitus,"HbA1c:8.4;eGFR:58",Metformin,Penicillin,Duplicate ID test row.

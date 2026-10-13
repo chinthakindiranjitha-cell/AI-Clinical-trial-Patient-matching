@@ -1,11 +1,12 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, Eye, CheckCircle2, FileText, User } from 'lucide-react';
+import { Search, Filter, Eye, CheckCircle2, FileText, User, UploadCloud } from 'lucide-react';
 
 export default function PatientExplorer({
   patients = [],
   selectedPatient,
   onSelectPatient,
   onViewDetails,
+  onOpenImport,
   loading
 }) {
   const [search, setSearch] = useState('');
@@ -105,6 +106,19 @@ export default function PatientExplorer({
               ))}
             </select>
           </div>
+
+          {/* Import Button */}
+          {onOpenImport && (
+            <button
+              type="button"
+              onClick={onOpenImport}
+              className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold text-sky-700 bg-sky-50 border border-sky-200 rounded-lg hover:bg-sky-100 transition-colors whitespace-nowrap"
+              title="Import from CSV, TXT, DOCX, or PDF"
+            >
+              <UploadCloud className="w-3.5 h-3.5 text-sky-600" />
+              <span>Import File</span>
+            </button>
+          )}
         </div>
       </div>
 

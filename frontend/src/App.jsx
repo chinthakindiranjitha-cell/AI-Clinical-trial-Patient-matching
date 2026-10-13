@@ -5,6 +5,7 @@ import TrialSelector from './components/TrialSelector';
 import PatientExplorer from './components/PatientExplorer';
 import MatchResultsView from './components/MatchResultsView';
 import PatientDetailModal from './components/PatientDetailModal';
+import PatientImportModal from './components/PatientImportModal';
 import {
   fetchHealth,
   fetchPatients,
@@ -19,6 +20,7 @@ export default function App() {
   const [selectedTrial, setSelectedTrial] = useState(null);
   const [selectedPatient, setSelectedPatient] = useState(null);
   const [detailPatient, setDetailPatient] = useState(null);
+  const [isImportOpen, setIsImportOpen] = useState(false);
 
   const [evaluationData, setEvaluationData] = useState(null);
   const [backendConnected, setBackendConnected] = useState(false);
@@ -111,6 +113,11 @@ export default function App() {
     }
   };
 
+  // Handle Import Success
+  const handleImportSuccess = async (importResult) => {
+    await loadInitialData();
+  };
+
   return (
     <div className="min-h-screen bg-slate-100/70 text-slate-900 flex flex-col font-sans">
       {/* Top Navbar */}
@@ -118,6 +125,7 @@ export default function App() {
         backendConnected={backendConnected}
         onResetSeed={handleResetSeed}
         resetting={resetting}
+        onOpenImport={() => setIsImportOpen(true)}
       />
 
       {/* Main Container */}
@@ -153,6 +161,7 @@ export default function App() {
               selectedPatient={selectedPatient}
               onSelectPatient={(p) => setSelectedPatient(p)}
               onViewDetails={(p) => setDetailPatient(p)}
+              onOpenImport={() => setIsImportOpen(true)}
               loading={loading}
             />
           </div>
@@ -171,6 +180,13 @@ export default function App() {
         </div>
       </main>
 
+      {/* Multi-Format Patient Import Modal */}
+      <PatientImportModal
+        isOpen={isImportOpen}
+        onClose={() => setIsImportOpen(false)}
+        onImportSuccess={handleImportSuccess}
+      />
+
       {/* Full Patient EHR Modal */}
       <PatientDetailModal
         patient={detailPatient}
@@ -188,7 +204,7 @@ export default function App() {
             <span>•</span>
             <span>Express.js</span>
             <span>•</span>
-            <span>Deterministic Rule Engine</span>
+            <span>Multi-Format Ingestion (CSV, TXT, DOCX, PDF)</span>
           </div>
         </div>
       </footer>

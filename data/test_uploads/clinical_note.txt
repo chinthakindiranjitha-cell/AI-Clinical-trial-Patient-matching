@@ -1,0 +1,9 @@
+CLINICAL PROGRESS NOTE:
+PATIENT EVALUATION: 61-year-old male presenting for endocrinology follow-up.
+DIAGNOSES: Type 2 Diabetes Mellitus, Essential Hypertension.
+VITALS: BP 134/82 mmHg.
+LABORATORY RESULTS: HbA1c is 8.8%. Estimated GFR (eGFR) is 52 mL/min/1.73m2.
+CURRENT MEDICATIONS: Metformin 1000mg BID, Lisinopril 10mg daily.
+ALLERGIES: Allergic to Sulfa drugs.
+SOCIAL HISTORY: Former smoker (stopped 4 years ago).
+ASSESSMENT: Suboptimal glycemic control. Candidate for SGLT2 inhibitor trial.
