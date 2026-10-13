@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MatchResult",
+  "description": "Evaluation schema for patient-to-trial eligibility matching with criterion-level explainability",
+  "type": "object",
+  "required": [
+    "patient_id",
+    "trial_id",
+    "match_status",
+    "is_eligible",
+    "has_insufficient_info",
+    "match_score",
+    "criteria_results",
+    "evaluated_at"
+  ],
+  "properties": {
+    "patient_id": {
+      "type": "string"
+    },
+    "trial_id": {
+      "type": "string"
+    },
+    "match_status": {
+      "type": "string",
+      "enum": [
+        "ELIGIBLE",
+        "INELIGIBLE",
+        "POTENTIALLY_ELIGIBLE_PENDING_INFO"
+      ],
+      "description": "ELIGIBLE = all mandatory criteria satisfied; INELIGIBLE = at least 1 mandatory criterion violated; POTENTIALLY_ELIGIBLE_PENDING_INFO = no violations, but 1 or more criteria have missing data"
+    },
+    "is_eligible": {
+      "type": "boolean",
+      "description": "True only if match_status is ELIGIBLE"
+    },
+    "has_insufficient_info": {
+      "type": "boolean",
+      "description": "True if missing patient data prevented definitive determination of one or more criteria"
+    },
+    "match_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Score between 0 and 100 representing eligibility degree. STRICT RULE: Must be 0 for INELIGIBLE to prevent rank override"
+    },
+    "summary": {
+      "type": "object",
+      "required": ["total_criteria", "satisfied_count", "violated_count", "unknown_count"],
+      "properties": {
+        "total_criteria": { "type": "integer" },
+        "satisfied_count": { "type": "integer" },
+        "violated_count": { "type": "integer" },
+        "unknown_count": { "type": "integer" }
+      }
+    },
+    "criteria_results": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/CriterionEvaluation" }
+    },
+    "clinical_rationale": {
+      "type": "string",
+      "description": "Summary medical explanation of the match outcome"
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "definitions": {
+    "CriterionEvaluation": {
+      "type": "object",
+      "required": [
+        "criterion_id",
+        "type",
+        "description",
+        "field",
+        "operator",
+        "status",
+        "is_mandatory",
+        "reason"
+      ],
+      "properties": {
+        "criterion_id": { "type": "string" },
+        "type": { "type": "string", "enum": ["INCLUSION", "EXCLUSION"] },
+        "description": { "type": "string" },
+        "field": { "type": "string" },
+        "operator": { "type": "string" },
+        "expected_value": {},
+        "patient_value": {},
+        "status": {
+          "type": "string",
+          "enum": ["SATISFIED", "VIOLATED", "UNKNOWN"],
+          "description": "SATISFIED: rule met; VIOLATED: rule failed/exclusion triggered; UNKNOWN: patient data missing"
+        },
+        "is_mandatory": { "type": "boolean" },
+        "reason": {
+          "type": "string",
+          "description": "Detailed human-readable explanation of why this criterion passed, failed, or is missing"
+        }
+      }
+    }
+  }
+}

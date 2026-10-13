@@ -1,0 +1,1930 @@
+[
+  {
+    "patient_id": "PAT-001",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "ELIGIBLE",
+    "is_eligible": true,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [],
+    "expected_unknown_criteria": [],
+    "expected_score": 100,
+    "clinical_rationale": "Eligible: All 7 mandatory inclusion and exclusion criteria confirmed satisfied."
+  },
+  {
+    "patient_id": "PAT-001",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-001",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-001",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-001",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-002",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [
+      "INC-04",
+      "EXC-02"
+    ],
+    "expected_unknown_criteria": [],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-04, EXC-02)."
+  },
+  {
+    "patient_id": "PAT-002",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-002",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-002",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-002",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-003",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "POTENTIALLY_ELIGIBLE_PENDING_INFO",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 86,
+    "clinical_rationale": "Potential match pending verification: 6/7 criteria satisfied; 1 criteria require lab/clinical confirmation (INC-03)."
+  },
+  {
+    "patient_id": "PAT-003",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-003",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-003",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-003",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-004",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-004",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "ELIGIBLE",
+    "is_eligible": true,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [],
+    "expected_unknown_criteria": [],
+    "expected_score": 100,
+    "clinical_rationale": "Eligible: All 6 mandatory inclusion and exclusion criteria confirmed satisfied."
+  },
+  {
+    "patient_id": "PAT-004",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-004",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-004",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-005",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-005",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [
+      "INC-03"
+    ],
+    "expected_unknown_criteria": [],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-03)."
+  },
+  {
+    "patient_id": "PAT-005",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-005",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-005",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-006",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-006",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "POTENTIALLY_ELIGIBLE_PENDING_INFO",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [],
+    "expected_unknown_criteria": [
+      "INC-04"
+    ],
+    "expected_score": 83,
+    "clinical_rationale": "Potential match pending verification: 5/6 criteria satisfied; 1 criteria require lab/clinical confirmation (INC-04)."
+  },
+  {
+    "patient_id": "PAT-006",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-006",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-006",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-007",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-007",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-007",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "ELIGIBLE",
+    "is_eligible": true,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [],
+    "expected_unknown_criteria": [],
+    "expected_score": 100,
+    "clinical_rationale": "Eligible: All 7 mandatory inclusion and exclusion criteria confirmed satisfied."
+  },
+  {
+    "patient_id": "PAT-007",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-007",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-008",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-008",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-008",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [
+      "INC-04",
+      "EXC-01"
+    ],
+    "expected_unknown_criteria": [],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-04, EXC-01)."
+  },
+  {
+    "patient_id": "PAT-008",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-008",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-009",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-009",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-009",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "POTENTIALLY_ELIGIBLE_PENDING_INFO",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 86,
+    "clinical_rationale": "Potential match pending verification: 6/7 criteria satisfied; 1 criteria require lab/clinical confirmation (INC-03)."
+  },
+  {
+    "patient_id": "PAT-009",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-009",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-010",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-010",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-010",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-010",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "ELIGIBLE",
+    "is_eligible": true,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [],
+    "expected_unknown_criteria": [],
+    "expected_score": 100,
+    "clinical_rationale": "Eligible: All 7 mandatory inclusion and exclusion criteria confirmed satisfied."
+  },
+  {
+    "patient_id": "PAT-010",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-011",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-011",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-011",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-011",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [
+      "INC-03"
+    ],
+    "expected_unknown_criteria": [],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-03)."
+  },
+  {
+    "patient_id": "PAT-011",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-012",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-012",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-012",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-012",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "POTENTIALLY_ELIGIBLE_PENDING_INFO",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [],
+    "expected_unknown_criteria": [
+      "INC-05"
+    ],
+    "expected_score": 86,
+    "clinical_rationale": "Potential match pending verification: 6/7 criteria satisfied; 1 criteria require lab/clinical confirmation (INC-05)."
+  },
+  {
+    "patient_id": "PAT-012",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-013",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-013",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-013",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-013",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-013",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "ELIGIBLE",
+    "is_eligible": true,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [],
+    "expected_unknown_criteria": [],
+    "expected_score": 100,
+    "clinical_rationale": "Eligible: All 5 mandatory inclusion and exclusion criteria confirmed satisfied."
+  },
+  {
+    "patient_id": "PAT-014",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-014",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-014",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-014",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-014",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [
+      "INC-03"
+    ],
+    "expected_unknown_criteria": [],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-03)."
+  },
+  {
+    "patient_id": "PAT-015",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-015",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-015",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-015",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-015",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "POTENTIALLY_ELIGIBLE_PENDING_INFO",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 80,
+    "clinical_rationale": "Potential match pending verification: 4/5 criteria satisfied; 1 criteria require lab/clinical confirmation (INC-03)."
+  },
+  {
+    "patient_id": "PAT-016",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [
+      "INC-01"
+    ],
+    "expected_unknown_criteria": [],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-01)."
+  },
+  {
+    "patient_id": "PAT-016",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-016",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-016",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-016",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-017",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "ELIGIBLE",
+    "is_eligible": true,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [],
+    "expected_unknown_criteria": [],
+    "expected_score": 100,
+    "clinical_rationale": "Eligible: All 7 mandatory inclusion and exclusion criteria confirmed satisfied."
+  },
+  {
+    "patient_id": "PAT-017",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-017",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-017",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-017",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-018",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [
+      "INC-02",
+      "EXC-01"
+    ],
+    "expected_unknown_criteria": [],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-02, EXC-01)."
+  },
+  {
+    "patient_id": "PAT-018",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-018",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-018",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-018",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-019",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-019",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [
+      "EXC-02"
+    ],
+    "expected_unknown_criteria": [],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (EXC-02)."
+  },
+  {
+    "patient_id": "PAT-019",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-019",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-019",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-020",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-020",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-020",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [
+      "EXC-03"
+    ],
+    "expected_unknown_criteria": [],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (EXC-03)."
+  },
+  {
+    "patient_id": "PAT-020",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-020",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-021",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-021",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-021",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-021",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [
+      "EXC-01"
+    ],
+    "expected_unknown_criteria": [],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (EXC-01)."
+  },
+  {
+    "patient_id": "PAT-021",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-022",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-022",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-022",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-022",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-022",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [
+      "EXC-02"
+    ],
+    "expected_unknown_criteria": [],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (EXC-02)."
+  },
+  {
+    "patient_id": "PAT-023",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-023",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-023",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "EXC-02"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-023",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-023",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-01",
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 2 mandatory criteria (INC-01, INC-02)."
+  },
+  {
+    "patient_id": "PAT-024",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "ELIGIBLE",
+    "is_eligible": true,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [],
+    "expected_unknown_criteria": [],
+    "expected_score": 100,
+    "clinical_rationale": "Eligible: All 7 mandatory inclusion and exclusion criteria confirmed satisfied."
+  },
+  {
+    "patient_id": "PAT-024",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-024",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "ELIGIBLE",
+    "is_eligible": true,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [],
+    "expected_unknown_criteria": [],
+    "expected_score": 100,
+    "clinical_rationale": "Eligible: All 7 mandatory inclusion and exclusion criteria confirmed satisfied."
+  },
+  {
+    "patient_id": "PAT-024",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-024",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-025",
+    "trial_id": "NCT-D2D-001",
+    "expected_status": "ELIGIBLE",
+    "is_eligible": true,
+    "has_insufficient_info": false,
+    "expected_violated_criteria": [],
+    "expected_unknown_criteria": [],
+    "expected_score": 100,
+    "clinical_rationale": "Eligible: All 7 mandatory inclusion and exclusion criteria confirmed satisfied."
+  },
+  {
+    "patient_id": "PAT-025",
+    "trial_id": "NCT-NSCLC-002",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-025",
+    "trial_id": "NCT-HF-003",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-025",
+    "trial_id": "NCT-TNBC-004",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03",
+      "INC-04",
+      "INC-05"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  },
+  {
+    "patient_id": "PAT-025",
+    "trial_id": "NCT-AD-005",
+    "expected_status": "INELIGIBLE",
+    "is_eligible": false,
+    "has_insufficient_info": true,
+    "expected_violated_criteria": [
+      "INC-02"
+    ],
+    "expected_unknown_criteria": [
+      "INC-03"
+    ],
+    "expected_score": 0,
+    "clinical_rationale": "Ineligible: Disqualified by 1 mandatory criteria (INC-02)."
+  }
+]

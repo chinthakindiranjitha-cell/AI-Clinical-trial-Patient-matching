@@ -1,0 +1,323 @@
+[
+  {
+    "trial_id": "NCT-D2D-001",
+    "title": "Efficacy of SGLT2 Inhibitor in Type 2 Diabetes with Diabetic Nephropathy",
+    "phase": "Phase 3",
+    "therapeutic_area": "Endocrinology",
+    "status": "Recruiting",
+    "description": "A multicenter, double-blind randomized study evaluating cardiovascular and renal outcomes with novel SGLT2 inhibition in adults with type 2 diabetes mellitus and mild-to-moderate nephropathy.",
+    "target_enrollment": 450,
+    "inclusion_criteria": [
+      {
+        "criterion_id": "INC-01",
+        "description": "Age between 18 and 75 years inclusive at time of screening",
+        "field": "demographics.age",
+        "operator": "range",
+        "value": [18, 75],
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-02",
+        "description": "Confirmed diagnosis of Type 2 Diabetes Mellitus",
+        "field": "conditions",
+        "operator": "contains",
+        "value": "Type 2 Diabetes Mellitus",
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-03",
+        "description": "HbA1c level between 7.5% and 11.0% inclusive",
+        "field": "biomarkers.HbA1c",
+        "operator": "range",
+        "value": [7.5, 11.0],
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-04",
+        "description": "Estimated GFR >= 45 mL/min/1.73m2",
+        "field": "biomarkers.eGFR",
+        "operator": ">=",
+        "value": 45,
+        "is_mandatory": true
+      }
+    ],
+    "exclusion_criteria": [
+      {
+        "criterion_id": "EXC-01",
+        "description": "Documented diagnosis of Type 1 Diabetes Mellitus",
+        "field": "conditions",
+        "operator": "contains",
+        "value": "Type 1 Diabetes Mellitus",
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "EXC-02",
+        "description": "Severe renal impairment defined as eGFR < 30 mL/min/1.73m2",
+        "field": "biomarkers.eGFR",
+        "operator": "<",
+        "value": 30,
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "EXC-03",
+        "description": "Uncontrolled hypertension with Systolic BP > 180 mmHg",
+        "field": "biomarkers.systolic_bp",
+        "operator": ">",
+        "value": 180,
+        "is_mandatory": true
+      }
+    ]
+  },
+  {
+    "trial_id": "NCT-NSCLC-002",
+    "title": "Targeted Anti-PD-L1 Immunotherapy in Locally Advanced or Metastatic NSCLC",
+    "phase": "Phase 2",
+    "therapeutic_area": "Oncology",
+    "status": "Recruiting",
+    "description": "Open-label Phase 2 investigation of next-generation immune checkpoint blockade in patients with histologically verified non-small cell lung cancer expressing PD-L1.",
+    "target_enrollment": 180,
+    "inclusion_criteria": [
+      {
+        "criterion_id": "INC-01",
+        "description": "Adult patient aged 18 years or older",
+        "field": "demographics.age",
+        "operator": ">=",
+        "value": 18,
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-02",
+        "description": "Pathologically confirmed diagnosis of Non-Small Cell Lung Cancer",
+        "field": "conditions",
+        "operator": "contains",
+        "value": "Non-Small Cell Lung Cancer",
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-03",
+        "description": "ECOG Performance Status of 0 or 1",
+        "field": "biomarkers.ECOG",
+        "operator": "<=",
+        "value": 1,
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-04",
+        "description": "Documented Tumor Proportion Score (TPS) PD-L1 expression >= 1%",
+        "field": "biomarkers.PD_L1_expression",
+        "operator": ">=",
+        "value": 1,
+        "is_mandatory": true
+      }
+    ],
+    "exclusion_criteria": [
+      {
+        "criterion_id": "EXC-01",
+        "description": "Active autoimmune disorder requiring chronic immunosuppressive therapy",
+        "field": "conditions",
+        "operator": "contains",
+        "value": "Systemic Lupus Erythematosus",
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "EXC-02",
+        "description": "Ongoing daily therapy with systemic corticosteroid (Prednisone > 10mg)",
+        "field": "medications",
+        "operator": "contains",
+        "value": "Prednisone",
+        "is_mandatory": true
+      }
+    ]
+  },
+  {
+    "trial_id": "NCT-HF-003",
+    "title": "Angiotensin Receptor-Neprilysin Inhibitor in Chronic Heart Failure (HFrEF)",
+    "phase": "Phase 3",
+    "therapeutic_area": "Cardiology",
+    "status": "Recruiting",
+    "description": "Evaluating cardiovascular mortality and hospital admissions in chronic heart failure patients with reduced ejection fraction.",
+    "target_enrollment": 600,
+    "inclusion_criteria": [
+      {
+        "criterion_id": "INC-01",
+        "description": "Age between 40 and 85 years inclusive",
+        "field": "demographics.age",
+        "operator": "range",
+        "value": [40, 85],
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-02",
+        "description": "Clinical diagnosis of Heart Failure",
+        "field": "conditions",
+        "operator": "contains",
+        "value": "Heart Failure",
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-03",
+        "description": "Left Ventricular Ejection Fraction (LVEF) <= 40%",
+        "field": "biomarkers.LVEF",
+        "operator": "<=",
+        "value": 40,
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-04",
+        "description": "Sitting Systolic Blood Pressure >= 100 mmHg",
+        "field": "biomarkers.systolic_bp",
+        "operator": ">=",
+        "value": 100,
+        "is_mandatory": true
+      }
+    ],
+    "exclusion_criteria": [
+      {
+        "criterion_id": "EXC-01",
+        "description": "Symptomatic severe hypotension: Systolic BP < 90 mmHg",
+        "field": "biomarkers.systolic_bp",
+        "operator": "<",
+        "value": 90,
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "EXC-02",
+        "description": "Severe renal insufficiency: eGFR < 25 mL/min/1.73m2",
+        "field": "biomarkers.eGFR",
+        "operator": "<",
+        "value": 25,
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "EXC-03",
+        "description": "Documented hypersensitivity or allergy to Valsartan or Sacubitril",
+        "field": "allergies",
+        "operator": "contains",
+        "value": "Valsartan",
+        "is_mandatory": true
+      }
+    ]
+  },
+  {
+    "trial_id": "NCT-TNBC-004",
+    "title": "Neoadjuvant Targeted Poly-Chemotherapy in Triple-Negative Breast Cancer",
+    "phase": "Phase 2",
+    "therapeutic_area": "Oncology",
+    "status": "Recruiting",
+    "description": "Assessing pathologic complete response rates following combination neoadjuvant therapy for patients with early non-metastatic triple-negative invasive breast cancer.",
+    "target_enrollment": 120,
+    "inclusion_criteria": [
+      {
+        "criterion_id": "INC-01",
+        "description": "Age between 18 and 70 years inclusive",
+        "field": "demographics.age",
+        "operator": "range",
+        "value": [18, 70],
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-02",
+        "description": "Biopsy-proven Invasive Breast Cancer",
+        "field": "conditions",
+        "operator": "contains",
+        "value": "Invasive Breast Cancer",
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-03",
+        "description": "HER2 Status confirmed Negative by IHC or FISH",
+        "field": "biomarkers.HER2_status",
+        "operator": "==",
+        "value": "negative",
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-04",
+        "description": "Estrogen Receptor (ER) status confirmed Negative (<1%)",
+        "field": "biomarkers.ER_status",
+        "operator": "==",
+        "value": "negative",
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-05",
+        "description": "Progesterone Receptor (PR) status confirmed Negative (<1%)",
+        "field": "biomarkers.PR_status",
+        "operator": "==",
+        "value": "negative",
+        "is_mandatory": true
+      }
+    ],
+    "exclusion_criteria": [
+      {
+        "criterion_id": "EXC-01",
+        "description": "Distant metastatic disease (Stage IV Breast Cancer)",
+        "field": "conditions",
+        "operator": "contains",
+        "value": "Stage IV Metastatic Breast Cancer",
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "EXC-02",
+        "description": "Prior chemotherapy within past 6 months",
+        "field": "medications",
+        "operator": "contains",
+        "value": "Doxorubicin",
+        "is_mandatory": true
+      }
+    ]
+  },
+  {
+    "trial_id": "NCT-AD-005",
+    "title": "Anti-Amyloid Monoclonal Antibody in Mild Cognitive Impairment & Early Alzheimer's",
+    "phase": "Phase 2",
+    "therapeutic_area": "Neurology",
+    "status": "Recruiting",
+    "description": "Evaluating cognitive and functional decline reduction in adults presenting with biomarker-verified mild cognitive impairment due to Alzheimer's pathology.",
+    "target_enrollment": 250,
+    "inclusion_criteria": [
+      {
+        "criterion_id": "INC-01",
+        "description": "Age between 55 and 85 years inclusive",
+        "field": "demographics.age",
+        "operator": "range",
+        "value": [55, 85],
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-02",
+        "description": "Documented diagnosis of Mild Cognitive Impairment or Early Alzheimer's Disease",
+        "field": "conditions",
+        "operator": "contains",
+        "value": "Mild Cognitive Impairment",
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "INC-03",
+        "description": "Baseline Mini-Mental State Examination (MMSE) score between 20 and 26 inclusive",
+        "field": "biomarkers.MMSE",
+        "operator": "range",
+        "value": [20, 26],
+        "is_mandatory": true
+      }
+    ],
+    "exclusion_criteria": [
+      {
+        "criterion_id": "EXC-01",
+        "description": "History of recent acute ischemic stroke within 12 months",
+        "field": "conditions",
+        "operator": "contains",
+        "value": "Recent Ischemic Stroke",
+        "is_mandatory": true
+      },
+      {
+        "criterion_id": "EXC-02",
+        "description": "Concurrent anticoagulant medication therapy (Warfarin or Direct Thrombin/Xa inhibitors)",
+        "field": "medications",
+        "operator": "contains",
+        "value": "Warfarin",
+        "is_mandatory": true
+      }
+    ]
+  }
+]

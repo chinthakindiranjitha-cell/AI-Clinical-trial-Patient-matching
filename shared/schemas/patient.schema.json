@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PatientRecord",
+  "description": "Fictional patient electronic health record schema for clinical trial matching",
+  "type": "object",
+  "required": ["patient_id", "demographics", "conditions", "medications"],
+  "properties": {
+    "patient_id": {
+      "type": "string",
+      "pattern": "^PAT-[0-9]{3,}$",
+      "description": "Unique identifier for the patient, e.g. PAT-001"
+    },
+    "demographics": {
+      "type": "object",
+      "required": ["age", "gender"],
+      "properties": {
+        "age": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 120,
+          "description": "Age in years"
+        },
+        "gender": {
+          "type": "string",
+          "enum": ["male", "female", "other", "unknown"],
+          "description": "Biological sex / gender"
+        },
+        "race": {
+          "type": ["string", "null"],
+          "enum": [
+            "White",
+            "Black or African American",
+            "Asian",
+            "American Indian or Alaska Native",
+            "Native Hawaiian or Other Pacific Islander",
+            "Multiracial",
+            "Other",
+            null
+          ],
+          "description": "Self-reported race (may be null for unknown/missing)"
+        },
+        "ethnicity": {
+          "type": ["string", "null"],
+          "enum": ["Hispanic or Latino", "Not Hispanic or Latino", "Unknown", null],
+          "description": "Self-reported ethnicity (may be null for unknown/missing)"
+        },
+        "postal_code": {
+          "type": ["string", "null"],
+          "description": "Postal code or regional identifier for diversity analytics"
+        }
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of active or historical medical conditions / ICD concepts"
+    },
+    "biomarkers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["number", "string", "boolean", "null"]
+      },
+      "description": "Key-value clinical biomarkers and lab measurements (e.g. HbA1c, eGFR, LVEF, ECOG, HER2_status, PD_L1_expression, systolic_bp, diastolic_bp, MMSE)"
+    },
+    "medications": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Current active medications"
+    },
+    "allergies": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Documented drug allergies or hypersensitivities"
+    },
+    "smoking_status": {
+      "type": ["string", "null"],
+      "enum": ["never", "former", "current", "unknown", null],
+      "description": "Smoking history status"
+    },
+    "notes_summary": {
+      "type": ["string", "null"],
+      "description": "Brief clinical narrative summary"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

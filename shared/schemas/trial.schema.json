@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ClinicalTrialRecord",
+  "description": "Fictional clinical trial protocol schema with deterministic inclusion and exclusion criteria",
+  "type": "object",
+  "required": [
+    "trial_id",
+    "title",
+    "phase",
+    "therapeutic_area",
+    "status",
+    "inclusion_criteria",
+    "exclusion_criteria"
+  ],
+  "properties": {
+    "trial_id": {
+      "type": "string",
+      "pattern": "^NCT-[A-Z0-9-]+$",
+      "description": "Identifier for the clinical trial, e.g. NCT-D2D-001"
+    },
+    "title": {
+      "type": "string",
+      "description": "Official title of the study"
+    },
+    "phase": {
+      "type": "string",
+      "enum": ["Phase 1", "Phase 2", "Phase 3", "Phase 4", "Phase 1/2", "Phase 2/3"]
+    },
+    "therapeutic_area": {
+      "type": "string",
+      "enum": ["Oncology", "Endocrinology", "Cardiology", "Neurology", "Immunology", "Pulmonology"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["Recruiting", "Active", "Completed", "Suspended"]
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief study overview"
+    },
+    "target_enrollment": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "inclusion_criteria": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/CriterionRule" }
+    },
+    "exclusion_criteria": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/CriterionRule" }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "definitions": {
+    "CriterionRule": {
+      "type": "object",
+      "required": ["criterion_id", "description", "field", "operator", "value", "is_mandatory"],
+      "properties": {
+        "criterion_id": {
+          "type": "string",
+          "description": "Unique criterion id, e.g. INC-01, EXC-02"
+        },
+        "description": {
+          "type": "string",
+          "description": "Human-readable clinical criterion statement"
+        },
+        "field": {
+          "type": "string",
+          "description": "Dot-notation path to patient field: demographics.age, conditions, biomarkers.eGFR, medications, etc."
+        },
+        "operator": {
+          "type": "string",
+          "enum": [">=", "<=", ">", "<", "==", "!=", "in", "not_in", "range", "contains", "not_contains", "exists"]
+        },
+        "value": {
+          "description": "Expected literal value, range tuple [min, max], or array of strings/numbers"
+        },
+        "is_mandatory": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether failing this criterion strictly disallows patient enrollment"
+        }
+      }
+    }
+  }
+}
