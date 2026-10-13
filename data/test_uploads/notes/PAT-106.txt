@@ -18,3 +18,9 @@ RECRUITMENT CONTACT:
   - Outreach Status: Not Contacted
   - Clinical Notes: Uncontrolled HbA1c exceeds inclusion threshold.
 
+SOURCE ORGANIZATION:
+  - Organization Name: Christus St. Vincent Regional Medical Center
+  - Site Address: 455 St Michaels Dr, Santa Fe, NM 87505
+  - Official Phone: +1-505-913-3361
+  - Site Email: research@stvin.org
+  - Website: https://www.stvin.org

@@ -18,3 +18,9 @@ RECRUITMENT CONTACT:
   - Outreach Status: Not Contacted
   - Clinical Notes: Hypotension violates baseline hemodynamic stability requirement.
 
+SOURCE ORGANIZATION:
+  - Organization Name: Cleveland Clinic Main Campus
+  - Site Address: 9500 Euclid Ave, Cleveland, OH 44195
+  - Official Phone: +1-216-444-2200
+  - Site Email: researchregistry@ccf.org
+  - Website: https://my.clevelandclinic.org

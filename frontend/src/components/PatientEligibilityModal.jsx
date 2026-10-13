@@ -18,7 +18,9 @@ import {
   ShieldCheck,
   Calendar,
   Layers,
-  ChevronRight
+  ChevronRight,
+  FlaskConical,
+  Info
 } from 'lucide-react';
 
 export default function PatientEligibilityModal({ matchResult, onClose }) {
@@ -152,6 +154,33 @@ export default function PatientEligibilityModal({ matchResult, onClose }) {
         <div className="p-6 overflow-y-auto space-y-5 text-xs text-slate-700 flex-1">
           {activeTab === 'criteria' && (
             <div className="space-y-5">
+              {/* Trial Protocol & Description Callout */}
+              {trial.description && (
+                <div className="p-4 rounded-xl border border-sky-200/80 bg-sky-50/40 text-slate-800 space-y-1.5">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex items-center space-x-1.5 font-bold text-sky-950 text-xs">
+                      <FlaskConical className="w-4 h-4 text-sky-600 shrink-0" />
+                      <span>Trial Protocol Overview & Objectives · {trial.trial_id || 'Protocol'}</span>
+                    </div>
+                    <div className="flex items-center space-x-1.5">
+                      {trial.phase && (
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-sky-100 text-sky-800 font-semibold border border-sky-200">
+                          {trial.phase}
+                        </span>
+                      )}
+                      {trial.therapeutic_area && (
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 font-semibold border border-purple-200">
+                          {trial.therapeutic_area}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <p className="leading-relaxed text-xs text-slate-700">
+                    {trial.description}
+                  </p>
+                </div>
+              )}
+
               {/* Clinical Rationale Summary */}
               <div
                 className={`p-4 rounded-xl border ${

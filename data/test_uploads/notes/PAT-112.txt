@@ -18,3 +18,9 @@ RECRUITMENT CONTACT:
   - Outreach Status: Contacted
   - Clinical Notes: Biopsy sent for PD-L1 immunohistochemistry assay.
 
+SOURCE ORGANIZATION:
+  - Organization Name: Emory University Hospital
+  - Site Address: 1364 Clifton Rd NE, Atlanta, GA 30322
+  - Official Phone: +1-404-712-2000
+  - Site Email: research-trials@emoryhealthcare.org
+  - Website: https://www.emoryhealthcare.org

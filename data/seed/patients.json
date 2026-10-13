@@ -8,7 +8,10 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "30301"
     },
-    "conditions": ["Type 2 Diabetes Mellitus", "Essential Hypertension"],
+    "conditions": [
+      "Type 2 Diabetes Mellitus",
+      "Essential Hypertension"
+    ],
     "biomarkers": {
       "HbA1c": 8.4,
       "eGFR": 58,
@@ -16,10 +19,23 @@
       "diastolic_bp": 84,
       "BMI": 29.3
     },
-    "medications": ["Metformin", "Lisinopril", "Amlodipine"],
-    "allergies": ["Penicillin"],
+    "medications": [
+      "Metformin",
+      "Lisinopril",
+      "Amlodipine"
+    ],
+    "allergies": [
+      "Penicillin"
+    ],
     "smoking_status": "former",
-    "notes_summary": "58-year-old male with poorly controlled T2D despite metformin monotherapy. Baseline renal function stable with eGFR 58."
+    "notes_summary": "58-year-old male with poorly controlled T2D despite metformin monotherapy. Baseline renal function stable with eGFR 58.",
+    "organization": {
+      "name": "Emory University Hospital",
+      "address": "1364 Clifton Rd NE, Atlanta, GA 30322",
+      "phone": "+1-404-712-2000",
+      "email": "research-trials@emoryhealthcare.org",
+      "website": "https://www.emoryhealthcare.org"
+    }
   },
   {
     "patient_id": "PAT-002",
@@ -30,17 +46,33 @@
       "ethnicity": "Hispanic or Latino",
       "postal_code": "90001"
     },
-    "conditions": ["Type 2 Diabetes Mellitus", "Diabetic Nephropathy", "Hypertension"],
+    "conditions": [
+      "Type 2 Diabetes Mellitus",
+      "Diabetic Nephropathy",
+      "Hypertension"
+    ],
     "biomarkers": {
       "HbA1c": 9.2,
       "eGFR": 26,
       "systolic_bp": 142,
       "diastolic_bp": 88
     },
-    "medications": ["Insulin Glargine", "Losartan"],
-    "allergies": ["Sulfa drugs"],
+    "medications": [
+      "Insulin Glargine",
+      "Losartan"
+    ],
+    "allergies": [
+      "Sulfa drugs"
+    ],
     "smoking_status": "never",
-    "notes_summary": "45-year-old female presenting with advanced diabetic kidney disease and declining renal clearance with eGFR 26."
+    "notes_summary": "45-year-old female presenting with advanced diabetic kidney disease and declining renal clearance with eGFR 26.",
+    "organization": {
+      "name": "Cedars-Sinai Medical Center",
+      "address": "8700 Beverly Blvd, Los Angeles, CA 90048",
+      "phone": "+1-310-423-3277",
+      "email": "research@cshs.org",
+      "website": "https://www.cedars-sinai.org"
+    }
   },
   {
     "patient_id": "PAT-003",
@@ -51,17 +83,30 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "02115"
     },
-    "conditions": ["Type 2 Diabetes Mellitus", "Hyperlipidemia"],
+    "conditions": [
+      "Type 2 Diabetes Mellitus",
+      "Hyperlipidemia"
+    ],
     "biomarkers": {
       "HbA1c": null,
       "eGFR": 65,
       "systolic_bp": 128,
       "diastolic_bp": 80
     },
-    "medications": ["Metformin", "Atorvastatin"],
+    "medications": [
+      "Metformin",
+      "Atorvastatin"
+    ],
     "allergies": [],
     "smoking_status": "never",
-    "notes_summary": "62-year-old female with long-standing T2D. Recent HbA1c pending repeat lab draw; baseline renal panel within normal limits."
+    "notes_summary": "62-year-old female with long-standing T2D. Recent HbA1c pending repeat lab draw; baseline renal panel within normal limits.",
+    "organization": {
+      "name": "Massachusetts General Hospital",
+      "address": "55 Fruit St, Boston, MA 02114",
+      "phone": "+1-617-726-2000",
+      "email": "mghresearch@partners.org",
+      "website": "https://www.massgeneral.org"
+    }
   },
   {
     "patient_id": "PAT-004",
@@ -72,17 +117,31 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "10001"
     },
-    "conditions": ["Non-Small Cell Lung Cancer", "Stage IIIb Adenocarcinoma"],
+    "conditions": [
+      "Non-Small Cell Lung Cancer",
+      "Stage IIIb Adenocarcinoma"
+    ],
     "biomarkers": {
       "ECOG": 1,
       "PD_L1_expression": 60,
       "systolic_bp": 122,
       "diastolic_bp": 76
     },
-    "medications": ["Carboplatin", "Pemetrexed", "Ondansetron"],
+    "medications": [
+      "Carboplatin",
+      "Pemetrexed",
+      "Ondansetron"
+    ],
     "allergies": [],
     "smoking_status": "former",
-    "notes_summary": "67-year-old male with Stage IIIb lung adenocarcinoma. High PD-L1 expression at 60% with functional ECOG 1 status."
+    "notes_summary": "67-year-old male with Stage IIIb lung adenocarcinoma. High PD-L1 expression at 60% with functional ECOG 1 status.",
+    "organization": {
+      "name": "Memorial Sloan Kettering Cancer Center",
+      "address": "1275 York Ave, New York, NY 10065",
+      "phone": "+1-212-639-2000",
+      "email": "trials@mskcc.org",
+      "website": "https://www.mskcc.org"
+    }
   },
   {
     "patient_id": "PAT-005",
@@ -93,17 +152,32 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "94102"
     },
-    "conditions": ["Non-Small Cell Lung Cancer", "Chronic Obstructive Pulmonary Disease"],
+    "conditions": [
+      "Non-Small Cell Lung Cancer",
+      "Chronic Obstructive Pulmonary Disease"
+    ],
     "biomarkers": {
       "ECOG": 2,
       "PD_L1_expression": 15,
       "systolic_bp": 130,
       "diastolic_bp": 82
     },
-    "medications": ["Tiotropium", "Albuterol"],
-    "allergies": ["Codeine"],
+    "medications": [
+      "Tiotropium",
+      "Albuterol"
+    ],
+    "allergies": [
+      "Codeine"
+    ],
     "smoking_status": "current",
-    "notes_summary": "54-year-old female with non-small cell lung cancer exhibiting moderate functional impairment (ECOG 2) due to severe dyspnea."
+    "notes_summary": "54-year-old female with non-small cell lung cancer exhibiting moderate functional impairment (ECOG 2) due to severe dyspnea.",
+    "organization": {
+      "name": "UCSF Medical Center",
+      "address": "505 Parnassus Ave, San Francisco, CA 94143",
+      "phone": "+1-415-476-1000",
+      "email": "clinicaltrials@ucsfhealth.org",
+      "website": "https://www.ucsfhealth.org"
+    }
   },
   {
     "patient_id": "PAT-006",
@@ -114,17 +188,29 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "60601"
     },
-    "conditions": ["Non-Small Cell Lung Cancer", "Squamous Cell Carcinoma"],
+    "conditions": [
+      "Non-Small Cell Lung Cancer",
+      "Squamous Cell Carcinoma"
+    ],
     "biomarkers": {
       "ECOG": 0,
       "PD_L1_expression": null,
       "systolic_bp": 135,
       "diastolic_bp": 85
     },
-    "medications": ["Acetaminophen"],
+    "medications": [
+      "Acetaminophen"
+    ],
     "allergies": [],
     "smoking_status": "former",
-    "notes_summary": "71-year-old male recently diagnosed with non-small cell lung cancer. Highly functional (ECOG 0), immunohistochemistry for PD-L1 currently pending."
+    "notes_summary": "71-year-old male recently diagnosed with non-small cell lung cancer. Highly functional (ECOG 0), immunohistochemistry for PD-L1 currently pending.",
+    "organization": {
+      "name": "Northwestern Memorial Hospital",
+      "address": "251 E Huron St, Chicago, IL 60611",
+      "phone": "+1-312-926-2000",
+      "email": "recruitment@nm.org",
+      "website": "https://www.nm.org"
+    }
   },
   {
     "patient_id": "PAT-007",
@@ -135,17 +221,31 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "48201"
     },
-    "conditions": ["Heart Failure", "Coronary Artery Disease"],
+    "conditions": [
+      "Heart Failure",
+      "Coronary Artery Disease"
+    ],
     "biomarkers": {
       "LVEF": 32,
       "systolic_bp": 125,
       "diastolic_bp": 78,
       "eGFR": 55
     },
-    "medications": ["Carvedilol", "Furosemide", "Aspirin"],
+    "medications": [
+      "Carvedilol",
+      "Furosemide",
+      "Aspirin"
+    ],
     "allergies": [],
     "smoking_status": "former",
-    "notes_summary": "64-year-old male with symptomatic HFrEF (LVEF 32%) following prior myocardial infarction. Clinically euvolemic on current diuretics."
+    "notes_summary": "64-year-old male with symptomatic HFrEF (LVEF 32%) following prior myocardial infarction. Clinically euvolemic on current diuretics.",
+    "organization": {
+      "name": "Cleveland Clinic Main Campus",
+      "address": "9500 Euclid Ave, Cleveland, OH 44195",
+      "phone": "+1-216-444-2200",
+      "email": "researchregistry@ccf.org",
+      "website": "https://my.clevelandclinic.org"
+    }
   },
   {
     "patient_id": "PAT-008",
@@ -156,17 +256,30 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "33101"
     },
-    "conditions": ["Heart Failure", "Atrial Fibrillation"],
+    "conditions": [
+      "Heart Failure",
+      "Atrial Fibrillation"
+    ],
     "biomarkers": {
       "LVEF": 28,
       "systolic_bp": 85,
       "diastolic_bp": 55,
       "eGFR": 48
     },
-    "medications": ["Metoprolol Succinate", "Digoxin"],
+    "medications": [
+      "Metoprolol Succinate",
+      "Digoxin"
+    ],
     "allergies": [],
     "smoking_status": "never",
-    "notes_summary": "72-year-old female with HFrEF and borderline persistent hypotension with seated systolic blood pressure of 85 mmHg."
+    "notes_summary": "72-year-old female with HFrEF and borderline persistent hypotension with seated systolic blood pressure of 85 mmHg.",
+    "organization": {
+      "name": "Johns Hopkins Hospital",
+      "address": "600 N Wolfe St, Baltimore, MD 21287",
+      "phone": "+1-410-955-5000",
+      "email": "clinical-research@hopkinsmedicine.org",
+      "website": "https://www.hopkinsmedicine.org"
+    }
   },
   {
     "patient_id": "PAT-009",
@@ -177,17 +290,30 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "98101"
     },
-    "conditions": ["Heart Failure", "Hypertension"],
+    "conditions": [
+      "Heart Failure",
+      "Hypertension"
+    ],
     "biomarkers": {
       "LVEF": null,
       "systolic_bp": 118,
       "diastolic_bp": 74,
       "eGFR": 60
     },
-    "medications": ["Lisinopril", "Spironolactone"],
+    "medications": [
+      "Lisinopril",
+      "Spironolactone"
+    ],
     "allergies": [],
     "smoking_status": "never",
-    "notes_summary": "68-year-old male with clinical diagnosis of heart failure. Scheduled for transthoracic echocardiogram next week to quantify baseline ejection fraction."
+    "notes_summary": "68-year-old male with clinical diagnosis of heart failure. Scheduled for transthoracic echocardiogram next week to quantify baseline ejection fraction.",
+    "organization": {
+      "name": "Mayo Clinic Rochester",
+      "address": "200 1st St SW, Rochester, MN 55905",
+      "phone": "+1-507-284-2511",
+      "email": "trials@mayo.edu",
+      "website": "https://www.mayoclinic.org"
+    }
   },
   {
     "patient_id": "PAT-010",
@@ -198,7 +324,10 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "77001"
     },
-    "conditions": ["Invasive Breast Cancer", "Invasive Ductal Carcinoma"],
+    "conditions": [
+      "Invasive Breast Cancer",
+      "Invasive Ductal Carcinoma"
+    ],
     "biomarkers": {
       "HER2_status": "negative",
       "ER_status": "negative",
@@ -210,7 +339,14 @@
     "medications": [],
     "allergies": [],
     "smoking_status": "never",
-    "notes_summary": "48-year-old pre-menopausal female with biopsy-proven triple-negative invasive ductal breast cancer (HER2-, ER-, PR-), localized stage IIa."
+    "notes_summary": "48-year-old pre-menopausal female with biopsy-proven triple-negative invasive ductal breast cancer (HER2-, ER-, PR-), localized stage IIa.",
+    "organization": {
+      "name": "Vanderbilt University Medical Center",
+      "address": "1211 Medical Center Dr, Nashville, TN 37232",
+      "phone": "+1-615-322-5000",
+      "email": "trials@vumc.org",
+      "website": "https://www.vumc.org"
+    }
   },
   {
     "patient_id": "PAT-011",
@@ -221,7 +357,9 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "02138"
     },
-    "conditions": ["Invasive Breast Cancer"],
+    "conditions": [
+      "Invasive Breast Cancer"
+    ],
     "biomarkers": {
       "HER2_status": "positive",
       "ER_status": "negative",
@@ -229,10 +367,19 @@
       "systolic_bp": 124,
       "diastolic_bp": 80
     },
-    "medications": ["Trastuzumab"],
+    "medications": [
+      "Trastuzumab"
+    ],
     "allergies": [],
     "smoking_status": "never",
-    "notes_summary": "52-year-old female with HER2-positive invasive breast cancer receiving target HER2-directed monoclonal therapy."
+    "notes_summary": "52-year-old female with HER2-positive invasive breast cancer receiving target HER2-directed monoclonal therapy.",
+    "organization": {
+      "name": "Mount Sinai Hospital",
+      "address": "1468 Madison Ave, New York, NY 10029",
+      "phone": "+1-212-241-6500",
+      "email": "clinicaltrials@mountsinai.org",
+      "website": "https://www.mountsinai.org"
+    }
   },
   {
     "patient_id": "PAT-012",
@@ -243,7 +390,9 @@
       "ethnicity": "Hispanic or Latino",
       "postal_code": "78201"
     },
-    "conditions": ["Invasive Breast Cancer"],
+    "conditions": [
+      "Invasive Breast Cancer"
+    ],
     "biomarkers": {
       "HER2_status": "negative",
       "ER_status": "negative",
@@ -254,7 +403,14 @@
     "medications": [],
     "allergies": [],
     "smoking_status": "never",
-    "notes_summary": "42-year-old female with newly confirmed invasive breast cancer. HER2 and ER negative; PR staining assay is being repeated due to technical artifact."
+    "notes_summary": "42-year-old female with newly confirmed invasive breast cancer. HER2 and ER negative; PR staining assay is being repeated due to technical artifact.",
+    "organization": {
+      "name": "Barnes-Jewish Hospital",
+      "address": "1 Barnes Jewish Hospital Plaza, St. Louis, MO 63110",
+      "phone": "+1-314-747-3000",
+      "email": "trials@bjc.org",
+      "website": "https://www.barnesjewish.org"
+    }
   },
   {
     "patient_id": "PAT-013",
@@ -265,16 +421,29 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "55401"
     },
-    "conditions": ["Mild Cognitive Impairment", "Hypercholesterolemia"],
+    "conditions": [
+      "Mild Cognitive Impairment",
+      "Hypercholesterolemia"
+    ],
     "biomarkers": {
       "MMSE": 23,
       "systolic_bp": 126,
       "diastolic_bp": 78
     },
-    "medications": ["Atorvastatin", "Donepezil"],
+    "medications": [
+      "Atorvastatin",
+      "Donepezil"
+    ],
     "allergies": [],
     "smoking_status": "never",
-    "notes_summary": "66-year-old female with amnestic mild cognitive impairment. MMSE score 23/30. Accompanied by spouse who acts as full-time study partner."
+    "notes_summary": "66-year-old female with amnestic mild cognitive impairment. MMSE score 23/30. Accompanied by spouse who acts as full-time study partner.",
+    "organization": {
+      "name": "Penn Medicine Hospital",
+      "address": "3400 Spruce St, Philadelphia, PA 19104",
+      "phone": "+1-215-662-4000",
+      "email": "trials@pennmedicine.upenn.edu",
+      "website": "https://www.pennmedicine.org"
+    }
   },
   {
     "patient_id": "PAT-014",
@@ -285,16 +454,29 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "85001"
     },
-    "conditions": ["Mild Cognitive Impairment", "Alzheimer's Dementia"],
+    "conditions": [
+      "Mild Cognitive Impairment",
+      "Alzheimer's Dementia"
+    ],
     "biomarkers": {
       "MMSE": 16,
       "systolic_bp": 138,
       "diastolic_bp": 82
     },
-    "medications": ["Memantine", "Donepezil"],
+    "medications": [
+      "Memantine",
+      "Donepezil"
+    ],
     "allergies": [],
     "smoking_status": "never",
-    "notes_summary": "78-year-old male with advanced cognitive impairment secondary to Alzheimer's pathology; latest MMSE score 16 indicates moderate-to-severe dementia."
+    "notes_summary": "78-year-old male with advanced cognitive impairment secondary to Alzheimer's pathology; latest MMSE score 16 indicates moderate-to-severe dementia.",
+    "organization": {
+      "name": "Houston Methodist Hospital",
+      "address": "6565 Fannin St, Houston, TX 77030",
+      "phone": "+1-713-790-3311",
+      "email": "research@houstonmethodist.org",
+      "website": "https://www.houstonmethodist.org"
+    }
   },
   {
     "patient_id": "PAT-015",
@@ -305,7 +487,9 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "19104"
     },
-    "conditions": ["Mild Cognitive Impairment"],
+    "conditions": [
+      "Mild Cognitive Impairment"
+    ],
     "biomarkers": {
       "MMSE": null,
       "systolic_bp": 122,
@@ -314,7 +498,14 @@
     "medications": [],
     "allergies": [],
     "smoking_status": "never",
-    "notes_summary": "63-year-old male referred for cognitive decline evaluation. Neurologist completed initial consultation; standardized MMSE screening scheduled for next visit."
+    "notes_summary": "63-year-old male referred for cognitive decline evaluation. Neurologist completed initial consultation; standardized MMSE screening scheduled for next visit.",
+    "organization": {
+      "name": "University of Washington Medical Center",
+      "address": "1959 NE Pacific St, Seattle, WA 98195",
+      "phone": "+1-206-598-3300",
+      "email": "trials@uw.edu",
+      "website": "https://www.uwmedicine.org"
+    }
   },
   {
     "patient_id": "PAT-016",
@@ -325,17 +516,30 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "06510"
     },
-    "conditions": ["Type 2 Diabetes Mellitus", "Osteoporosis"],
+    "conditions": [
+      "Type 2 Diabetes Mellitus",
+      "Osteoporosis"
+    ],
     "biomarkers": {
-      "HbA1c": 8.0,
+      "HbA1c": 8,
       "eGFR": 54,
       "systolic_bp": 134,
       "diastolic_bp": 80
     },
-    "medications": ["Metformin", "Alendronate"],
+    "medications": [
+      "Metformin",
+      "Alendronate"
+    ],
     "allergies": [],
     "smoking_status": "never",
-    "notes_summary": "76-year-old female with T2D (HbA1c 8.0%, eGFR 54). Note: age exceeds 75 cutoff for diabetes trial NCT-D2D-001."
+    "notes_summary": "76-year-old female with T2D (HbA1c 8.0%, eGFR 54). Note: age exceeds 75 cutoff for diabetes trial NCT-D2D-001.",
+    "organization": {
+      "name": "Emory University Hospital",
+      "address": "1364 Clifton Rd NE, Atlanta, GA 30322",
+      "phone": "+1-404-712-2000",
+      "email": "research-trials@emoryhealthcare.org",
+      "website": "https://www.emoryhealthcare.org"
+    }
   },
   {
     "patient_id": "PAT-017",
@@ -346,17 +550,28 @@
       "ethnicity": "Hispanic or Latino",
       "postal_code": "92101"
     },
-    "conditions": ["Type 2 Diabetes Mellitus"],
+    "conditions": [
+      "Type 2 Diabetes Mellitus"
+    ],
     "biomarkers": {
       "HbA1c": 7.9,
       "eGFR": 92,
       "systolic_bp": 118,
       "diastolic_bp": 74
     },
-    "medications": ["Metformin"],
+    "medications": [
+      "Metformin"
+    ],
     "allergies": [],
     "smoking_status": "never",
-    "notes_summary": "18-year-old male with young-onset type 2 diabetes mellitus, preserved renal filtration (eGFR 92), and baseline HbA1c 7.9%."
+    "notes_summary": "18-year-old male with young-onset type 2 diabetes mellitus, preserved renal filtration (eGFR 92), and baseline HbA1c 7.9%.",
+    "organization": {
+      "name": "Cedars-Sinai Medical Center",
+      "address": "8700 Beverly Blvd, Los Angeles, CA 90048",
+      "phone": "+1-310-423-3277",
+      "email": "research@cshs.org",
+      "website": "https://www.cedars-sinai.org"
+    }
   },
   {
     "patient_id": "PAT-018",
@@ -367,17 +582,29 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "80202"
     },
-    "conditions": ["Type 1 Diabetes Mellitus"],
+    "conditions": [
+      "Type 1 Diabetes Mellitus"
+    ],
     "biomarkers": {
       "HbA1c": 8.5,
       "eGFR": 85,
       "systolic_bp": 120,
       "diastolic_bp": 75
     },
-    "medications": ["Insulin Lispro", "Insulin Degludec"],
+    "medications": [
+      "Insulin Lispro",
+      "Insulin Degludec"
+    ],
     "allergies": [],
     "smoking_status": "never",
-    "notes_summary": "34-year-old female with long-standing autoimmune Type 1 diabetes on basal-bolus insulin pump regimen."
+    "notes_summary": "34-year-old female with long-standing autoimmune Type 1 diabetes on basal-bolus insulin pump regimen.",
+    "organization": {
+      "name": "Massachusetts General Hospital",
+      "address": "55 Fruit St, Boston, MA 02114",
+      "phone": "+1-617-726-2000",
+      "email": "mghresearch@partners.org",
+      "website": "https://www.massgeneral.org"
+    }
   },
   {
     "patient_id": "PAT-019",
@@ -388,17 +615,30 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "43210"
     },
-    "conditions": ["Non-Small Cell Lung Cancer", "Rheumatoid Arthritis"],
+    "conditions": [
+      "Non-Small Cell Lung Cancer",
+      "Rheumatoid Arthritis"
+    ],
     "biomarkers": {
       "ECOG": 0,
       "PD_L1_expression": 80,
       "systolic_bp": 128,
       "diastolic_bp": 80
     },
-    "medications": ["Prednisone", "Methotrexate"],
+    "medications": [
+      "Prednisone",
+      "Methotrexate"
+    ],
     "allergies": [],
     "smoking_status": "former",
-    "notes_summary": "60-year-old male with NSCLC and high PD-L1 (80%), but currently receiving chronic Prednisone for active rheumatoid arthritis flare."
+    "notes_summary": "60-year-old male with NSCLC and high PD-L1 (80%), but currently receiving chronic Prednisone for active rheumatoid arthritis flare.",
+    "organization": {
+      "name": "Memorial Sloan Kettering Cancer Center",
+      "address": "1275 York Ave, New York, NY 10065",
+      "phone": "+1-212-639-2000",
+      "email": "trials@mskcc.org",
+      "website": "https://www.mskcc.org"
+    }
   },
   {
     "patient_id": "PAT-020",
@@ -409,17 +649,32 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "37203"
     },
-    "conditions": ["Heart Failure", "Non-ischemic Cardiomyopathy"],
+    "conditions": [
+      "Heart Failure",
+      "Non-ischemic Cardiomyopathy"
+    ],
     "biomarkers": {
       "LVEF": 35,
       "systolic_bp": 120,
       "diastolic_bp": 75,
       "eGFR": 62
     },
-    "medications": ["Carvedilol", "Eplerenone"],
-    "allergies": ["Valsartan"],
+    "medications": [
+      "Carvedilol",
+      "Eplerenone"
+    ],
+    "allergies": [
+      "Valsartan"
+    ],
     "smoking_status": "never",
-    "notes_summary": "55-year-old female with non-ischemic cardiomyopathy (LVEF 35%) and documented severe angioedema allergy to Valsartan."
+    "notes_summary": "55-year-old female with non-ischemic cardiomyopathy (LVEF 35%) and documented severe angioedema allergy to Valsartan.",
+    "organization": {
+      "name": "UCSF Medical Center",
+      "address": "505 Parnassus Ave, San Francisco, CA 94143",
+      "phone": "+1-415-476-1000",
+      "email": "clinicaltrials@ucsfhealth.org",
+      "website": "https://www.ucsfhealth.org"
+    }
   },
   {
     "patient_id": "PAT-021",
@@ -430,7 +685,10 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "90210"
     },
-    "conditions": ["Invasive Breast Cancer", "Stage IV Metastatic Breast Cancer"],
+    "conditions": [
+      "Invasive Breast Cancer",
+      "Stage IV Metastatic Breast Cancer"
+    ],
     "biomarkers": {
       "HER2_status": "negative",
       "ER_status": "negative",
@@ -438,10 +696,19 @@
       "systolic_bp": 116,
       "diastolic_bp": 72
     },
-    "medications": ["Capecitabine"],
+    "medications": [
+      "Capecitabine"
+    ],
     "allergies": [],
     "smoking_status": "never",
-    "notes_summary": "49-year-old female with triple negative breast cancer presenting with distant osseous metastasis (Stage IV)."
+    "notes_summary": "49-year-old female with triple negative breast cancer presenting with distant osseous metastasis (Stage IV).",
+    "organization": {
+      "name": "Northwestern Memorial Hospital",
+      "address": "251 E Huron St, Chicago, IL 60611",
+      "phone": "+1-312-926-2000",
+      "email": "recruitment@nm.org",
+      "website": "https://www.nm.org"
+    }
   },
   {
     "patient_id": "PAT-022",
@@ -452,16 +719,29 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "97201"
     },
-    "conditions": ["Mild Cognitive Impairment", "Deep Vein Thrombosis"],
+    "conditions": [
+      "Mild Cognitive Impairment",
+      "Deep Vein Thrombosis"
+    ],
     "biomarkers": {
       "MMSE": 24,
       "systolic_bp": 130,
       "diastolic_bp": 80
     },
-    "medications": ["Warfarin", "Atorvastatin"],
+    "medications": [
+      "Warfarin",
+      "Atorvastatin"
+    ],
     "allergies": [],
     "smoking_status": "never",
-    "notes_summary": "70-year-old male with mild cognitive impairment (MMSE 24) on chronic therapeutic anticoagulation with Warfarin for recurrent DVT."
+    "notes_summary": "70-year-old male with mild cognitive impairment (MMSE 24) on chronic therapeutic anticoagulation with Warfarin for recurrent DVT.",
+    "organization": {
+      "name": "Cleveland Clinic Main Campus",
+      "address": "9500 Euclid Ave, Cleveland, OH 44195",
+      "phone": "+1-216-444-2200",
+      "email": "researchregistry@ccf.org",
+      "website": "https://my.clevelandclinic.org"
+    }
   },
   {
     "patient_id": "PAT-023",
@@ -472,15 +752,28 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "53703"
     },
-    "conditions": ["Allergic Rhinitis"],
+    "conditions": [
+      "Allergic Rhinitis"
+    ],
     "biomarkers": {
       "systolic_bp": 118,
       "diastolic_bp": 74
     },
-    "medications": ["Cetirizine"],
-    "allergies": ["Pollen"],
+    "medications": [
+      "Cetirizine"
+    ],
+    "allergies": [
+      "Pollen"
+    ],
     "smoking_status": "never",
-    "notes_summary": "50-year-old healthy male presenting for annual wellness checkup with no chronic cardiopulmonary, endocrine, or oncologic diagnoses."
+    "notes_summary": "50-year-old healthy male presenting for annual wellness checkup with no chronic cardiopulmonary, endocrine, or oncologic diagnoses.",
+    "organization": {
+      "name": "Johns Hopkins Hospital",
+      "address": "600 N Wolfe St, Baltimore, MD 21287",
+      "phone": "+1-410-955-5000",
+      "email": "clinical-research@hopkinsmedicine.org",
+      "website": "https://www.hopkinsmedicine.org"
+    }
   },
   {
     "patient_id": "PAT-024",
@@ -491,7 +784,11 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "20001"
     },
-    "conditions": ["Type 2 Diabetes Mellitus", "Heart Failure", "Hypertension"],
+    "conditions": [
+      "Type 2 Diabetes Mellitus",
+      "Heart Failure",
+      "Hypertension"
+    ],
     "biomarkers": {
       "HbA1c": 8.1,
       "eGFR": 50,
@@ -499,10 +796,15 @@
       "systolic_bp": 130,
       "diastolic_bp": 82
     },
-    "medications": ["Metformin", "Carvedilol", "Furosemide"],
+    "medications": [
+      "Metformin",
+      "Carvedilol",
+      "Furosemide"
+    ],
     "allergies": [],
     "smoking_status": "former",
-    "notes_summary": "65-year-old female with dual diagnosis of T2D (HbA1c 8.1, eGFR 50) and symptomatic HFrEF (LVEF 36%, SBP 130). Candidate for multimodality trials."
+    "notes_summary": "65-year-old female with dual diagnosis of T2D (HbA1c 8.1, eGFR 50) and symptomatic HFrEF (LVEF 36%, SBP 130). Candidate for multimodality trials.",
+    "organization": null
   },
   {
     "patient_id": "PAT-025",
@@ -513,16 +815,29 @@
       "ethnicity": "Not Hispanic or Latino",
       "postal_code": "87101"
     },
-    "conditions": ["Type 2 Diabetes Mellitus", "Dyslipidemia"],
+    "conditions": [
+      "Type 2 Diabetes Mellitus",
+      "Dyslipidemia"
+    ],
     "biomarkers": {
       "HbA1c": 8.6,
       "eGFR": 62,
       "systolic_bp": 128,
       "diastolic_bp": 80
     },
-    "medications": ["Metformin", "Pravastatin"],
+    "medications": [
+      "Metformin",
+      "Pravastatin"
+    ],
     "allergies": [],
     "smoking_status": "former",
-    "notes_summary": "59-year-old non-binary individual with type 2 diabetes mellitus, HbA1c 8.6%, eGFR 62, candidate for SGLT2 inhibitor trial."
+    "notes_summary": "59-year-old non-binary individual with type 2 diabetes mellitus, HbA1c 8.6%, eGFR 62, candidate for SGLT2 inhibitor trial.",
+    "organization": {
+      "name": "Metro Community Health Alliance",
+      "address": "410 S 7th St, Philadelphia, PA 19147",
+      "phone": "+1-215-555-0199",
+      "email": null,
+      "website": null
+    }
   }
 ]

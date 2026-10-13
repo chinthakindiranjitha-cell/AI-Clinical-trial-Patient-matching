@@ -17,6 +17,13 @@ RECRUITMENT CONTACT:
   - Availability: Weekdays 10am-2pm
   - Outreach Status: Contacted
   - Clinical Notes: Spouse confirmed interested in SGLT2 study.
+SOURCE ORGANIZATION:
+  - Organization Name: UCSF Medical Center
+  - Site Address: 505 Parnassus Ave, San Francisco, CA 94143
+  - Official Phone: +1-415-476-1000
+  - Site Email: clinicaltrials@ucsfhealth.org
+  - Website: https://www.ucsfhealth.org
+
 
 
 ================================================================================
@@ -38,6 +45,13 @@ RECRUITMENT CONTACT:
   - Availability: Mornings
   - Outreach Status: Interested
   - Clinical Notes: Patient willing to screen for immunotherapy protocol.
+SOURCE ORGANIZATION:
+  - Organization Name: Emory University Hospital
+  - Site Address: 1364 Clifton Rd NE, Atlanta, GA 30322
+  - Official Phone: +1-404-712-2000
+  - Site Email: research-trials@emoryhealthcare.org
+  - Website: https://www.emoryhealthcare.org
+
 
 
 ================================================================================
@@ -59,6 +73,13 @@ RECRUITMENT CONTACT:
   - Availability: After 5pm
   - Outreach Status: Not Contacted
   - Clinical Notes: Daughter handles clinical scheduling.
+SOURCE ORGANIZATION:
+  - Organization Name: Northwestern Memorial Hospital
+  - Site Address: 251 E Huron St, Chicago, IL 60611
+  - Official Phone: +1-312-926-2000
+  - Site Email: recruitment@nm.org
+  - Website: https://www.nm.org
+
 
 
 ================================================================================
@@ -80,6 +101,13 @@ RECRUITMENT CONTACT:
   - Availability: Anytime
   - Outreach Status: Follow-up Required
   - Clinical Notes: Requires follow-up call regarding study visit transportation.
+SOURCE ORGANIZATION:
+  - Organization Name: University of Miami Hospital & Clinics
+  - Site Address: 1400 NW 12th Ave, Miami, FL 33136
+  - Official Phone: +1-305-689-5511
+  - Site Email: trials@umiami.edu
+  - Website: https://umiamihealth.org
+
 
 
 ================================================================================
@@ -101,6 +129,13 @@ RECRUITMENT CONTACT:
   - Availability: Weekday mornings
   - Outreach Status: Contacted
   - Clinical Notes: Patient received trial overview via patient portal.
+SOURCE ORGANIZATION:
+  - Organization Name: Massachusetts General Hospital
+  - Site Address: 55 Fruit St, Boston, MA 02114
+  - Official Phone: +1-617-726-2000
+  - Site Email: mghresearch@partners.org
+  - Website: https://www.massgeneral.org
+
 
 
 ================================================================================
@@ -122,6 +157,13 @@ RECRUITMENT CONTACT:
   - Availability: Afternoon
   - Outreach Status: Not Contacted
   - Clinical Notes: Uncontrolled HbA1c exceeds inclusion threshold.
+SOURCE ORGANIZATION:
+  - Organization Name: Christus St. Vincent Regional Medical Center
+  - Site Address: 455 St Michaels Dr, Santa Fe, NM 87505
+  - Official Phone: +1-505-913-3361
+  - Site Email: research@stvin.org
+  - Website: https://www.stvin.org
+
 
 
 ================================================================================
@@ -143,6 +185,13 @@ RECRUITMENT CONTACT:
   - Availability: Weekends
   - Outreach Status: Declined
   - Clinical Notes: Caregiver declined due to functional performance impairment.
+SOURCE ORGANIZATION:
+  - Organization Name: University of Washington Medical Center
+  - Site Address: 1959 NE Pacific St, Seattle, WA 98195
+  - Official Phone: +1-206-598-3300
+  - Site Email: trials@uw.edu
+  - Website: https://www.uwmedicine.org
+
 
 
 ================================================================================
@@ -164,6 +213,13 @@ RECRUITMENT CONTACT:
   - Availability: Evenings
   - Outreach Status: Not Contacted
   - Clinical Notes: Preserved ejection fraction not qualifying for HFrEF protocol.
+SOURCE ORGANIZATION:
+  - Organization Name: Stanford Health Care
+  - Site Address: 300 Pasteur Dr, Stanford, CA 94305
+  - Official Phone: +1-650-723-4000
+  - Site Email: cto@stanfordhealthcare.org
+  - Website: https://stanfordhealthcare.org
+
 
 
 ================================================================================
@@ -185,6 +241,13 @@ RECRUITMENT CONTACT:
   - Availability: Weekdays
   - Outreach Status: Not Contacted
   - Clinical Notes: Age exceeds protocol upper limit of 85.
+SOURCE ORGANIZATION:
+  - Organization Name: Mount Sinai Hospital
+  - Site Address: 1468 Madison Ave, New York, NY 10029
+  - Official Phone: +1-212-241-6500
+  - Site Email: clinicaltrials@mountsinai.org
+  - Website: https://www.mountsinai.org
+
 
 
 ================================================================================
@@ -206,6 +269,13 @@ RECRUITMENT CONTACT:
   - Availability: Mornings
   - Outreach Status: Not Contacted
   - Clinical Notes: HER2-negative histology not qualifying for targeted anti-HER2 trial.
+SOURCE ORGANIZATION:
+  - Organization Name: Cleveland Clinic Main Campus
+  - Site Address: 9500 Euclid Ave, Cleveland, OH 44195
+  - Official Phone: +1-216-444-2200
+  - Site Email: researchregistry@ccf.org
+  - Website: https://my.clevelandclinic.org
+
 
 
 ================================================================================
@@ -227,6 +297,13 @@ RECRUITMENT CONTACT:
   - Availability: Mornings
   - Outreach Status: Follow-up Required
   - Clinical Notes: Awaiting recent metabolic panel with eGFR calculation.
+SOURCE ORGANIZATION:
+  - Organization Name: UCSF Medical Center
+  - Site Address: 505 Parnassus Ave, San Francisco, CA 94143
+  - Official Phone: +1-415-476-1000
+  - Site Email: clinicaltrials@ucsfhealth.org
+  - Website: https://www.ucsfhealth.org
+
 
 
 ================================================================================
@@ -248,6 +325,13 @@ RECRUITMENT CONTACT:
   - Availability: Weekday afternoons
   - Outreach Status: Contacted
   - Clinical Notes: Biopsy sent for PD-L1 immunohistochemistry assay.
+SOURCE ORGANIZATION:
+  - Organization Name: Emory University Hospital
+  - Site Address: 1364 Clifton Rd NE, Atlanta, GA 30322
+  - Official Phone: +1-404-712-2000
+  - Site Email: research-trials@emoryhealthcare.org
+  - Website: https://www.emoryhealthcare.org
+
 
 
 ================================================================================
@@ -269,6 +353,13 @@ RECRUITMENT CONTACT:
   - Availability: Anytime
   - Outreach Status: Not Contacted
   - Clinical Notes: Transthoracic echocardiogram scheduled for ejection fraction.
+SOURCE ORGANIZATION:
+  - Organization Name: Northwestern Memorial Hospital
+  - Site Address: 251 E Huron St, Chicago, IL 60611
+  - Official Phone: +1-312-926-2000
+  - Site Email: recruitment@nm.org
+  - Website: https://www.nm.org
+
 
 
 ================================================================================
@@ -290,6 +381,13 @@ RECRUITMENT CONTACT:
   - Availability: Weekdays
   - Outreach Status: Interested
   - Clinical Notes: Needs cognitive screening MMSE test administered.
+SOURCE ORGANIZATION:
+  - Organization Name: University of Miami Hospital & Clinics
+  - Site Address: 1400 NW 12th Ave, Miami, FL 33136
+  - Official Phone: +1-305-689-5511
+  - Site Email: trials@umiami.edu
+  - Website: https://umiamihealth.org
+
 
 
 ================================================================================
@@ -311,6 +409,13 @@ RECRUITMENT CONTACT:
   - Availability: After 4pm
   - Outreach Status: Not Contacted
   - Clinical Notes: Pathology report awaiting FISH confirmatory test for HER2.
+SOURCE ORGANIZATION:
+  - Organization Name: Massachusetts General Hospital
+  - Site Address: 55 Fruit St, Boston, MA 02114
+  - Official Phone: +1-617-726-2000
+  - Site Email: mghresearch@partners.org
+  - Website: https://www.massgeneral.org
+
 
 
 ================================================================================
@@ -332,6 +437,13 @@ RECRUITMENT CONTACT:
   - Availability: Flexible
   - Outreach Status: Declined
   - Clinical Notes: Excluded due to dual diabetes / latent autoimmune adult diabetes diagnosis.
+SOURCE ORGANIZATION:
+  - Organization Name: Christus St. Vincent Regional Medical Center
+  - Site Address: 455 St Michaels Dr, Santa Fe, NM 87505
+  - Official Phone: +1-505-913-3361
+  - Site Email: research@stvin.org
+  - Website: https://www.stvin.org
+
 
 
 ================================================================================
@@ -353,6 +465,13 @@ RECRUITMENT CONTACT:
   - Availability: Mornings
   - Outreach Status: Not Contacted
   - Clinical Notes: Severe renal impairment (eGFR 22) violates safety criterion.
+SOURCE ORGANIZATION:
+  - Organization Name: University of Washington Medical Center
+  - Site Address: 1959 NE Pacific St, Seattle, WA 98195
+  - Official Phone: +1-206-598-3300
+  - Site Email: trials@uw.edu
+  - Website: https://www.uwmedicine.org
+
 
 
 ================================================================================
@@ -374,6 +493,13 @@ RECRUITMENT CONTACT:
   - Availability: Afternoons
   - Outreach Status: Follow-up Required
   - Clinical Notes: Severely uncontrolled hypertension (192 mmHg) requires medical stabilization.
+SOURCE ORGANIZATION:
+  - Organization Name: Stanford Health Care
+  - Site Address: 300 Pasteur Dr, Stanford, CA 94305
+  - Official Phone: +1-650-723-4000
+  - Site Email: cto@stanfordhealthcare.org
+  - Website: https://stanfordhealthcare.org
+
 
 
 ================================================================================
@@ -395,6 +521,13 @@ RECRUITMENT CONTACT:
   - Availability: Weekday mornings
   - Outreach Status: Not Contacted
   - Clinical Notes: Excluded due to intracranial disease progression.
+SOURCE ORGANIZATION:
+  - Organization Name: Mount Sinai Hospital
+  - Site Address: 1468 Madison Ave, New York, NY 10029
+  - Official Phone: +1-212-241-6500
+  - Site Email: clinicaltrials@mountsinai.org
+  - Website: https://www.mountsinai.org
+
 
 
 ================================================================================
@@ -416,6 +549,13 @@ RECRUITMENT CONTACT:
   - Availability: Mornings
   - Outreach Status: Not Contacted
   - Clinical Notes: Hypotension violates baseline hemodynamic stability requirement.
+SOURCE ORGANIZATION:
+  - Organization Name: Cleveland Clinic Main Campus
+  - Site Address: 9500 Euclid Ave, Cleveland, OH 44195
+  - Official Phone: +1-216-444-2200
+  - Site Email: researchregistry@ccf.org
+  - Website: https://my.clevelandclinic.org
+
 
 
 ================================================================================
@@ -437,6 +577,13 @@ RECRUITMENT CONTACT:
   - Availability: 11am-3pm
   - Outreach Status: Interested
   - Clinical Notes: Patient confirmed active interest in renal protective therapy.
+SOURCE ORGANIZATION:
+  - Organization Name: UCSF Medical Center
+  - Site Address: 505 Parnassus Ave, San Francisco, CA 94143
+  - Official Phone: +1-415-476-1000
+  - Site Email: clinicaltrials@ucsfhealth.org
+  - Website: https://www.ucsfhealth.org
+
 
 
 ================================================================================
@@ -458,6 +605,13 @@ RECRUITMENT CONTACT:
   - Availability: Anytime
   - Outreach Status: Contacted
   - Clinical Notes: Strong candidate with high PD-L1 TPS expression.
+SOURCE ORGANIZATION:
+  - Organization Name: Emory University Hospital
+  - Site Address: 1364 Clifton Rd NE, Atlanta, GA 30322
+  - Official Phone: +1-404-712-2000
+  - Site Email: research-trials@emoryhealthcare.org
+  - Website: https://www.emoryhealthcare.org
+
 
 
 ================================================================================
@@ -479,6 +633,13 @@ RECRUITMENT CONTACT:
   - Availability: Evenings
   - Outreach Status: Contacted
   - Clinical Notes: Son reviewed protocol schedule and confirms ability to attend clinic.
+SOURCE ORGANIZATION:
+  - Organization Name: Northwestern Memorial Hospital
+  - Site Address: 251 E Huron St, Chicago, IL 60611
+  - Official Phone: +1-312-926-2000
+  - Site Email: recruitment@nm.org
+  - Website: https://www.nm.org
+
 
 
 ================================================================================
@@ -500,6 +661,13 @@ RECRUITMENT CONTACT:
   - Availability: Weekdays
   - Outreach Status: Interested
   - Clinical Notes: Mild stage cognitive impairment fits window perfectly.
+SOURCE ORGANIZATION:
+  - Organization Name: University of Miami Hospital & Clinics
+  - Site Address: 1400 NW 12th Ave, Miami, FL 33136
+  - Official Phone: +1-305-689-5511
+  - Site Email: trials@umiami.edu
+  - Website: https://umiamihealth.org
+
 
 
 ================================================================================
@@ -521,4 +689,12 @@ RECRUITMENT CONTACT:
   - Availability: Weekday mornings
   - Outreach Status: Follow-up Required
   - Clinical Notes: Confirmed HER2-positive status; follow up for informed consent visit.
+SOURCE ORGANIZATION:
+  - Organization Name: Massachusetts General Hospital
+  - Site Address: 55 Fruit St, Boston, MA 02114
+  - Official Phone: +1-617-726-2000
+  - Site Email: mghresearch@partners.org
+  - Website: https://www.massgeneral.org
+
+
 

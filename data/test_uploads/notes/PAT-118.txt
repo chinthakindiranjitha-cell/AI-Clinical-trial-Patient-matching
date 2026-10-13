@@ -18,3 +18,9 @@ RECRUITMENT CONTACT:
   - Outreach Status: Follow-up Required
   - Clinical Notes: Severely uncontrolled hypertension (192 mmHg) requires medical stabilization.
 
+SOURCE ORGANIZATION:
+  - Organization Name: Stanford Health Care
+  - Site Address: 300 Pasteur Dr, Stanford, CA 94305
+  - Official Phone: +1-650-723-4000
+  - Site Email: cto@stanfordhealthcare.org
+  - Website: https://stanfordhealthcare.org

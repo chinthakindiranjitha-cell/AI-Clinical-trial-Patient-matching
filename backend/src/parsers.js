@@ -582,6 +582,46 @@ function extractClinicalFacts(text) {
     contactEmail = emailMatch[1].trim();
   }
 
+  // Source Organization details (if mentioned in clinical note)
+  let orgName = null;
+  let orgAddress = null;
+  let orgPhone = null;
+  let orgEmail = null;
+  let orgWebsite = null;
+
+  const orgNameMatch = text.match(/(?:Source Organization|Organization Name|Organization|Hospital|Facility|Clinical Site):\s*([^\n,\r]+)/i);
+  if (orgNameMatch) {
+    orgName = orgNameMatch[1].trim();
+  }
+
+  const orgAddrMatch = text.match(/(?:Org Address|Hospital Address|Facility Address|Organization Address|Site Address):\s*([^\n\r]+)/i);
+  if (orgAddrMatch) {
+    orgAddress = orgAddrMatch[1].trim();
+  }
+
+  const orgPhoneMatch = text.match(/(?:Org Phone|Hospital Phone|Official Phone|Facility Phone|Site Phone):\s*([+\d- ()]+)/i);
+  if (orgPhoneMatch) {
+    orgPhone = orgPhoneMatch[1].trim();
+  }
+
+  const orgEmailMatch = text.match(/(?:Org Email|Hospital Email|Facility Email|Site Email|Official Email):\s*([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/i);
+  if (orgEmailMatch) {
+    orgEmail = orgEmailMatch[1].trim();
+  }
+
+  const orgWebMatch = text.match(/(?:Org Website|Hospital Website|Official Website|Website):\s*(https?:\/\/[^\s\n\r]+)/i);
+  if (orgWebMatch) {
+    orgWebsite = orgWebMatch[1].trim();
+  }
+
+  const organization = {
+    name: orgName,
+    address: orgAddress,
+    phone: orgPhone,
+    email: orgEmail,
+    website: orgWebsite
+  };
+
   // Create candidate patient draft
   const draftPatient = {
     patient_id: null,
@@ -607,7 +647,8 @@ function extractClinicalFacts(text) {
       availability: null,
       recruitment_status: 'Not Contacted',
       notes: null
-    }
+    },
+    organization: organization
   };
 
   return {

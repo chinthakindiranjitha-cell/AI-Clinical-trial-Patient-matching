@@ -5,7 +5,7 @@
     "phase": "Phase 3",
     "therapeutic_area": "Endocrinology",
     "status": "Recruiting",
-    "description": "A multicenter, double-blind randomized study evaluating cardiovascular and renal outcomes with novel SGLT2 inhibition in adults with type 2 diabetes mellitus and mild-to-moderate nephropathy.",
+    "description": "A randomized, double-blind, multicenter Phase 3 clinical trial evaluating the cardiorenal protective efficacy and safety of a next-generation SGLT2 inhibitor in adults with Type 2 Diabetes Mellitus and early-stage diabetic nephropathy. The study investigates whether targeted sodium-glucose cotransporter-2 inhibition delays renal disease progression and reduces major adverse cardiovascular events (MACE). Eligible participants are adults aged 18-75 with confirmed T2D, HbA1c between 7.5% and 11.0%, and preserved-to-moderate renal function (eGFR >= 45 mL/min/1.73m2). Patients with Type 1 Diabetes, advanced renal failure (eGFR < 30), or severe hypertension (systolic BP > 180 mmHg) are excluded to ensure participant safety.",
     "target_enrollment": 450,
     "inclusion_criteria": [
       {
@@ -74,7 +74,7 @@
     "phase": "Phase 2",
     "therapeutic_area": "Oncology",
     "status": "Recruiting",
-    "description": "Open-label Phase 2 investigation of next-generation immune checkpoint blockade in patients with histologically verified non-small cell lung cancer expressing PD-L1.",
+    "description": "An open-label, biomarker-stratified Phase 2 investigation evaluating the therapeutic response and safety of a targeted anti-PD-L1 monoclonal antibody checkpoint inhibitor in adults with locally advanced or metastatic Non-Small Cell Lung Cancer (NSCLC). The protocol assesses whether blocking the PD-1/PD-L1 axis restores antitumor T-cell immunity to achieve durable objective responses and prolong progression-free survival (PFS). Eligible candidates must be at least 18 years old, possess histologically confirmed NSCLC, maintain ambulatory functional performance (ECOG status 0 or 1), and exhibit documented tumor cell PD-L1 expression (TPS >= 1%). Patients with active autoimmune disorders (e.g., SLE) or chronic high-dose systemic corticosteroids (Prednisone > 10mg) are excluded.",
     "target_enrollment": 180,
     "inclusion_criteria": [
       {
@@ -135,7 +135,7 @@
     "phase": "Phase 3",
     "therapeutic_area": "Cardiology",
     "status": "Recruiting",
-    "description": "Evaluating cardiovascular mortality and hospital admissions in chronic heart failure patients with reduced ejection fraction.",
+    "description": "A pivotal Phase 3, double-blind randomized study comparing cardiovascular mortality and heart failure hospitalization rates between an Angiotensin Receptor-Neprilysin Inhibitor (ARNI) and guideline-standard therapy in patients with chronic Heart Failure with Reduced Ejection Fraction (HFrEF). The trial evaluates dual neurohormonal modulation to reduce ventricular remodeling, improve quality of life, and lower risk of decompensation. Designed for adults aged 40 to 85 with diagnosed heart failure, documented Left Ventricular Ejection Fraction (LVEF) <= 40%, and stable baseline blood pressure (systolic BP >= 100 mmHg). Excludes patients with symptomatic hypotension (systolic BP < 90 mmHg), severe kidney dysfunction (eGFR < 25 mL/min/1.73m2), or known hypersensitivity to Valsartan or Sacubitril.",
     "target_enrollment": 600,
     "inclusion_criteria": [
       {
@@ -204,7 +204,7 @@
     "phase": "Phase 2",
     "therapeutic_area": "Oncology",
     "status": "Recruiting",
-    "description": "Assessing pathologic complete response rates following combination neoadjuvant therapy for patients with early non-metastatic triple-negative invasive breast cancer.",
+    "description": "A prospective Phase 2 clinical trial assessing pathologic complete response (pCR; ypT0/is ypN0) rates at definitive surgical resection following a dose-dense neoadjuvant poly-chemotherapy regimen in women with non-metastatic Triple-Negative Breast Cancer (TNBC). Triple-negative tumors lack estrogen receptor (ER), progesterone receptor (PR), and human epidermal growth factor receptor 2 (HER2) expression, making targeted cytoreductive combinations critical before surgery. Eligible candidates are women aged 18-70 with biopsy-proven invasive breast cancer confirmed negative for HER2, ER (<1%), and PR (<1%). Excludes patients with distant metastatic dissemination (Stage IV disease) or prior anthracycline chemotherapy within the past 6 months.",
     "target_enrollment": 120,
     "inclusion_criteria": [
       {
@@ -273,7 +273,7 @@
     "phase": "Phase 2",
     "therapeutic_area": "Neurology",
     "status": "Recruiting",
-    "description": "Evaluating cognitive and functional decline reduction in adults presenting with biomarker-verified mild cognitive impairment due to Alzheimer's pathology.",
+    "description": "A double-blind, randomized, placebo-controlled Phase 2 clinical trial investigating the clinical efficacy, safety, and amyloid plaque reduction of a humanized anti-amyloid beta monoclonal antibody in older adults with Mild Cognitive Impairment (MCI) or early-stage Alzheimer's disease. The primary objective is to slow clinical decline measured by change in the Clinical Dementia Rating-Sum of Boxes (CDR-SB) and maintain daily executive function over 78 weeks. Enrolls participants aged 55 to 85 with diagnosed MCI or early AD and baseline Mini-Mental State Examination (MMSE) scores between 20 and 26 inclusive. Participants with recent ischemic stroke (< 12 months) or concurrent anticoagulant therapy (Warfarin) are excluded to minimize microhemorrhagic complications.",
     "target_enrollment": 250,
     "inclusion_criteria": [
       {
