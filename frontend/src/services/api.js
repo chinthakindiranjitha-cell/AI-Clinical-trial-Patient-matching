@@ -93,6 +93,12 @@ export async function confirmPatientImport(records, duplicateResolution = 'assig
   return handleResponse(res);
 }
 
+export async function fetchDiversityAnalytics(trialId = null) {
+  const query = trialId ? `?trial_id=${encodeURIComponent(trialId)}` : '';
+  const res = await fetch(`${BASE_URL}/analytics/diversity${query}`);
+  return handleResponse(res);
+}
+
 export async function resetSeedData() {
   const res = await fetch(`${BASE_URL}/reset-data`, {
     method: 'POST'
