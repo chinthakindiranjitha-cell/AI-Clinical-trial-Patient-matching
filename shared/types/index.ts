@@ -23,6 +23,24 @@ export interface Demographics {
   postal_code?: string | null;
 }
 
+export type RecruitmentStatus =
+  | 'Not Contacted'
+  | 'Contacted'
+  | 'Interested'
+  | 'Declined'
+  | 'Follow-up Required';
+
+export interface RecruitmentContact {
+  contact_person?: string | null;
+  relationship?: 'patient' | 'caregiver' | 'authorized representative' | 'other' | string | null;
+  phone?: string | null;
+  email?: string | null;
+  preferred_contact_method?: 'email' | 'phone' | 'sms' | 'portal' | string | null;
+  availability?: string | null;
+  recruitment_status: RecruitmentStatus;
+  notes?: string | null;
+}
+
 export interface PatientRecord {
   patient_id: string;
   demographics: Demographics;
@@ -32,6 +50,9 @@ export interface PatientRecord {
   allergies: string[];
   smoking_status?: SmokingStatus | null;
   notes_summary?: string | null;
+  dataset_source?: 'demo' | 'imported';
+  import_batch_id?: string | null;
+  recruitment_contact?: RecruitmentContact | null;
   created_at?: string;
   updated_at?: string;
 }

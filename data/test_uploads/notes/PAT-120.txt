@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-120
+================================================================================
+PATIENT ID: PAT-120
+DEMOGRAPHICS: 67-year-old female, Race: White, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Heart Failure
+BIOMARKERS & LABS: LVEF = 35, systolic_bp = 82, eGFR = 40
+MEDICATIONS: Furosemide
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 67-year-old female with Heart Failure presenting with symptomatic hypotension (systolic BP 82 mmHg, violates systolic < 90 exclusion). Contact: Nancy Evans (Patient), Phone: +1-555-0120, Email: nevans.pat120@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Nancy Evans (patient)
+  - Phone: +1-555-0120
+  - Email: nevans.pat120@example.org
+  - Preferred Method: phone
+  - Availability: Mornings
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Hypotension violates baseline hemodynamic stability requirement.
+

@@ -1,8 +1,76 @@
-import React from 'react';
-import { X, User, Activity, Pill, AlertCircle, FileText } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import {
+  X,
+  User,
+  Activity,
+  Pill,
+  AlertCircle,
+  FileText,
+  Phone,
+  Mail,
+  Clock,
+  CheckCircle2,
+  Save,
+  RotateCcw,
+  ShieldCheck,
+  AlertTriangle
+} from 'lucide-react';
+import { updatePatientRecruitment } from '../services/api';
 
-export default function PatientDetailModal({ patient, onClose }) {
+export default function PatientDetailModal({ patient, onClose, onUpdatePatient }) {
   if (!patient) return null;
+
+  const initialContact = patient.recruitment_contact || {};
+  const [status, setStatus] = useState(initialContact.recruitment_status || 'Not Contacted');
+  const [notes, setNotes] = useState(initialContact.notes || '');
+  const [saving, setSaving] = useState(false);
+  const [savedMessage, setSavedMessage] = useState(false);
+  const [saveError, setSaveError] = useState(null);
+
+  useEffect(() => {
+    const contact = patient.recruitment_contact || {};
+    setStatus(contact.recruitment_status || 'Not Contacted');
+    setNotes(contact.notes || '');
+    setSavedMessage(false);
+    setSaveError(null);
+  }, [patient]);
+
+  const handleSaveContact = async () => {
+    setSaving(true);
+    setSaveError(null);
+    setSavedMessage(false);
+    try {
+      const res = await updatePatientRecruitment(patient.patient_id, {
+        recruitment_status: status,
+        notes: notes
+      });
+      setSavedMessage(true);
+      if (onUpdatePatient && res.patient) {
+        onUpdatePatient(res.patient);
+      }
+      setTimeout(() => setSavedMessage(false), 3000);
+    } catch (err) {
+      setSaveError(err.message || 'Failed to update recruitment details.');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const getStatusColor = (st) => {
+    switch (st) {
+      case 'Interested':
+        return 'bg-emerald-100 text-emerald-800 border-emerald-300';
+      case 'Contacted':
+        return 'bg-sky-100 text-sky-800 border-sky-300';
+      case 'Follow-up Required':
+        return 'bg-amber-100 text-amber-800 border-amber-300';
+      case 'Declined':
+        return 'bg-rose-100 text-rose-800 border-rose-300';
+      case 'Not Contacted':
+      default:
+        return 'bg-slate-100 text-slate-700 border-slate-300';
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
@@ -14,9 +82,22 @@ export default function PatientDetailModal({ patient, onClose }) {
               <User className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-slate-900">
-                Patient EHR Record: {patient.patient_id}
-              </h3>
+              <div className="flex items-center space-x-2">
+                <h3 className="text-base font-bold text-slate-900">
+                  Patient EHR Record: {patient.patient_id}
+                </h3>
+                {patient.dataset_source && (
+                  <span
+                    className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded-full border ${
+                      patient.dataset_source === 'imported'
+                        ? 'bg-purple-50 text-purple-700 border-purple-200'
+                        : 'bg-slate-100 text-slate-600 border-slate-200'
+                    }`}
+                  >
+                    {patient.dataset_source}
+                  </span>
+                )}
+              </div>
               <p className="text-xs text-slate-500">
                 {patient.demographics.age} years old · {patient.demographics.gender} · {patient.demographics.race || 'Race unspecified'}
               </p>
@@ -67,6 +148,143 @@ export default function PatientDetailModal({ patient, onClose }) {
                 <span className="text-slate-500 block text-[11px]">Ethnicity</span>
                 <strong className="text-slate-800">{patient.demographics.ethnicity || 'N/A'}</strong>
               </div>
+            </div>
+          </div>
+
+          {/* Recruitment Contact Section */}
+          <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/60 pb-2">
+              <div className="flex items-center space-x-2">
+                <Phone className="w-4 h-4 text-indigo-600" />
+                <h4 className="font-bold text-slate-900 uppercase tracking-wider text-xs">
+                  Recruitment Contact & Coordinator Outreach
+                </h4>
+              </div>
+              <span
+                className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold border ${getStatusColor(
+                  status
+                )}`}
+              >
+                {status}
+              </span>
+            </div>
+
+            {/* Read-only contact details */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <div className="p-2.5 bg-white rounded-lg border border-slate-200">
+                <span className="text-slate-400 block text-[10px] uppercase font-semibold">Contact Person & Relationship</span>
+                <strong className="text-slate-900">
+                  {initialContact.contact_person || <em className="text-slate-400 font-normal">Not provided</em>}
+                </strong>
+                {initialContact.relationship && (
+                  <span className="text-slate-500 ml-1 font-normal">({initialContact.relationship})</span>
+                )}
+              </div>
+
+              <div className="p-2.5 bg-white rounded-lg border border-slate-200">
+                <span className="text-slate-400 block text-[10px] uppercase font-semibold">Fictional Telephone</span>
+                <div className="flex items-center space-x-1.5 font-semibold text-slate-900 mt-0.5">
+                  <Phone className="w-3.5 h-3.5 text-slate-400" />
+                  <span>{initialContact.phone || <em className="text-slate-400 font-normal">Unknown / None</em>}</span>
+                </div>
+              </div>
+
+              <div className="p-2.5 bg-white rounded-lg border border-slate-200">
+                <span className="text-slate-400 block text-[10px] uppercase font-semibold">Fictional Email Address</span>
+                <div className="flex items-center space-x-1.5 font-semibold text-slate-900 mt-0.5">
+                  <Mail className="w-3.5 h-3.5 text-slate-400" />
+                  <span>{initialContact.email || <em className="text-slate-400 font-normal">Unknown / None</em>}</span>
+                </div>
+              </div>
+
+              <div className="p-2.5 bg-white rounded-lg border border-slate-200">
+                <span className="text-slate-400 block text-[10px] uppercase font-semibold">Preferred Channel & Window</span>
+                <div className="flex items-center space-x-1.5 font-semibold text-slate-900 mt-0.5">
+                  <Clock className="w-3.5 h-3.5 text-slate-400" />
+                  <span className="capitalize">
+                    {initialContact.preferred_contact_method || 'Any'}
+                    {initialContact.availability ? ` (${initialContact.availability})` : ''}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Editable Coordinator Status & Notes */}
+            <div className="pt-2 border-t border-slate-200/60 space-y-2.5">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+                <div className="w-full sm:w-1/2">
+                  <label className="block text-[11px] font-bold text-slate-700 mb-1">
+                    Update Recruitment Follow-up Status:
+                  </label>
+                  <select
+                    value={status}
+                    onChange={(e) => setStatus(e.target.value)}
+                    className="w-full px-2.5 py-1.5 text-xs bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 font-semibold text-slate-900"
+                  >
+                    <option value="Not Contacted">Not Contacted</option>
+                    <option value="Contacted">Contacted</option>
+                    <option value="Interested">Interested</option>
+                    <option value="Declined">Declined</option>
+                    <option value="Follow-up Required">Follow-up Required</option>
+                  </select>
+                </div>
+
+                <div className="w-full sm:w-1/2 flex items-end">
+                  <button
+                    type="button"
+                    onClick={handleSaveContact}
+                    disabled={saving}
+                    className="w-full inline-flex items-center justify-center space-x-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-semibold shadow-xs transition-colors disabled:opacity-50"
+                  >
+                    {saving ? (
+                      <>
+                        <RotateCcw className="w-3.5 h-3.5 animate-spin" />
+                        <span>Saving Update...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Save className="w-3.5 h-3.5" />
+                        <span>Save Recruitment Update</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-bold text-slate-700 mb-1">
+                  Researcher Outreach & Compliance Notes:
+                </label>
+                <textarea
+                  rows={2}
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
+                  placeholder="Record coordinator notes, consent discussion logs, or IRB scheduling details..."
+                  className="w-full px-2.5 py-1.5 text-xs bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 text-slate-800"
+                />
+              </div>
+
+              {savedMessage && (
+                <div className="p-2 bg-emerald-50 border border-emerald-200 rounded-lg text-emerald-800 text-[11px] flex items-center space-x-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Recruitment outreach status updated successfully.</span>
+                </div>
+              )}
+
+              {saveError && (
+                <div className="p-2 bg-rose-50 border border-rose-200 rounded-lg text-rose-800 text-[11px] flex items-center space-x-1.5">
+                  <AlertCircle className="w-3.5 h-3.5 text-rose-600" />
+                  <span>Error saving recruitment status: {saveError}</span>
+                </div>
+              )}
+            </div>
+
+            {/* IRB / Protocol Consent Disclaimer */}
+            <div className="p-2.5 bg-amber-50/70 border border-amber-200/70 rounded-lg text-amber-800 text-[11px] flex items-start space-x-2">
+              <AlertTriangle className="w-3.5 h-3.5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <span>
+                <strong>Protocol Governance Advisory:</strong> Clinical trial matching eligibility is strictly separate from patient informed consent or trial enrollment. Fictional contact information only.
+              </span>
             </div>
           </div>
 

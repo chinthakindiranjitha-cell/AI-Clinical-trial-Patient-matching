@@ -6,8 +6,8 @@ const store = require('./store');
  * Matching Service
  * Executes deterministic evaluation and candidate ranking with non-override rule.
  */
-function evaluateMatching({ patient_id, trial_id }) {
-  const allPatients = store.getPatients();
+function evaluateMatching({ patient_id, trial_id, dataset = 'all', import_batch_id = null }) {
+  const allPatients = store.getPatients({ dataset, import_batch_id });
   const allTrials = store.getTrials();
 
   let targetPatients = allPatients;
@@ -46,7 +46,10 @@ function evaluateMatching({ patient_id, trial_id }) {
           gender: p.demographics.gender,
           race: p.demographics.race,
           ethnicity: p.demographics.ethnicity,
-          conditions: p.conditions
+          conditions: p.conditions,
+          dataset_source: p.dataset_source || 'demo',
+          import_batch_id: p.import_batch_id || null,
+          recruitment_contact: p.recruitment_contact || null
         },
         trial_summary: {
           trial_id: t.trial_id,
@@ -76,6 +79,8 @@ function evaluateMatching({ patient_id, trial_id }) {
   });
 
   return {
+    active_dataset: dataset,
+    active_batch_id: import_batch_id,
     evaluated_count: results.length,
     eligible_count: results.filter((r) => r.match_status === 'ELIGIBLE').length,
     pending_count: results.filter((r) => r.match_status === 'POTENTIALLY_ELIGIBLE_PENDING_INFO').length,

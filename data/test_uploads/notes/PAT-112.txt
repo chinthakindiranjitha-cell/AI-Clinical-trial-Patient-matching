@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-112
+================================================================================
+PATIENT ID: PAT-112
+DEMOGRAPHICS: 59-year-old female, Race: Asian, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Non-Small Cell Lung Cancer
+BIOMARKERS & LABS: ECOG = 0, systolic_bp = 120
+MEDICATIONS: Cisplatin
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 59-year-old female with Non-Small Cell Lung Cancer. ECOG performance status 0. PD-L1 biomarker expression is pending test result. Contact: Sun-Hi Park (Patient), Phone: +1-555-0112, Email: spark.pat112@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Sun-Hi Park (patient)
+  - Phone: +1-555-0112
+  - Email: spark.pat112@example.org
+  - Preferred Method: email
+  - Availability: Weekday afternoons
+  - Outreach Status: Contacted
+  - Clinical Notes: Biopsy sent for PD-L1 immunohistochemistry assay.
+

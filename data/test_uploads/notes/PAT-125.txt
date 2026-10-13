@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-125
+================================================================================
+PATIENT ID: PAT-125
+DEMOGRAPHICS: 47-year-old female, Race: Asian, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Breast Cancer
+BIOMARKERS & LABS: HER2_status = Positive, LVEF = 58, systolic_bp = 118
+MEDICATIONS: Trastuzumab
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 47-year-old female with invasive Breast Cancer. Confirmed HER2 Positive. LVEF 58%. Fully meets criteria for NCT-BC-005. Contact: Mei-Ling Zhao (Patient), Phone: +1-555-0125, Email: mzhao.pat125@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Mei-Ling Zhao (patient)
+  - Phone: +1-555-0125
+  - Email: mzhao.pat125@example.org
+  - Preferred Method: phone
+  - Availability: Weekday mornings
+  - Outreach Status: Follow-up Required
+  - Clinical Notes: Confirmed HER2-positive status; follow up for informed consent visit.
+

@@ -37,7 +37,14 @@ const COLOR_PALETTE = [
   '#f43f5e'  // Rose
 ];
 
-export default function DiversityAnalyticsView({ trials = [], defaultTrialId }) {
+export default function DiversityAnalyticsView({
+  trials = [],
+  defaultTrialId,
+  activeDataset = 'demo',
+  selectedBatchId = null,
+  onChangeDataset,
+  batches = []
+}) {
   const [selectedTrialId, setSelectedTrialId] = useState(defaultTrialId || trials[0]?.trial_id || '');
   const [activeCategory, setActiveCategory] = useState('race'); // 'race' | 'ethnicity' | 'gender' | 'age_groups'
   const [analyticsData, setAnalyticsData] = useState(null);
@@ -55,7 +62,7 @@ export default function DiversityAnalyticsView({ trials = [], defaultTrialId }) 
     setLoading(true);
     setError(null);
 
-    fetchDiversityAnalytics(selectedTrialId)
+    fetchDiversityAnalytics(selectedTrialId, activeDataset, selectedBatchId)
       .then((data) => {
         if (isMounted) {
           setAnalyticsData(data);
@@ -72,7 +79,7 @@ export default function DiversityAnalyticsView({ trials = [], defaultTrialId }) 
     return () => {
       isMounted = false;
     };
-  }, [selectedTrialId]);
+  }, [selectedTrialId, activeDataset, selectedBatchId]);
 
   const selectedTrial = trials.find((t) => t.trial_id === selectedTrialId) || null;
 

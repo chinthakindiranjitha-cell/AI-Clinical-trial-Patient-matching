@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-108
+================================================================================
+PATIENT ID: PAT-108
+DEMOGRAPHICS: 74-year-old male, Race: Asian, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Heart Failure
+BIOMARKERS & LABS: LVEF = 48, systolic_bp = 130, eGFR = 50
+MEDICATIONS: Furosemide, Lisinopril
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 74-year-old male with Heart Failure and preserved ejection fraction (LVEF 48%, which violates the HFrEF cutoff of <= 40%). Contact: Kenji Tanaka (Caregiver), Phone: +1-555-0108, Email: ktanaka.pat108@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Kenji Tanaka (caregiver)
+  - Phone: +1-555-0108
+  - Email: ktanaka.pat108@example.org
+  - Preferred Method: phone
+  - Availability: Evenings
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Preserved ejection fraction not qualifying for HFrEF protocol.
+

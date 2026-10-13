@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-111
+================================================================================
+PATIENT ID: PAT-111
+DEMOGRAPHICS: 62-year-old male, Race: Hispanic or Latino, Ethnicity: Hispanic or Latino
+DIAGNOSES: Type 2 Diabetes Mellitus
+BIOMARKERS & LABS: HbA1c = 8.9, systolic_bp = 142
+MEDICATIONS: Metformin
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: former
+NARRATIVE: 62-year-old male with Type 2 Diabetes Mellitus. HbA1c is 8.9%. Laboratory renal assessment eGFR is currently pending. Contact: Mateo Garcia (Patient), Phone: +1-555-0111, Email: mgarcia.pat111@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Mateo Garcia (patient)
+  - Phone: +1-555-0111
+  - Email: mgarcia.pat111@example.org
+  - Preferred Method: phone
+  - Availability: Mornings
+  - Outreach Status: Follow-up Required
+  - Clinical Notes: Awaiting recent metabolic panel with eGFR calculation.
+

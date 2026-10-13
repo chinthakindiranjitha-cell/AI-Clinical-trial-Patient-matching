@@ -1,5 +1,17 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, Eye, CheckCircle2, FileText, User, UploadCloud } from 'lucide-react';
+import {
+  Search,
+  Filter,
+  Eye,
+  CheckCircle2,
+  FileText,
+  User,
+  UploadCloud,
+  Database,
+  Layers,
+  Phone,
+  Tag
+} from 'lucide-react';
 
 export default function PatientExplorer({
   patients = [],
@@ -7,7 +19,14 @@ export default function PatientExplorer({
   onSelectPatient,
   onViewDetails,
   onOpenImport,
-  loading
+  loading,
+  activeDataset = 'demo',
+  onChangeDataset,
+  selectedBatchId = '',
+  onChangeBatchId,
+  batches = [],
+  demoCount = 25,
+  importedCount = 0
 }) {
   const [search, setSearch] = useState('');
   const [selectedCondition, setSelectedCondition] = useState('ALL');
@@ -29,7 +48,9 @@ export default function PatientExplorer({
         !search ||
         p.patient_id.toLowerCase().includes(q) ||
         (p.notes_summary && p.notes_summary.toLowerCase().includes(q)) ||
-        p.conditions?.some((c) => c.toLowerCase().includes(q));
+        p.conditions?.some((c) => c.toLowerCase().includes(q)) ||
+        (p.recruitment_contact?.contact_person &&
+          p.recruitment_contact.contact_person.toLowerCase().includes(q));
 
       const matchesCondition =
         selectedCondition === 'ALL' ||
@@ -46,7 +67,7 @@ export default function PatientExplorer({
     if (keys.length === 0) return <span className="text-slate-400 italic">None recorded</span>;
     return (
       <div className="flex flex-wrap gap-1">
-        {keys.slice(0, 3).map((k) => (
+        {keys.slice(0, 2).map((k) => (
           <span
             key={k}
             className="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700 border border-slate-200"
@@ -54,16 +75,111 @@ export default function PatientExplorer({
             {k}: <strong className="ml-1 text-slate-900">{String(biomarkers[k])}</strong>
           </span>
         ))}
-        {keys.length > 3 && (
-          <span className="text-[10px] text-slate-400 self-center">+{keys.length - 3}</span>
+        {keys.length > 2 && (
+          <span className="text-[10px] text-slate-400 self-center">+{keys.length - 2}</span>
         )}
       </div>
     );
   };
 
+  const getRecruitmentStatusBadge = (status) => {
+    switch (status) {
+      case 'Interested':
+        return (
+          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+            Interested
+          </span>
+        );
+      case 'Contacted':
+        return (
+          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-sky-50 text-sky-700 border border-sky-200">
+            Contacted
+          </span>
+        );
+      case 'Follow-up Required':
+        return (
+          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">
+            Follow-up
+          </span>
+        );
+      case 'Declined':
+        return (
+          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-50 text-rose-700 border border-rose-200">
+            Declined
+          </span>
+        );
+      case 'Not Contacted':
+      default:
+        return (
+          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-slate-100 text-slate-600 border border-slate-200">
+            Not Contacted
+          </span>
+        );
+    }
+  };
+
   return (
-    <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100">
+    <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5 space-y-4">
+      {/* Dataset Isolation Switcher Bar */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+        <div className="flex items-center space-x-2">
+          <Database className="w-4 h-4 text-sky-600" />
+          <span className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+            Active Patient Dataset:
+          </span>
+        </div>
+
+        {/* Dataset Toggle Pills */}
+        {onChangeDataset && (
+          <div className="flex items-center p-1 bg-slate-100 rounded-lg space-x-1 text-xs">
+            <button
+              type="button"
+              onClick={() => onChangeDataset('demo')}
+              className={`px-3 py-1 rounded-md font-semibold transition-all ${
+                activeDataset === 'demo'
+                  ? 'bg-white text-slate-900 shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              Demo Dataset{' '}
+              <span className="ml-1 text-[11px] font-normal text-slate-500">
+                ({demoCount})
+              </span>
+            </button>
+            <button
+              type="button"
+              onClick={() => onChangeDataset('imported')}
+              className={`px-3 py-1 rounded-md font-semibold transition-all ${
+                activeDataset === 'imported'
+                  ? 'bg-white text-slate-900 shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              Imported Dataset{' '}
+              <span className="ml-1 text-[11px] font-normal text-slate-500">
+                ({importedCount})
+              </span>
+            </button>
+            <button
+              type="button"
+              onClick={() => onChangeDataset('all')}
+              className={`px-3 py-1 rounded-md font-semibold transition-all ${
+                activeDataset === 'all'
+                  ? 'bg-white text-slate-900 shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              All Patients{' '}
+              <span className="ml-1 text-[11px] font-normal text-slate-500">
+                ({demoCount + importedCount})
+              </span>
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Header & Search Controls */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
           <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center space-x-2">
             <User className="w-4 h-4 text-sky-600" />
@@ -73,14 +189,33 @@ export default function PatientExplorer({
             </span>
           </h2>
           <p className="text-xs text-slate-500 mt-0.5">
-            Select a specific patient to evaluate individual eligibility or view comprehensive health records
+            Displaying only records from the active{' '}
+            <strong className="text-slate-700 capitalize">{activeDataset}</strong> dataset
           </p>
         </div>
 
         {/* Search & Filter Controls */}
         <div className="flex flex-col sm:flex-row items-center gap-2">
+          {/* Batch Filter (when in imported mode) */}
+          {activeDataset === 'imported' && batches.length > 0 && onChangeBatchId && (
+            <div className="relative w-full sm:w-44">
+              <select
+                value={selectedBatchId || ''}
+                onChange={(e) => onChangeBatchId(e.target.value || null)}
+                className="w-full px-2.5 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-700 font-medium"
+              >
+                <option value="">All Imported Batches ({batches.length})</option>
+                {batches.map((b) => (
+                  <option key={b.batch_id} value={b.batch_id}>
+                    {b.batch_name} ({b.record_count})
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
           {/* Search Input */}
-          <div className="relative w-full sm:w-48">
+          <div className="relative w-full sm:w-44">
             <Search className="w-4 h-4 text-slate-400 absolute left-2.5 top-2.5" />
             <input
               type="text"
@@ -92,7 +227,7 @@ export default function PatientExplorer({
           </div>
 
           {/* Condition Filter */}
-          <div className="relative w-full sm:w-48">
+          <div className="relative w-full sm:w-40">
             <select
               value={selectedCondition}
               onChange={(e) => setSelectedCondition(e.target.value)}
@@ -123,14 +258,34 @@ export default function PatientExplorer({
       </div>
 
       {/* Table */}
-      <div className="mt-4 overflow-x-auto">
+      <div className="overflow-x-auto">
         {loading ? (
           <div className="py-12 text-center text-slate-400 text-sm">
             Loading patient records...
           </div>
         ) : filteredPatients.length === 0 ? (
-          <div className="py-12 text-center text-slate-400 text-sm">
-            No patient records match the filter criteria.
+          <div className="py-12 text-center bg-slate-50/60 rounded-xl border border-dashed border-slate-200 space-y-2">
+            <User className="w-7 h-7 text-slate-300 mx-auto" />
+            <h4 className="text-xs font-bold text-slate-700">
+              {activeDataset === 'imported'
+                ? 'No Patients in Selected Imported Dataset'
+                : 'No Patient Records Found'}
+            </h4>
+            <p className="text-xs text-slate-500 max-w-sm mx-auto">
+              {activeDataset === 'imported'
+                ? 'Upload a CSV, TXT, DOCX, or digital PDF file using the "Import File" action to populate the imported dataset.'
+                : 'No patients match your search or condition filters.'}
+            </p>
+            {activeDataset === 'imported' && onOpenImport && (
+              <button
+                type="button"
+                onClick={onOpenImport}
+                className="mt-2 inline-flex items-center space-x-1.5 px-3 py-1.5 bg-sky-600 hover:bg-sky-700 text-white rounded-lg text-xs font-semibold"
+              >
+                <UploadCloud className="w-3.5 h-3.5" />
+                <span>Import First File</span>
+              </button>
+            )}
           </div>
         ) : (
           <table className="w-full text-left border-collapse text-xs">
@@ -140,12 +295,14 @@ export default function PatientExplorer({
                 <th className="py-2.5 px-3">Demographics</th>
                 <th className="py-2.5 px-3">Conditions</th>
                 <th className="py-2.5 px-3">Key Biomarkers</th>
+                <th className="py-2.5 px-3">Recruitment Outreach</th>
                 <th className="py-2.5 px-3 text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
               {filteredPatients.map((patient) => {
                 const isSelected = selectedPatient?.patient_id === patient.patient_id;
+                const contact = patient.recruitment_contact || {};
                 return (
                   <tr
                     key={patient.patient_id}
@@ -174,7 +331,7 @@ export default function PatientExplorer({
                     </td>
                     <td className="py-2.5 px-3">
                       <div className="flex flex-wrap gap-1 max-w-xs">
-                        {patient.conditions?.map((c) => (
+                        {patient.conditions?.slice(0, 2).map((c) => (
                           <span
                             key={c}
                             className="inline-block px-1.5 py-0.5 rounded text-[11px] bg-slate-100 text-slate-800 border border-slate-200"
@@ -182,10 +339,25 @@ export default function PatientExplorer({
                             {c}
                           </span>
                         ))}
+                        {patient.conditions?.length > 2 && (
+                          <span className="text-[10px] text-slate-400 self-center">
+                            +{patient.conditions.length - 2}
+                          </span>
+                        )}
                       </div>
                     </td>
                     <td className="py-2.5 px-3">
                       {formatBiomarkers(patient.biomarkers)}
+                    </td>
+                    <td className="py-2.5 px-3 whitespace-nowrap">
+                      <div>
+                        {getRecruitmentStatusBadge(contact.recruitment_status)}
+                        {contact.contact_person && (
+                          <div className="text-[10px] text-slate-500 mt-0.5 truncate max-w-[120px]">
+                            {contact.contact_person}
+                          </div>
+                        )}
+                      </div>
                     </td>
                     <td className="py-2.5 px-3 text-right whitespace-nowrap">
                       <div className="inline-flex items-center space-x-1">
@@ -196,7 +368,7 @@ export default function PatientExplorer({
                             onViewDetails(patient);
                           }}
                           className="p-1 text-slate-500 hover:text-sky-600 hover:bg-slate-100 rounded"
-                          title="View Full Health Record"
+                          title="View Full Health Record & Recruitment Contact"
                         >
                           <Eye className="w-4 h-4" />
                         </button>

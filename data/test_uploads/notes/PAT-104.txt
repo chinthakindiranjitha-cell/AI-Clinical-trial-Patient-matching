@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-104
+================================================================================
+PATIENT ID: PAT-104
+DEMOGRAPHICS: 68-year-old female, Race: Hispanic or Latino, Ethnicity: Hispanic or Latino
+DIAGNOSES: Alzheimer's Disease
+BIOMARKERS & LABS: MMSE = 21, systolic_bp = 122
+MEDICATIONS: Donepezil, Memantine
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 68-year-old female presenting with mild cognitive decline due to Alzheimer's Disease. MMSE score 21. No severe psychiatric comorbidities. Contact: Carlos Rodriguez (Authorized Representative), Phone: +1-555-0104, Email: crodriguez.pat104@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Carlos Rodriguez (authorized representative)
+  - Phone: +1-555-0104
+  - Email: crodriguez.pat104@example.org
+  - Preferred Method: phone
+  - Availability: Anytime
+  - Outreach Status: Follow-up Required
+  - Clinical Notes: Requires follow-up call regarding study visit transportation.
+

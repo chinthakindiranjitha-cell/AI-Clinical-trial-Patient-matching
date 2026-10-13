@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-124
+================================================================================
+PATIENT ID: PAT-124
+DEMOGRAPHICS: 63-year-old female, Race: Black or African American, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Alzheimer's Disease
+BIOMARKERS & LABS: MMSE = 24, systolic_bp = 120
+MEDICATIONS: Donepezil
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 63-year-old female with early-stage Alzheimer's Disease. MMSE score 24. No exclusionary vascular neurological signs. Fully meets criteria for NCT-AD-004. Contact: Denise Jackson (Caregiver), Phone: +1-555-0124, Email: djackson.pat124@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Denise Jackson (caregiver)
+  - Phone: +1-555-0124
+  - Email: djackson.pat124@example.org
+  - Preferred Method: email
+  - Availability: Weekdays
+  - Outreach Status: Interested
+  - Clinical Notes: Mild stage cognitive impairment fits window perfectly.
+

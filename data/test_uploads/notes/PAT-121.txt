@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-121
+================================================================================
+PATIENT ID: PAT-121
+DEMOGRAPHICS: 61-year-old male, Race: Asian, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Type 2 Diabetes Mellitus
+BIOMARKERS & LABS: HbA1c = 9.1, eGFR = 65, systolic_bp = 130
+MEDICATIONS: Metformin, Empagliflozin
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 61-year-old male with Type 2 Diabetes Mellitus. HbA1c is 9.1%, eGFR is 65 mL/min/1.73m2, and systolic BP is 130 mmHg. Fully meets inclusion criteria for NCT-D2D-001. Contact: Jin Woo (Patient), Phone: +1-555-0121, Email: jwoo.pat121@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Jin Woo (patient)
+  - Phone: +1-555-0121
+  - Email: jwoo.pat121@example.org
+  - Preferred Method: email
+  - Availability: 11am-3pm
+  - Outreach Status: Interested
+  - Clinical Notes: Patient confirmed active interest in renal protective therapy.
+

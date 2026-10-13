@@ -10,8 +10,13 @@ import {
   FileText,
   User,
   FlaskConical,
-  Scale
+  Scale,
+  Download,
+  FileSpreadsheet,
+  FileCode,
+  Phone
 } from 'lucide-react';
+import { getExportUrl } from '../services/api';
 
 export default function MatchResultsView({
   selectedPatient,
@@ -19,12 +24,26 @@ export default function MatchResultsView({
   onEvaluate,
   evaluationData,
   loading,
-  error
+  error,
+  activeDataset = 'demo',
+  selectedBatchId = null,
+  onViewPatientDetails
 }) {
   const [evalMode, setEvalMode] = useState('ALL'); // 'ALL' or 'SINGLE'
   const [expandedPatientId, setExpandedPatientId] = useState(null);
 
   const results = evaluationData?.results || [];
+
+  const handleDownload = (format) => {
+    if (!selectedTrial) return;
+    const url = getExportUrl(
+      selectedTrial.trial_id,
+      evaluationData?.active_dataset || activeDataset,
+      selectedBatchId,
+      format
+    );
+    window.open(url, '_blank');
+  };
 
   const getStatusBadge = (status, score) => {
     switch (status) {
@@ -94,7 +113,8 @@ export default function MatchResultsView({
             <span>Eligibility Matching & Explainability</span>
           </h2>
           <p className="text-xs text-slate-500 mt-0.5">
-            Deterministic rule engine evaluates all inclusion & exclusion criteria with zero hallucination
+            Deterministic rule engine evaluates all criteria against the active{' '}
+            <strong className="text-slate-700 capitalize">{activeDataset}</strong> dataset
           </p>
         </div>
 
@@ -110,7 +130,7 @@ export default function MatchResultsView({
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              Evaluate All Patients
+              Evaluate Active Dataset
             </button>
             <button
               type="button"
@@ -165,7 +185,7 @@ export default function MatchResultsView({
             <FlaskConical className="w-8 h-8 text-slate-300 mx-auto mb-2" />
             <h4 className="text-sm font-semibold text-slate-700">No Matching Evaluation Run Yet</h4>
             <p className="text-xs text-slate-500 max-w-md mx-auto mt-1">
-              Select a clinical trial protocol and click "Evaluate Cohort" to run the deterministic rule engine.
+              Select a clinical trial protocol and click "Evaluate Active Dataset" to run the deterministic rule engine.
             </p>
           </div>
         )}
@@ -179,32 +199,76 @@ export default function MatchResultsView({
 
         {evaluationData && !loading && (
           <div className="space-y-4">
-            {/* Summary Bar */}
-            <div className="bg-slate-50 p-3.5 rounded-lg border border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs">
-              <div className="flex items-center space-x-2">
-                <span className="font-semibold text-slate-700">Evaluation Summary:</span>
-                <span className="text-slate-600">
-                  {evaluationData.evaluated_count} candidates evaluated against{' '}
-                  <strong>{selectedTrial?.trial_id}</strong>
-                </span>
+            {/* Summary Bar & Export Action */}
+            <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+              <div className="space-y-1">
+                <div className="flex items-center space-x-2">
+                  <span className="font-bold text-slate-800 uppercase tracking-wider text-[11px]">
+                    Dataset Evaluated:
+                  </span>
+                  <span className="px-2 py-0.5 rounded-md font-semibold text-[11px] bg-sky-100 text-sky-800 border border-sky-200 capitalize">
+                    {evaluationData.active_dataset || activeDataset} Dataset
+                  </span>
+                  {evaluationData.active_batch_id && (
+                    <span className="text-[10px] text-slate-500 font-mono">
+                      ({evaluationData.active_batch_id.slice(-8)})
+                    </span>
+                  )}
+                </div>
+                <div className="flex items-center space-x-3 font-medium">
+                  <span className="text-slate-600">
+                    Total: <strong>{evaluationData.evaluated_count}</strong>
+                  </span>
+                  <span className="text-emerald-700">
+                    ● <strong>{evaluationData.eligible_count}</strong> Eligible
+                  </span>
+                  <span className="text-amber-700">
+                    ● <strong>{evaluationData.pending_count}</strong> Pending Info
+                  </span>
+                  <span className="text-rose-700">
+                    ● <strong>{evaluationData.ineligible_count}</strong> Ineligible
+                  </span>
+                </div>
               </div>
-              <div className="flex items-center space-x-3 font-medium">
-                <span className="text-emerald-700">
-                  ● <strong>{evaluationData.eligible_count}</strong> Eligible
+
+              {/* Download Results Action */}
+              <div className="flex items-center space-x-2 self-end sm:self-center">
+                <span className="text-slate-500 font-medium text-[11px] hidden md:inline">
+                  Download Results:
                 </span>
-                <span className="text-amber-700">
-                  ● <strong>{evaluationData.pending_count}</strong> Pending Info
-                </span>
-                <span className="text-rose-700">
-                  ● <strong>{evaluationData.ineligible_count}</strong> Ineligible
-                </span>
+                <button
+                  type="button"
+                  onClick={() => handleDownload('csv')}
+                  title="Export verified trial matching results to CSV for spreadsheet review"
+                  className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 rounded-lg text-xs font-semibold shadow-2xs transition-colors"
+                >
+                  <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Download CSV</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleDownload('json')}
+                  title="Export verified trial matching results to structured JSON format"
+                  className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 rounded-lg text-xs font-semibold shadow-2xs transition-colors"
+                >
+                  <FileCode className="w-3.5 h-3.5 text-indigo-600" />
+                  <span>Download JSON</span>
+                </button>
               </div>
             </div>
+
+            {/* Empty Evaluated Set */}
+            {results.length === 0 && (
+              <div className="py-10 text-center bg-slate-50 rounded-xl border border-dashed border-slate-200 text-slate-500 text-xs">
+                No patients available in this dataset to evaluate for {selectedTrial?.trial_id}.
+              </div>
+            )}
 
             {/* Results List */}
             <div className="space-y-3">
               {results.map((res, idx) => {
                 const isExpanded = expandedPatientId === res.patient_id;
+                const contact = res.patient_summary?.recruitment_contact || {};
                 return (
                   <div
                     key={`${res.patient_id}-${res.trial_id}`}
@@ -234,6 +298,25 @@ export default function MatchResultsView({
                               ({res.patient_summary?.age}y, {res.patient_summary?.gender},{' '}
                               {res.patient_summary?.race || 'Race unspecified'})
                             </span>
+                            {/* Recruitment Follow-up Badge */}
+                            {contact.recruitment_status && (
+                              <span
+                                className={`inline-flex items-center space-x-1 px-2 py-0.5 rounded text-[10px] font-semibold border ${
+                                  contact.recruitment_status === 'Interested'
+                                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                                    : contact.recruitment_status === 'Contacted'
+                                    ? 'bg-sky-50 text-sky-700 border-sky-200'
+                                    : contact.recruitment_status === 'Follow-up Required'
+                                    ? 'bg-amber-50 text-amber-700 border-amber-200'
+                                    : contact.recruitment_status === 'Declined'
+                                    ? 'bg-rose-50 text-rose-700 border-rose-200'
+                                    : 'bg-slate-100 text-slate-600 border-slate-200'
+                                }`}
+                              >
+                                <Phone className="w-2.5 h-2.5" />
+                                <span>{contact.recruitment_status}</span>
+                              </span>
+                            )}
                           </div>
                           <p className="text-xs text-slate-600 mt-1 line-clamp-1">
                             {res.clinical_rationale}

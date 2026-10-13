@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-110
+================================================================================
+PATIENT ID: PAT-110
+DEMOGRAPHICS: 49-year-old female, Race: Black or African American, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Breast Cancer
+BIOMARKERS & LABS: HER2_status = Negative, LVEF = 60, systolic_bp = 120
+MEDICATIONS: Tamoxifen
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 49-year-old female with Breast Cancer. HER2 status is Negative by IHC and FISH, which violates HER2-positive requirement. Contact: Angela Davis (Patient), Phone: +1-555-0110, Email: adavis.pat110@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Angela Davis (patient)
+  - Phone: +1-555-0110
+  - Email: adavis.pat110@example.org
+  - Preferred Method: phone
+  - Availability: Mornings
+  - Outreach Status: Not Contacted
+  - Clinical Notes: HER2-negative histology not qualifying for targeted anti-HER2 trial.
+

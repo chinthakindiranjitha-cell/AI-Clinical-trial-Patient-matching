@@ -1,0 +1,524 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-101
+================================================================================
+PATIENT ID: PAT-101
+DEMOGRAPHICS: 58-year-old female, Race: Asian, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Type 2 Diabetes Mellitus, Essential Hypertension
+BIOMARKERS & LABS: HbA1c = 8.2, eGFR = 68, systolic_bp = 134, diastolic_bp = 82
+MEDICATIONS: Metformin, Lisinopril
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 58-year-old female with long-standing Type 2 Diabetes Mellitus and Essential Hypertension. HbA1c is 8.2% and eGFR is 68 mL/min/1.73m2. Tolerating Metformin well. Contact: David Chen (Caregiver), Phone: +1-555-0101, Email: dchen.pat101@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: David Chen (caregiver)
+  - Phone: +1-555-0101
+  - Email: dchen.pat101@example.org
+  - Preferred Method: email
+  - Availability: Weekdays 10am-2pm
+  - Outreach Status: Contacted
+  - Clinical Notes: Spouse confirmed interested in SGLT2 study.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-102
+================================================================================
+PATIENT ID: PAT-102
+DEMOGRAPHICS: 66-year-old male, Race: Black or African American, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Non-Small Cell Lung Cancer
+BIOMARKERS & LABS: ECOG = 1, PD_L1_expression = 45, systolic_bp = 128
+MEDICATIONS: Pembrolizumab, Carboplatin
+ALLERGIES: Penicillin
+SMOKING HISTORY: former
+NARRATIVE: 66-year-old male diagnosed with Non-Small Cell Lung Cancer. ECOG performance status 1. PD-L1 expression verified at 45%. No active brain metastases. Contact: Marcus Washington (Patient), Phone: +1-555-0102, Email: mwashington.pat102@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Marcus Washington (patient)
+  - Phone: +1-555-0102
+  - Email: mwashington.pat102@example.org
+  - Preferred Method: phone
+  - Availability: Mornings
+  - Outreach Status: Interested
+  - Clinical Notes: Patient willing to screen for immunotherapy protocol.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-103
+================================================================================
+PATIENT ID: PAT-103
+DEMOGRAPHICS: 71-year-old male, Race: White, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Heart Failure, Hypertension
+BIOMARKERS & LABS: LVEF = 32, systolic_bp = 118, eGFR = 54
+MEDICATIONS: Sacubitril/Valsartan, Carvedilol
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 71-year-old male with chronic Heart Failure and reduced ejection fraction (LVEF 32%). Blood pressure 118/76 mmHg and eGFR 54 mL/min/1.73m2. Contact: Sarah Miller (Caregiver), Phone: +1-555-0103, Email: smiller.pat103@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Sarah Miller (caregiver)
+  - Phone: +1-555-0103
+  - Email: smiller.pat103@example.org
+  - Preferred Method: email
+  - Availability: After 5pm
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Daughter handles clinical scheduling.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-104
+================================================================================
+PATIENT ID: PAT-104
+DEMOGRAPHICS: 68-year-old female, Race: Hispanic or Latino, Ethnicity: Hispanic or Latino
+DIAGNOSES: Alzheimer's Disease
+BIOMARKERS & LABS: MMSE = 21, systolic_bp = 122
+MEDICATIONS: Donepezil, Memantine
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 68-year-old female presenting with mild cognitive decline due to Alzheimer's Disease. MMSE score 21. No severe psychiatric comorbidities. Contact: Carlos Rodriguez (Authorized Representative), Phone: +1-555-0104, Email: crodriguez.pat104@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Carlos Rodriguez (authorized representative)
+  - Phone: +1-555-0104
+  - Email: crodriguez.pat104@example.org
+  - Preferred Method: phone
+  - Availability: Anytime
+  - Outreach Status: Follow-up Required
+  - Clinical Notes: Requires follow-up call regarding study visit transportation.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-105
+================================================================================
+PATIENT ID: PAT-105
+DEMOGRAPHICS: 52-year-old female, Race: White, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Breast Cancer
+BIOMARKERS & LABS: HER2_status = Positive, LVEF = 62, systolic_bp = 115
+MEDICATIONS: Trastuzumab, Paclitaxel
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 52-year-old female with histologically confirmed Breast Cancer. HER2 status is Positive. Normal cardiac function with LVEF 62%. Contact: Elena Bennett (Patient), Phone: +1-555-0105, Email: ebennett.pat105@example.org. Preferred contact: portal.
+RECRUITMENT CONTACT:
+  - Contact Person: Elena Bennett (patient)
+  - Phone: +1-555-0105
+  - Email: ebennett.pat105@example.org
+  - Preferred Method: portal
+  - Availability: Weekday mornings
+  - Outreach Status: Contacted
+  - Clinical Notes: Patient received trial overview via patient portal.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-106
+================================================================================
+PATIENT ID: PAT-106
+DEMOGRAPHICS: 45-year-old male, Race: American Indian or Alaska Native, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Type 2 Diabetes Mellitus
+BIOMARKERS & LABS: HbA1c = 12.4, eGFR = 78, systolic_bp = 138
+MEDICATIONS: Metformin
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: current
+NARRATIVE: 45-year-old male with poorly controlled Type 2 Diabetes Mellitus. HbA1c is elevated at 12.4% (exceeds protocol cutoff of 11.0%). eGFR is 78 mL/min/1.73m2. Contact: Thomas Redfeather (Patient), Phone: +1-555-0106, Email: tredfeather.pat106@example.org. Preferred contact: sms.
+RECRUITMENT CONTACT:
+  - Contact Person: Thomas Redfeather (patient)
+  - Phone: +1-555-0106
+  - Email: tredfeather.pat106@example.org
+  - Preferred Method: sms
+  - Availability: Afternoon
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Uncontrolled HbA1c exceeds inclusion threshold.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-107
+================================================================================
+PATIENT ID: PAT-107
+DEMOGRAPHICS: 63-year-old female, Race: Multiracial, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Non-Small Cell Lung Cancer
+BIOMARKERS & LABS: ECOG = 3, PD_L1_expression = 60, systolic_bp = 132
+MEDICATIONS: Carboplatin
+ALLERGIES: Sulfa
+SMOKING HISTORY: former
+NARRATIVE: 63-year-old female with Non-Small Cell Lung Cancer and compromised performance status (ECOG 3). PD-L1 expression 60%. Contact: Maya Johnson (Caregiver), Phone: +1-555-0107, Email: mjohnson.pat107@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Maya Johnson (caregiver)
+  - Phone: +1-555-0107
+  - Email: mjohnson.pat107@example.org
+  - Preferred Method: email
+  - Availability: Weekends
+  - Outreach Status: Declined
+  - Clinical Notes: Caregiver declined due to functional performance impairment.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-108
+================================================================================
+PATIENT ID: PAT-108
+DEMOGRAPHICS: 74-year-old male, Race: Asian, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Heart Failure
+BIOMARKERS & LABS: LVEF = 48, systolic_bp = 130, eGFR = 50
+MEDICATIONS: Furosemide, Lisinopril
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 74-year-old male with Heart Failure and preserved ejection fraction (LVEF 48%, which violates the HFrEF cutoff of <= 40%). Contact: Kenji Tanaka (Caregiver), Phone: +1-555-0108, Email: ktanaka.pat108@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Kenji Tanaka (caregiver)
+  - Phone: +1-555-0108
+  - Email: ktanaka.pat108@example.org
+  - Preferred Method: phone
+  - Availability: Evenings
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Preserved ejection fraction not qualifying for HFrEF protocol.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-109
+================================================================================
+PATIENT ID: PAT-109
+DEMOGRAPHICS: 88-year-old female, Race: White, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Alzheimer's Disease
+BIOMARKERS & LABS: MMSE = 20, systolic_bp = 126
+MEDICATIONS: Donepezil
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 88-year-old female with Alzheimer's Disease. MMSE score 20. Age 88 violates protocol inclusion range (18 to 85 years). Contact: Barbara Hayes (Authorized Representative), Phone: +1-555-0109, Email: bhayes.pat109@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Barbara Hayes (authorized representative)
+  - Phone: +1-555-0109
+  - Email: bhayes.pat109@example.org
+  - Preferred Method: email
+  - Availability: Weekdays
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Age exceeds protocol upper limit of 85.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-110
+================================================================================
+PATIENT ID: PAT-110
+DEMOGRAPHICS: 49-year-old female, Race: Black or African American, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Breast Cancer
+BIOMARKERS & LABS: HER2_status = Negative, LVEF = 60, systolic_bp = 120
+MEDICATIONS: Tamoxifen
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 49-year-old female with Breast Cancer. HER2 status is Negative by IHC and FISH, which violates HER2-positive requirement. Contact: Angela Davis (Patient), Phone: +1-555-0110, Email: adavis.pat110@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Angela Davis (patient)
+  - Phone: +1-555-0110
+  - Email: adavis.pat110@example.org
+  - Preferred Method: phone
+  - Availability: Mornings
+  - Outreach Status: Not Contacted
+  - Clinical Notes: HER2-negative histology not qualifying for targeted anti-HER2 trial.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-111
+================================================================================
+PATIENT ID: PAT-111
+DEMOGRAPHICS: 62-year-old male, Race: Hispanic or Latino, Ethnicity: Hispanic or Latino
+DIAGNOSES: Type 2 Diabetes Mellitus
+BIOMARKERS & LABS: HbA1c = 8.9, systolic_bp = 142
+MEDICATIONS: Metformin
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: former
+NARRATIVE: 62-year-old male with Type 2 Diabetes Mellitus. HbA1c is 8.9%. Laboratory renal assessment eGFR is currently pending. Contact: Mateo Garcia (Patient), Phone: +1-555-0111, Email: mgarcia.pat111@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Mateo Garcia (patient)
+  - Phone: +1-555-0111
+  - Email: mgarcia.pat111@example.org
+  - Preferred Method: phone
+  - Availability: Mornings
+  - Outreach Status: Follow-up Required
+  - Clinical Notes: Awaiting recent metabolic panel with eGFR calculation.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-112
+================================================================================
+PATIENT ID: PAT-112
+DEMOGRAPHICS: 59-year-old female, Race: Asian, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Non-Small Cell Lung Cancer
+BIOMARKERS & LABS: ECOG = 0, systolic_bp = 120
+MEDICATIONS: Cisplatin
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 59-year-old female with Non-Small Cell Lung Cancer. ECOG performance status 0. PD-L1 biomarker expression is pending test result. Contact: Sun-Hi Park (Patient), Phone: +1-555-0112, Email: spark.pat112@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Sun-Hi Park (patient)
+  - Phone: +1-555-0112
+  - Email: spark.pat112@example.org
+  - Preferred Method: email
+  - Availability: Weekday afternoons
+  - Outreach Status: Contacted
+  - Clinical Notes: Biopsy sent for PD-L1 immunohistochemistry assay.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-113
+================================================================================
+PATIENT ID: PAT-113
+DEMOGRAPHICS: 65-year-old male, Race: White, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Heart Failure
+BIOMARKERS & LABS: systolic_bp = 112, eGFR = 62
+MEDICATIONS: Carvedilol
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: former
+NARRATIVE: 65-year-old male with documented Heart Failure. Blood pressure 112/70 mmHg. LVEF echocardiogram report is pending. Contact: Robert Taylor (Patient), Phone: +1-555-0113, Email: rtaylor.pat113@example.org. Preferred contact: sms.
+RECRUITMENT CONTACT:
+  - Contact Person: Robert Taylor (patient)
+  - Phone: +1-555-0113
+  - Email: rtaylor.pat113@example.org
+  - Preferred Method: sms
+  - Availability: Anytime
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Transthoracic echocardiogram scheduled for ejection fraction.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-114
+================================================================================
+PATIENT ID: PAT-114
+DEMOGRAPHICS: 72-year-old male, Race: Black or African American, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Alzheimer's Disease
+BIOMARKERS & LABS: systolic_bp = 128
+MEDICATIONS: Memantine
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 72-year-old male diagnosed with Alzheimer's Disease. MMSE score evaluation is pending clinic visit. Contact: Gerald Washington (Authorized Representative), Phone: +1-555-0114, Email: gwashington.pat114@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Gerald Washington (authorized representative)
+  - Phone: +1-555-0114
+  - Email: gwashington.pat114@example.org
+  - Preferred Method: phone
+  - Availability: Weekdays
+  - Outreach Status: Interested
+  - Clinical Notes: Needs cognitive screening MMSE test administered.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-115
+================================================================================
+PATIENT ID: PAT-115
+DEMOGRAPHICS: 55-year-old female, Race: Other, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Breast Cancer
+BIOMARKERS & LABS: LVEF = 58, systolic_bp = 124
+MEDICATIONS: Doxorubicin
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 55-year-old female with invasive Breast Cancer. Normal baseline LVEF 58%. HER2 receptor status is pending molecular pathology. Contact: Fatima Al-Mansoor (Patient), Phone: +1-555-0115, Email: falmansoor.pat115@example.org. Preferred contact: portal.
+RECRUITMENT CONTACT:
+  - Contact Person: Fatima Al-Mansoor (patient)
+  - Phone: +1-555-0115
+  - Email: falmansoor.pat115@example.org
+  - Preferred Method: portal
+  - Availability: After 4pm
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Pathology report awaiting FISH confirmatory test for HER2.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-116
+================================================================================
+PATIENT ID: PAT-116
+DEMOGRAPHICS: 50-year-old male, Race: White, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Type 2 Diabetes Mellitus, Type 1 Diabetes Mellitus
+BIOMARKERS & LABS: HbA1c = 8.5, eGFR = 60, systolic_bp = 126
+MEDICATIONS: Insulin Glargine
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 50-year-old male with secondary Type 1 Diabetes Mellitus (violates EXC-01 exclusion criterion). HbA1c is 8.5%. Contact: Luke Adams (Patient), Phone: +1-555-0116, Email: ladams.pat116@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Luke Adams (patient)
+  - Phone: +1-555-0116
+  - Email: ladams.pat116@example.org
+  - Preferred Method: email
+  - Availability: Flexible
+  - Outreach Status: Declined
+  - Clinical Notes: Excluded due to dual diabetes / latent autoimmune adult diabetes diagnosis.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-117
+================================================================================
+PATIENT ID: PAT-117
+DEMOGRAPHICS: 64-year-old female, Race: Hispanic or Latino, Ethnicity: Hispanic or Latino
+DIAGNOSES: Type 2 Diabetes Mellitus
+BIOMARKERS & LABS: HbA1c = 8, eGFR = 22, systolic_bp = 136
+MEDICATIONS: Metformin
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 64-year-old female with Type 2 Diabetes Mellitus and severe renal impairment (eGFR 22 mL/min/1.73m2, violates eGFR < 30 exclusion). Contact: Sofia Morales (Caregiver), Phone: +1-555-0117, Email: smorales.pat117@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Sofia Morales (caregiver)
+  - Phone: +1-555-0117
+  - Email: smorales.pat117@example.org
+  - Preferred Method: phone
+  - Availability: Mornings
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Severe renal impairment (eGFR 22) violates safety criterion.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-118
+================================================================================
+PATIENT ID: PAT-118
+DEMOGRAPHICS: 70-year-old male, Race: Black or African American, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Type 2 Diabetes Mellitus, Hypertension
+BIOMARKERS & LABS: HbA1c = 8.4, eGFR = 58, systolic_bp = 192
+MEDICATIONS: Metformin, Amlodipine
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: former
+NARRATIVE: 70-year-old male with Type 2 Diabetes Mellitus and severe uncontrolled hypertension (systolic BP 192 mmHg, violates > 180 exclusion). Contact: Arthur King (Patient), Phone: +1-555-0118, Email: aking.pat118@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Arthur King (patient)
+  - Phone: +1-555-0118
+  - Email: aking.pat118@example.org
+  - Preferred Method: phone
+  - Availability: Afternoons
+  - Outreach Status: Follow-up Required
+  - Clinical Notes: Severely uncontrolled hypertension (192 mmHg) requires medical stabilization.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-119
+================================================================================
+PATIENT ID: PAT-119
+DEMOGRAPHICS: 53-year-old male, Race: Native Hawaiian or Other Pacific Islander, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Non-Small Cell Lung Cancer, Brain Metastases
+BIOMARKERS & LABS: ECOG = 1, PD_L1_expression = 12, systolic_bp = 130
+MEDICATIONS: Carboplatin
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: former
+NARRATIVE: 53-year-old male with Non-Small Cell Lung Cancer and active symptomatic Brain Metastases (violates exclusion). Contact: Keanu Kalani (Caregiver), Phone: +1-555-0119, Email: kkalani.pat119@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Keanu Kalani (caregiver)
+  - Phone: +1-555-0119
+  - Email: kkalani.pat119@example.org
+  - Preferred Method: email
+  - Availability: Weekday mornings
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Excluded due to intracranial disease progression.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-120
+================================================================================
+PATIENT ID: PAT-120
+DEMOGRAPHICS: 67-year-old female, Race: White, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Heart Failure
+BIOMARKERS & LABS: LVEF = 35, systolic_bp = 82, eGFR = 40
+MEDICATIONS: Furosemide
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 67-year-old female with Heart Failure presenting with symptomatic hypotension (systolic BP 82 mmHg, violates systolic < 90 exclusion). Contact: Nancy Evans (Patient), Phone: +1-555-0120, Email: nevans.pat120@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Nancy Evans (patient)
+  - Phone: +1-555-0120
+  - Email: nevans.pat120@example.org
+  - Preferred Method: phone
+  - Availability: Mornings
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Hypotension violates baseline hemodynamic stability requirement.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-121
+================================================================================
+PATIENT ID: PAT-121
+DEMOGRAPHICS: 61-year-old male, Race: Asian, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Type 2 Diabetes Mellitus
+BIOMARKERS & LABS: HbA1c = 9.1, eGFR = 65, systolic_bp = 130
+MEDICATIONS: Metformin, Empagliflozin
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 61-year-old male with Type 2 Diabetes Mellitus. HbA1c is 9.1%, eGFR is 65 mL/min/1.73m2, and systolic BP is 130 mmHg. Fully meets inclusion criteria for NCT-D2D-001. Contact: Jin Woo (Patient), Phone: +1-555-0121, Email: jwoo.pat121@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Jin Woo (patient)
+  - Phone: +1-555-0121
+  - Email: jwoo.pat121@example.org
+  - Preferred Method: email
+  - Availability: 11am-3pm
+  - Outreach Status: Interested
+  - Clinical Notes: Patient confirmed active interest in renal protective therapy.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-122
+================================================================================
+PATIENT ID: PAT-122
+DEMOGRAPHICS: 56-year-old female, Race: White, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Non-Small Cell Lung Cancer
+BIOMARKERS & LABS: ECOG = 0, PD_L1_expression = 80, systolic_bp = 118
+MEDICATIONS: Pembrolizumab
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 56-year-old female with Non-Small Cell Lung Cancer. ECOG status 0. High PD-L1 expression at 80%. Fully meets inclusion criteria for NCT-NSCLC-002. Contact: Claire Dupont (Patient), Phone: +1-555-0122, Email: cdupont.pat122@example.org. Preferred contact: portal.
+RECRUITMENT CONTACT:
+  - Contact Person: Claire Dupont (patient)
+  - Phone: +1-555-0122
+  - Email: cdupont.pat122@example.org
+  - Preferred Method: portal
+  - Availability: Anytime
+  - Outreach Status: Contacted
+  - Clinical Notes: Strong candidate with high PD-L1 TPS expression.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-123
+================================================================================
+PATIENT ID: PAT-123
+DEMOGRAPHICS: 69-year-old male, Race: Multiracial, Ethnicity: Hispanic or Latino
+DIAGNOSES: Heart Failure
+BIOMARKERS & LABS: LVEF = 28, systolic_bp = 110, eGFR = 48
+MEDICATIONS: Sacubitril/Valsartan, Spironolactone
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: former
+NARRATIVE: 69-year-old male with Heart Failure. Severe LV systolic dysfunction with LVEF 28%. Systolic BP 110 mmHg and eGFR 48 mL/min/1.73m2. Fully meets criteria for NCT-HF-003. Contact: Gabriel Ortiz (Caregiver), Phone: +1-555-0123, Email: gortiz.pat123@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Gabriel Ortiz (caregiver)
+  - Phone: +1-555-0123
+  - Email: gortiz.pat123@example.org
+  - Preferred Method: phone
+  - Availability: Evenings
+  - Outreach Status: Contacted
+  - Clinical Notes: Son reviewed protocol schedule and confirms ability to attend clinic.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-124
+================================================================================
+PATIENT ID: PAT-124
+DEMOGRAPHICS: 63-year-old female, Race: Black or African American, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Alzheimer's Disease
+BIOMARKERS & LABS: MMSE = 24, systolic_bp = 120
+MEDICATIONS: Donepezil
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 63-year-old female with early-stage Alzheimer's Disease. MMSE score 24. No exclusionary vascular neurological signs. Fully meets criteria for NCT-AD-004. Contact: Denise Jackson (Caregiver), Phone: +1-555-0124, Email: djackson.pat124@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Denise Jackson (caregiver)
+  - Phone: +1-555-0124
+  - Email: djackson.pat124@example.org
+  - Preferred Method: email
+  - Availability: Weekdays
+  - Outreach Status: Interested
+  - Clinical Notes: Mild stage cognitive impairment fits window perfectly.
+
+
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-125
+================================================================================
+PATIENT ID: PAT-125
+DEMOGRAPHICS: 47-year-old female, Race: Asian, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Breast Cancer
+BIOMARKERS & LABS: HER2_status = Positive, LVEF = 58, systolic_bp = 118
+MEDICATIONS: Trastuzumab
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 47-year-old female with invasive Breast Cancer. Confirmed HER2 Positive. LVEF 58%. Fully meets criteria for NCT-BC-005. Contact: Mei-Ling Zhao (Patient), Phone: +1-555-0125, Email: mzhao.pat125@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Mei-Ling Zhao (patient)
+  - Phone: +1-555-0125
+  - Email: mzhao.pat125@example.org
+  - Preferred Method: phone
+  - Availability: Weekday mornings
+  - Outreach Status: Follow-up Required
+  - Clinical Notes: Confirmed HER2-positive status; follow up for informed consent visit.
+

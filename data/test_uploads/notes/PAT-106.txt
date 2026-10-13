@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-106
+================================================================================
+PATIENT ID: PAT-106
+DEMOGRAPHICS: 45-year-old male, Race: American Indian or Alaska Native, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Type 2 Diabetes Mellitus
+BIOMARKERS & LABS: HbA1c = 12.4, eGFR = 78, systolic_bp = 138
+MEDICATIONS: Metformin
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: current
+NARRATIVE: 45-year-old male with poorly controlled Type 2 Diabetes Mellitus. HbA1c is elevated at 12.4% (exceeds protocol cutoff of 11.0%). eGFR is 78 mL/min/1.73m2. Contact: Thomas Redfeather (Patient), Phone: +1-555-0106, Email: tredfeather.pat106@example.org. Preferred contact: sms.
+RECRUITMENT CONTACT:
+  - Contact Person: Thomas Redfeather (patient)
+  - Phone: +1-555-0106
+  - Email: tredfeather.pat106@example.org
+  - Preferred Method: sms
+  - Availability: Afternoon
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Uncontrolled HbA1c exceeds inclusion threshold.
+

@@ -33,6 +33,22 @@ class Demographics(BaseModel):
     postal_code: Optional[str] = None
 
 
+RecruitmentStatusType = Literal[
+    "Not Contacted", "Contacted", "Interested", "Declined", "Follow-up Required"
+]
+
+
+class RecruitmentContact(BaseModel):
+    contact_person: Optional[str] = None
+    relationship: Optional[str] = None
+    phone: Optional[str] = None
+    email: Optional[str] = None
+    preferred_contact_method: Optional[str] = None
+    availability: Optional[str] = None
+    recruitment_status: RecruitmentStatusType = "Not Contacted"
+    notes: Optional[str] = None
+
+
 class PatientRecord(BaseModel):
     patient_id: str
     demographics: Demographics
@@ -42,6 +58,9 @@ class PatientRecord(BaseModel):
     allergies: List[str] = Field(default_factory=list)
     smoking_status: SmokingStatusType = None
     notes_summary: Optional[str] = None
+    dataset_source: Optional[Literal["demo", "imported"]] = "demo"
+    import_batch_id: Optional[str] = None
+    recruitment_contact: Optional[RecruitmentContact] = None
     created_at: Optional[str] = None
     updated_at: Optional[str] = None
 
