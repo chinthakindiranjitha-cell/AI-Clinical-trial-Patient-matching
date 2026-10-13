@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-101
+================================================================================
+PATIENT ID: PAT-101
+DEMOGRAPHICS: 58-year-old female, Race: Asian, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Type 2 Diabetes Mellitus, Essential Hypertension
+BIOMARKERS & LABS: HbA1c = 8.2, eGFR = 68, systolic_bp = 134, diastolic_bp = 82
+MEDICATIONS: Metformin, Lisinopril
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 58-year-old female with long-standing Type 2 Diabetes Mellitus and Essential Hypertension. HbA1c is 8.2% and eGFR is 68 mL/min/1.73m2. Tolerating Metformin well. Contact: David Chen (Caregiver), Phone: +1-555-0101, Email: dchen.pat101@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: David Chen (caregiver)
+  - Phone: +1-555-0101
+  - Email: dchen.pat101@example.org
+  - Preferred Method: email
+  - Availability: Weekdays 10am-2pm
+  - Outreach Status: Contacted
+  - Clinical Notes: Spouse confirmed interested in SGLT2 study.
+

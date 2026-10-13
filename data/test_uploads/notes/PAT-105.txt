@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-105
+================================================================================
+PATIENT ID: PAT-105
+DEMOGRAPHICS: 52-year-old female, Race: White, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Breast Cancer
+BIOMARKERS & LABS: HER2_status = Positive, LVEF = 62, systolic_bp = 115
+MEDICATIONS: Trastuzumab, Paclitaxel
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 52-year-old female with histologically confirmed Breast Cancer. HER2 status is Positive. Normal cardiac function with LVEF 62%. Contact: Elena Bennett (Patient), Phone: +1-555-0105, Email: ebennett.pat105@example.org. Preferred contact: portal.
+RECRUITMENT CONTACT:
+  - Contact Person: Elena Bennett (patient)
+  - Phone: +1-555-0105
+  - Email: ebennett.pat105@example.org
+  - Preferred Method: portal
+  - Availability: Weekday mornings
+  - Outreach Status: Contacted
+  - Clinical Notes: Patient received trial overview via patient portal.
+

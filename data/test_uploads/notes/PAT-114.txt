@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-114
+================================================================================
+PATIENT ID: PAT-114
+DEMOGRAPHICS: 72-year-old male, Race: Black or African American, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Alzheimer's Disease
+BIOMARKERS & LABS: systolic_bp = 128
+MEDICATIONS: Memantine
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 72-year-old male diagnosed with Alzheimer's Disease. MMSE score evaluation is pending clinic visit. Contact: Gerald Washington (Authorized Representative), Phone: +1-555-0114, Email: gwashington.pat114@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Gerald Washington (authorized representative)
+  - Phone: +1-555-0114
+  - Email: gwashington.pat114@example.org
+  - Preferred Method: phone
+  - Availability: Weekdays
+  - Outreach Status: Interested
+  - Clinical Notes: Needs cognitive screening MMSE test administered.
+

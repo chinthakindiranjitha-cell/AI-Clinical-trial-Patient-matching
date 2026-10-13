@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-118
+================================================================================
+PATIENT ID: PAT-118
+DEMOGRAPHICS: 70-year-old male, Race: Black or African American, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Type 2 Diabetes Mellitus, Hypertension
+BIOMARKERS & LABS: HbA1c = 8.4, eGFR = 58, systolic_bp = 192
+MEDICATIONS: Metformin, Amlodipine
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: former
+NARRATIVE: 70-year-old male with Type 2 Diabetes Mellitus and severe uncontrolled hypertension (systolic BP 192 mmHg, violates > 180 exclusion). Contact: Arthur King (Patient), Phone: +1-555-0118, Email: aking.pat118@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Arthur King (patient)
+  - Phone: +1-555-0118
+  - Email: aking.pat118@example.org
+  - Preferred Method: phone
+  - Availability: Afternoons
+  - Outreach Status: Follow-up Required
+  - Clinical Notes: Severely uncontrolled hypertension (192 mmHg) requires medical stabilization.
+

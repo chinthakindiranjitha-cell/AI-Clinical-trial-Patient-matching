@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-115
+================================================================================
+PATIENT ID: PAT-115
+DEMOGRAPHICS: 55-year-old female, Race: Other, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Breast Cancer
+BIOMARKERS & LABS: LVEF = 58, systolic_bp = 124
+MEDICATIONS: Doxorubicin
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 55-year-old female with invasive Breast Cancer. Normal baseline LVEF 58%. HER2 receptor status is pending molecular pathology. Contact: Fatima Al-Mansoor (Patient), Phone: +1-555-0115, Email: falmansoor.pat115@example.org. Preferred contact: portal.
+RECRUITMENT CONTACT:
+  - Contact Person: Fatima Al-Mansoor (patient)
+  - Phone: +1-555-0115
+  - Email: falmansoor.pat115@example.org
+  - Preferred Method: portal
+  - Availability: After 4pm
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Pathology report awaiting FISH confirmatory test for HER2.
+

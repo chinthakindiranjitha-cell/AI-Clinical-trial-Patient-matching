@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-117
+================================================================================
+PATIENT ID: PAT-117
+DEMOGRAPHICS: 64-year-old female, Race: Hispanic or Latino, Ethnicity: Hispanic or Latino
+DIAGNOSES: Type 2 Diabetes Mellitus
+BIOMARKERS & LABS: HbA1c = 8, eGFR = 22, systolic_bp = 136
+MEDICATIONS: Metformin
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 64-year-old female with Type 2 Diabetes Mellitus and severe renal impairment (eGFR 22 mL/min/1.73m2, violates eGFR < 30 exclusion). Contact: Sofia Morales (Caregiver), Phone: +1-555-0117, Email: smorales.pat117@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Sofia Morales (caregiver)
+  - Phone: +1-555-0117
+  - Email: smorales.pat117@example.org
+  - Preferred Method: phone
+  - Availability: Mornings
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Severe renal impairment (eGFR 22) violates safety criterion.
+

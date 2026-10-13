@@ -101,7 +101,11 @@ export default function PatientImportModal({ isOpen, onClose, onImportSuccess })
         throw new Error('No valid records to confirm.');
       }
 
-      const res = await confirmPatientImport(recordsToSave, duplicateResolution);
+      const res = await confirmPatientImport(recordsToSave, duplicateResolution, {
+        batch_name: `Import: ${previewData.filename}`,
+        filename: previewData.filename,
+        format: previewData.format
+      });
       onImportSuccess(res);
       handleReset();
       onClose();

@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-103
+================================================================================
+PATIENT ID: PAT-103
+DEMOGRAPHICS: 71-year-old male, Race: White, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Heart Failure, Hypertension
+BIOMARKERS & LABS: LVEF = 32, systolic_bp = 118, eGFR = 54
+MEDICATIONS: Sacubitril/Valsartan, Carvedilol
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 71-year-old male with chronic Heart Failure and reduced ejection fraction (LVEF 32%). Blood pressure 118/76 mmHg and eGFR 54 mL/min/1.73m2. Contact: Sarah Miller (Caregiver), Phone: +1-555-0103, Email: smiller.pat103@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Sarah Miller (caregiver)
+  - Phone: +1-555-0103
+  - Email: smiller.pat103@example.org
+  - Preferred Method: email
+  - Availability: After 5pm
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Daughter handles clinical scheduling.
+

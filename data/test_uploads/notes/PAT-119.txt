@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-119
+================================================================================
+PATIENT ID: PAT-119
+DEMOGRAPHICS: 53-year-old male, Race: Native Hawaiian or Other Pacific Islander, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Non-Small Cell Lung Cancer, Brain Metastases
+BIOMARKERS & LABS: ECOG = 1, PD_L1_expression = 12, systolic_bp = 130
+MEDICATIONS: Carboplatin
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: former
+NARRATIVE: 53-year-old male with Non-Small Cell Lung Cancer and active symptomatic Brain Metastases (violates exclusion). Contact: Keanu Kalani (Caregiver), Phone: +1-555-0119, Email: kkalani.pat119@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Keanu Kalani (caregiver)
+  - Phone: +1-555-0119
+  - Email: kkalani.pat119@example.org
+  - Preferred Method: email
+  - Availability: Weekday mornings
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Excluded due to intracranial disease progression.
+

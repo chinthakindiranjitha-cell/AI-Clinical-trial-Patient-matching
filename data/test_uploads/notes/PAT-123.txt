@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-123
+================================================================================
+PATIENT ID: PAT-123
+DEMOGRAPHICS: 69-year-old male, Race: Multiracial, Ethnicity: Hispanic or Latino
+DIAGNOSES: Heart Failure
+BIOMARKERS & LABS: LVEF = 28, systolic_bp = 110, eGFR = 48
+MEDICATIONS: Sacubitril/Valsartan, Spironolactone
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: former
+NARRATIVE: 69-year-old male with Heart Failure. Severe LV systolic dysfunction with LVEF 28%. Systolic BP 110 mmHg and eGFR 48 mL/min/1.73m2. Fully meets criteria for NCT-HF-003. Contact: Gabriel Ortiz (Caregiver), Phone: +1-555-0123, Email: gortiz.pat123@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Gabriel Ortiz (caregiver)
+  - Phone: +1-555-0123
+  - Email: gortiz.pat123@example.org
+  - Preferred Method: phone
+  - Availability: Evenings
+  - Outreach Status: Contacted
+  - Clinical Notes: Son reviewed protocol schedule and confirms ability to attend clinic.
+

@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-109
+================================================================================
+PATIENT ID: PAT-109
+DEMOGRAPHICS: 88-year-old female, Race: White, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Alzheimer's Disease
+BIOMARKERS & LABS: MMSE = 20, systolic_bp = 126
+MEDICATIONS: Donepezil
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 88-year-old female with Alzheimer's Disease. MMSE score 20. Age 88 violates protocol inclusion range (18 to 85 years). Contact: Barbara Hayes (Authorized Representative), Phone: +1-555-0109, Email: bhayes.pat109@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Barbara Hayes (authorized representative)
+  - Phone: +1-555-0109
+  - Email: bhayes.pat109@example.org
+  - Preferred Method: email
+  - Availability: Weekdays
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Age exceeds protocol upper limit of 85.
+

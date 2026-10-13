@@ -44,11 +44,28 @@ router.get('/health', (req, res) => {
 
 // Patients API
 router.get('/patients', (req, res) => {
-  const { search, condition, gender, race } = req.query;
-  const patients = store.getPatients({ search, condition, gender, race });
+  const { search, condition, gender, race, dataset, batch_id } = req.query;
+  const patients = store.getPatients({
+    search,
+    condition,
+    gender,
+    race,
+    dataset: dataset || 'all',
+    import_batch_id: batch_id
+  });
   res.json({
     total: patients.length,
+    dataset: dataset || 'all',
+    batch_id: batch_id || null,
     patients
+  });
+});
+
+router.get('/batches', (req, res) => {
+  const batches = store.getBatches();
+  res.json({
+    total: batches.length,
+    batches
   });
 });
 
@@ -58,6 +75,67 @@ router.get('/patients/:id', (req, res) => {
     return res.status(404).json({ error: `Patient '${req.params.id}' not found.` });
   }
   res.json({ patient });
+});
+
+// Update Recruitment Contact Information
+router.patch('/patients/:id/recruitment', (req, res) => {
+  try {
+    const { id } = req.params;
+    const updateData = req.body || {};
+    const validStatuses = [
+      'Not Contacted',
+      'Contacted',
+      'Interested',
+      'Declined',
+      'Follow-up Required'
+    ];
+
+    if (updateData.recruitment_status && !validStatuses.includes(updateData.recruitment_status)) {
+      return res.status(400).json({
+        error: `Invalid recruitment status '${updateData.recruitment_status}'. Must be one of: ${validStatuses.join(', ')}`
+      });
+    }
+
+    const updatedPatient = store.updateRecruitmentContact(id, updateData);
+    res.json({
+      success: true,
+      message: `Recruitment contact updated for patient ${id}.`,
+      patient: updatedPatient
+    });
+  } catch (err) {
+    const statusCode = err.status || 500;
+    res.status(statusCode).json({ error: err.message });
+  }
+});
+
+router.put('/patients/:id/recruitment', (req, res) => {
+  try {
+    const { id } = req.params;
+    const updateData = req.body || {};
+    const validStatuses = [
+      'Not Contacted',
+      'Contacted',
+      'Interested',
+      'Declined',
+      'Follow-up Required'
+    ];
+
+    if (updateData.recruitment_status && !validStatuses.includes(updateData.recruitment_status)) {
+      return res.status(400).json({
+        error: `Invalid recruitment status '${updateData.recruitment_status}'. Must be one of: ${validStatuses.join(', ')}`
+      });
+    }
+
+    const updatedPatient = store.updateRecruitmentContact(id, updateData);
+    res.json({
+      success: true,
+      message: `Recruitment contact updated for patient ${id}.`,
+      patient: updatedPatient
+    });
+  } catch (err) {
+    const statusCode = err.status || 500;
+    res.status(statusCode).json({ error: err.message });
+  }
 });
 
 router.post('/patients', (req, res) => {
@@ -159,7 +237,14 @@ router.post('/patients/upload', (req, res) => {
 // Confirmation & Commit Endpoint
 router.post('/patients/confirm-import', (req, res) => {
   try {
-    const { records, duplicate_resolution = 'assign_new_id' } = req.body || {};
+    const {
+      records,
+      duplicate_resolution = 'assign_new_id',
+      batch_id,
+      batch_name,
+      filename,
+      format
+    } = req.body || {};
 
     if (!Array.isArray(records) || records.length === 0) {
       return res.status(400).json({ error: 'No patient records provided to import.' });
@@ -175,10 +260,16 @@ router.post('/patients/confirm-import', (req, res) => {
       }
     }
 
-    const result = store.addPatientsBatch(records, duplicate_resolution);
+    const result = store.addPatientsBatch(records, duplicate_resolution, {
+      batch_id,
+      batch_name,
+      filename,
+      format
+    });
     res.status(201).json({
       success: true,
       message: `Successfully processed ${result.imported_count + result.updated_count} patient records.`,
+      active_dataset: 'imported',
       ...result
     });
   } catch (err) {
@@ -220,9 +311,144 @@ router.post('/trials', (req, res) => {
 // Deterministic Eligibility Matching API
 router.post('/match/evaluate', (req, res) => {
   try {
-    const { patient_id, trial_id } = req.body || {};
-    const evaluation = evaluateMatching({ patient_id, trial_id });
+    const { patient_id, trial_id, dataset, batch_id } = req.body || {};
+    const evaluation = evaluateMatching({
+      patient_id,
+      trial_id,
+      dataset: dataset || 'all',
+      import_batch_id: batch_id
+    });
     res.json(evaluation);
+  } catch (err) {
+    const statusCode = err.status || 500;
+    res.status(statusCode).json({ error: err.message });
+  }
+});
+
+// Helper for safe CSV generation with formula injection prevention
+function escapeCsvCell(val) {
+  if (val === null || val === undefined) return '""';
+  let str = String(val);
+  // Protect against spreadsheet formula injection (=, +, -, @, \t, \r)
+  if (/^[=+\-@\t\r]/.test(str)) {
+    str = `'${str}`;
+  }
+  str = str.replace(/"/g, '""');
+  return `"${str}"`;
+}
+
+// Downloadable Trial Matching Results API
+router.get('/match/export', (req, res) => {
+  try {
+    const { trial_id, dataset = 'all', batch_id = null, format = 'csv' } = req.query;
+
+    if (!trial_id) {
+      return res.status(400).json({ error: "Query parameter 'trial_id' is required for results export." });
+    }
+
+    const trial = store.getTrialById(trial_id);
+    if (!trial) {
+      return res.status(404).json({ error: `Trial '${trial_id}' not found.` });
+    }
+
+    const matchEval = evaluateMatching({
+      trial_id,
+      dataset,
+      import_batch_id: batch_id
+    });
+
+    const exportTimestamp = new Date().toISOString();
+    const filenameBase = `clinmatch_results_${trial_id}_${dataset}_${Date.now()}`;
+
+    if (format.toLowerCase() === 'json') {
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader('Content-Disposition', `attachment; filename="${filenameBase}.json"`);
+      return res.json({
+        export_metadata: {
+          export_timestamp: exportTimestamp,
+          system: 'ClinMatch AI Patient Matching',
+          selected_trial_id: trial.trial_id,
+          selected_trial_title: trial.title,
+          active_dataset: dataset,
+          import_batch_id: batch_id || null,
+          total_candidates_evaluated: matchEval.evaluated_count,
+          eligible_count: matchEval.eligible_count,
+          pending_count: matchEval.pending_count,
+          ineligible_count: matchEval.ineligible_count
+        },
+        trial_criteria_summary: {
+          inclusion_criteria_count: trial.inclusion_criteria?.length || 0,
+          exclusion_criteria_count: trial.exclusion_criteria?.length || 0
+        },
+        evaluated_candidates: matchEval.results
+      });
+    }
+
+    // CSV format
+    const csvHeaders = [
+      'Export Timestamp',
+      'Trial ID',
+      'Trial Title',
+      'Active Dataset',
+      'Import Batch ID',
+      'Patient ID',
+      'Age',
+      'Gender',
+      'Race',
+      'Ethnicity',
+      'Match Status',
+      'Match Score',
+      'Satisfied Count',
+      'Violated Count',
+      'Unknown Count',
+      'Clinical Rationale',
+      'Contact Person',
+      'Relationship',
+      'Phone',
+      'Email',
+      'Preferred Contact Method',
+      'Availability',
+      'Recruitment Follow-up Status',
+      'Researcher Notes'
+    ];
+
+    const rows = [csvHeaders.map(escapeCsvCell).join(',')];
+
+    for (const r of matchEval.results) {
+      const contact = r.patient_summary?.recruitment_contact || {};
+      const rowCols = [
+        exportTimestamp,
+        trial.trial_id,
+        trial.title,
+        dataset,
+        r.patient_summary?.import_batch_id || 'N/A',
+        r.patient_id,
+        r.patient_summary?.age,
+        r.patient_summary?.gender,
+        r.patient_summary?.race || 'Undisclosed',
+        r.patient_summary?.ethnicity || 'Undisclosed',
+        r.match_status,
+        r.match_score,
+        r.summary?.satisfied_count || 0,
+        r.summary?.violated_count || 0,
+        r.summary?.unknown_count || 0,
+        r.clinical_rationale,
+        contact.contact_person || 'Not provided',
+        contact.relationship || 'N/A',
+        contact.phone || 'N/A',
+        contact.email || 'N/A',
+        contact.preferred_contact_method || 'N/A',
+        contact.availability || 'N/A',
+        contact.recruitment_status || 'Not Contacted',
+        contact.notes || ''
+      ];
+      rows.push(rowCols.map(escapeCsvCell).join(','));
+    }
+
+    const csvContent = rows.join('\r\n');
+    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+    res.setHeader('Content-Disposition', `attachment; filename="${filenameBase}.csv"`);
+    res.send(csvContent);
   } catch (err) {
     const statusCode = err.status || 500;
     res.status(statusCode).json({ error: err.message });
@@ -231,8 +457,11 @@ router.post('/match/evaluate', (req, res) => {
 
 // Diversity Analytics API
 router.get('/analytics/diversity', (req, res) => {
-  const { trial_id } = req.query;
-  const patients = store.getPatients();
+  const { trial_id, dataset = 'all', batch_id = null } = req.query;
+  const patients = store.getPatients({
+    dataset,
+    import_batch_id: batch_id
+  });
   const total = patients.length;
 
   // Cohort distributions
@@ -281,7 +510,11 @@ router.get('/analytics/diversity', (req, res) => {
   if (targetTrialId) {
     const targetTrial = store.getTrialById(targetTrialId);
     if (targetTrial) {
-      const matchEval = evaluateMatching({ trial_id: targetTrialId });
+      const matchEval = evaluateMatching({
+        trial_id: targetTrialId,
+        dataset,
+        import_batch_id: batch_id
+      });
       // Filter candidates who are confirmed ELIGIBLE or POTENTIALLY_ELIGIBLE_PENDING_INFO
       const eligibleResults = matchEval.results.filter(
         (r) => r.match_status === 'ELIGIBLE' || r.match_status === 'POTENTIALLY_ELIGIBLE_PENDING_INFO'
@@ -371,6 +604,8 @@ router.get('/analytics/diversity', (req, res) => {
 
   res.json({
     total_patients: total,
+    active_dataset: dataset,
+    active_batch_id: batch_id,
     gender_distribution: genderDist,
     race_distribution: raceDist,
     ethnicity_distribution: ethnicityDist,

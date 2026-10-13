@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-102
+================================================================================
+PATIENT ID: PAT-102
+DEMOGRAPHICS: 66-year-old male, Race: Black or African American, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Non-Small Cell Lung Cancer
+BIOMARKERS & LABS: ECOG = 1, PD_L1_expression = 45, systolic_bp = 128
+MEDICATIONS: Pembrolizumab, Carboplatin
+ALLERGIES: Penicillin
+SMOKING HISTORY: former
+NARRATIVE: 66-year-old male diagnosed with Non-Small Cell Lung Cancer. ECOG performance status 1. PD-L1 expression verified at 45%. No active brain metastases. Contact: Marcus Washington (Patient), Phone: +1-555-0102, Email: mwashington.pat102@example.org. Preferred contact: phone.
+RECRUITMENT CONTACT:
+  - Contact Person: Marcus Washington (patient)
+  - Phone: +1-555-0102
+  - Email: mwashington.pat102@example.org
+  - Preferred Method: phone
+  - Availability: Mornings
+  - Outreach Status: Interested
+  - Clinical Notes: Patient willing to screen for immunotherapy protocol.
+

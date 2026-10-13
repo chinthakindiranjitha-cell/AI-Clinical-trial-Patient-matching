@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-116
+================================================================================
+PATIENT ID: PAT-116
+DEMOGRAPHICS: 50-year-old male, Race: White, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Type 2 Diabetes Mellitus, Type 1 Diabetes Mellitus
+BIOMARKERS & LABS: HbA1c = 8.5, eGFR = 60, systolic_bp = 126
+MEDICATIONS: Insulin Glargine
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 50-year-old male with secondary Type 1 Diabetes Mellitus (violates EXC-01 exclusion criterion). HbA1c is 8.5%. Contact: Luke Adams (Patient), Phone: +1-555-0116, Email: ladams.pat116@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Luke Adams (patient)
+  - Phone: +1-555-0116
+  - Email: ladams.pat116@example.org
+  - Preferred Method: email
+  - Availability: Flexible
+  - Outreach Status: Declined
+  - Clinical Notes: Excluded due to dual diabetes / latent autoimmune adult diabetes diagnosis.
+

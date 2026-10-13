@@ -42,6 +42,16 @@ function parseCsv(buffer) {
   const smokingIdx = headers.indexOf('smoking_status');
   const notesIdx = headers.indexOf('notes_summary') !== -1 ? headers.indexOf('notes_summary') : headers.indexOf('notes');
 
+  // Recruitment Contact columns
+  const contactPersonIdx = headers.indexOf('contact_person') !== -1 ? headers.indexOf('contact_person') : headers.indexOf('contact_name');
+  const relationshipIdx = headers.indexOf('relationship');
+  const phoneIdx = headers.indexOf('phone') !== -1 ? headers.indexOf('phone') : headers.indexOf('contact_phone');
+  const emailIdx = headers.indexOf('email') !== -1 ? headers.indexOf('email') : headers.indexOf('contact_email');
+  const prefMethodIdx = headers.indexOf('preferred_contact_method') !== -1 ? headers.indexOf('preferred_contact_method') : headers.indexOf('contact_method');
+  const availabilityIdx = headers.indexOf('availability') !== -1 ? headers.indexOf('availability') : headers.indexOf('contact_availability');
+  const recruitStatusIdx = headers.indexOf('recruitment_status');
+  const recruitNotesIdx = headers.indexOf('recruitment_notes') !== -1 ? headers.indexOf('recruitment_notes') : headers.indexOf('contact_notes');
+
   const validRecords = [];
   const rejectedRecords = [];
   const seenIds = new Set();
@@ -124,6 +134,29 @@ function parseCsv(buffer) {
     const smokingStatus = smokingIdx !== -1 && cols[smokingIdx] ? cols[smokingIdx].trim().toLowerCase() : null;
     const notesSummary = notesIdx !== -1 && cols[notesIdx] ? cols[notesIdx].trim() : null;
 
+    // Recruitment contact
+    const contactPerson = contactPersonIdx !== -1 && cols[contactPersonIdx] ? cols[contactPersonIdx].trim() : null;
+    const relationship = relationshipIdx !== -1 && cols[relationshipIdx] ? cols[relationshipIdx].trim() : null;
+    const phone = phoneIdx !== -1 && cols[phoneIdx] ? cols[phoneIdx].trim() : null;
+    const email = emailIdx !== -1 && cols[emailIdx] ? cols[emailIdx].trim() : null;
+    const prefMethod = prefMethodIdx !== -1 && cols[prefMethodIdx] ? cols[prefMethodIdx].trim().toLowerCase() : null;
+    const availability = availabilityIdx !== -1 && cols[availabilityIdx] ? cols[availabilityIdx].trim() : null;
+    const rawStatus = recruitStatusIdx !== -1 && cols[recruitStatusIdx] ? cols[recruitStatusIdx].trim() : 'Not Contacted';
+    const validStatuses = ['Not Contacted', 'Contacted', 'Interested', 'Declined', 'Follow-up Required'];
+    const recruitmentStatus = validStatuses.includes(rawStatus) ? rawStatus : 'Not Contacted';
+    const recruitNotes = recruitNotesIdx !== -1 && cols[recruitNotesIdx] ? cols[recruitNotesIdx].trim() : null;
+
+    const recruitmentContact = {
+      contact_person: contactPerson,
+      relationship: relationship,
+      phone: phone,
+      email: email,
+      preferred_contact_method: prefMethod,
+      availability: availability,
+      recruitment_status: recruitmentStatus,
+      notes: recruitNotes
+    };
+
     validRecords.push({
       patient_id: patientId, // may be null, store will assign if not set
       demographics: {
@@ -138,7 +171,8 @@ function parseCsv(buffer) {
       medications,
       allergies,
       smoking_status: smokingStatus,
-      notes_summary: notesSummary
+      notes_summary: notesSummary,
+      recruitment_contact: recruitmentContact
     });
   }
 
@@ -510,6 +544,28 @@ function extractClinicalFacts(text) {
     smokingStatus = 'never';
   }
 
+  // Recruitment Contact details (if mentioned in clinical note)
+  let contactPerson = null;
+  let contactRelationship = null;
+  let contactPhone = null;
+  let contactEmail = null;
+
+  const contactMatch = text.match(/(?:Contact|Emergency Contact|Caregiver|Representative):\s*([A-Za-z ]+?)(?:\s*\(([^)]+)\))?(?=[,\n]|$)/i);
+  if (contactMatch) {
+    contactPerson = contactMatch[1].trim();
+    if (contactMatch[2]) contactRelationship = contactMatch[2].trim().toLowerCase();
+  }
+
+  const phoneMatch = text.match(/(?:Phone|Tel|Mobile):\s*([+\d- ()]+)/i);
+  if (phoneMatch) {
+    contactPhone = phoneMatch[1].trim();
+  }
+
+  const emailMatch = text.match(/(?:Email):\s*([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/i);
+  if (emailMatch) {
+    contactEmail = emailMatch[1].trim();
+  }
+
   // Create candidate patient draft
   const draftPatient = {
     patient_id: null,
@@ -525,7 +581,17 @@ function extractClinicalFacts(text) {
     medications,
     allergies,
     smoking_status: smokingStatus,
-    notes_summary: text.slice(0, 300) + (text.length > 300 ? '...' : '')
+    notes_summary: text.slice(0, 300) + (text.length > 300 ? '...' : ''),
+    recruitment_contact: {
+      contact_person: contactPerson,
+      relationship: contactRelationship || (contactPerson ? 'patient' : null),
+      phone: contactPhone,
+      email: contactEmail,
+      preferred_contact_method: contactEmail ? 'email' : (contactPhone ? 'phone' : null),
+      availability: null,
+      recruitment_status: 'Not Contacted',
+      notes: null
+    }
   };
 
   return {

@@ -32,6 +32,8 @@ export async function fetchPatients(params = {}) {
   if (params.condition) query.append('condition', params.condition);
   if (params.gender) query.append('gender', params.gender);
   if (params.race) query.append('race', params.race);
+  if (params.dataset) query.append('dataset', params.dataset);
+  if (params.batch_id) query.append('batch_id', params.batch_id);
 
   const qs = query.toString();
   const url = `${BASE_URL}/patients${qs ? `?${qs}` : ''}`;
@@ -39,8 +41,22 @@ export async function fetchPatients(params = {}) {
   return handleResponse(res);
 }
 
+export async function fetchBatches() {
+  const res = await fetch(`${BASE_URL}/batches`);
+  return handleResponse(res);
+}
+
 export async function fetchPatientById(id) {
   const res = await fetch(`${BASE_URL}/patients/${encodeURIComponent(id)}`);
+  return handleResponse(res);
+}
+
+export async function updatePatientRecruitment(patientId, recruitmentData) {
+  const res = await fetch(`${BASE_URL}/patients/${encodeURIComponent(patientId)}/recruitment`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(recruitmentData)
+  });
   return handleResponse(res);
 }
 
@@ -81,22 +97,37 @@ export async function uploadPatientFile(file) {
   return handleResponse(res);
 }
 
-export async function confirmPatientImport(records, duplicateResolution = 'assign_new_id') {
+export async function confirmPatientImport(records, duplicateResolution = 'assign_new_id', batchMeta = {}) {
   const res = await fetch(`${BASE_URL}/patients/confirm-import`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       records,
-      duplicate_resolution: duplicateResolution
+      duplicate_resolution: duplicateResolution,
+      ...batchMeta
     })
   });
   return handleResponse(res);
 }
 
-export async function fetchDiversityAnalytics(trialId = null) {
-  const query = trialId ? `?trial_id=${encodeURIComponent(trialId)}` : '';
-  const res = await fetch(`${BASE_URL}/analytics/diversity${query}`);
+export async function fetchDiversityAnalytics(trialId = null, dataset = 'all', batchId = null) {
+  const query = new URLSearchParams();
+  if (trialId) query.append('trial_id', trialId);
+  if (dataset) query.append('dataset', dataset);
+  if (batchId) query.append('batch_id', batchId);
+
+  const qs = query.toString();
+  const res = await fetch(`${BASE_URL}/analytics/diversity${qs ? `?${qs}` : ''}`);
   return handleResponse(res);
+}
+
+export function getExportUrl(trialId, dataset = 'all', batchId = null, format = 'csv') {
+  const query = new URLSearchParams();
+  query.append('trial_id', trialId);
+  query.append('dataset', dataset);
+  if (batchId) query.append('batch_id', batchId);
+  query.append('format', format);
+  return `${BASE_URL}/match/export?${query.toString()}`;
 }
 
 export async function resetSeedData() {

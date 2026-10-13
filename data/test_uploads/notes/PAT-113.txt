@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-113
+================================================================================
+PATIENT ID: PAT-113
+DEMOGRAPHICS: 65-year-old male, Race: White, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Heart Failure
+BIOMARKERS & LABS: systolic_bp = 112, eGFR = 62
+MEDICATIONS: Carvedilol
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: former
+NARRATIVE: 65-year-old male with documented Heart Failure. Blood pressure 112/70 mmHg. LVEF echocardiogram report is pending. Contact: Robert Taylor (Patient), Phone: +1-555-0113, Email: rtaylor.pat113@example.org. Preferred contact: sms.
+RECRUITMENT CONTACT:
+  - Contact Person: Robert Taylor (patient)
+  - Phone: +1-555-0113
+  - Email: rtaylor.pat113@example.org
+  - Preferred Method: sms
+  - Availability: Anytime
+  - Outreach Status: Not Contacted
+  - Clinical Notes: Transthoracic echocardiogram scheduled for ejection fraction.
+

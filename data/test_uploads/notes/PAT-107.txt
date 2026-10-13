@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-107
+================================================================================
+PATIENT ID: PAT-107
+DEMOGRAPHICS: 63-year-old female, Race: Multiracial, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Non-Small Cell Lung Cancer
+BIOMARKERS & LABS: ECOG = 3, PD_L1_expression = 60, systolic_bp = 132
+MEDICATIONS: Carboplatin
+ALLERGIES: Sulfa
+SMOKING HISTORY: former
+NARRATIVE: 63-year-old female with Non-Small Cell Lung Cancer and compromised performance status (ECOG 3). PD-L1 expression 60%. Contact: Maya Johnson (Caregiver), Phone: +1-555-0107, Email: mjohnson.pat107@example.org. Preferred contact: email.
+RECRUITMENT CONTACT:
+  - Contact Person: Maya Johnson (caregiver)
+  - Phone: +1-555-0107
+  - Email: mjohnson.pat107@example.org
+  - Preferred Method: email
+  - Availability: Weekends
+  - Outreach Status: Declined
+  - Clinical Notes: Caregiver declined due to functional performance impairment.
+

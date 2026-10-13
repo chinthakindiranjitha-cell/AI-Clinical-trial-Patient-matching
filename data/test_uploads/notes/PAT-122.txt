@@ -1,0 +1,20 @@
+================================================================================
+CLINICAL PROGRESS NOTE: PAT-122
+================================================================================
+PATIENT ID: PAT-122
+DEMOGRAPHICS: 56-year-old female, Race: White, Ethnicity: Not Hispanic or Latino
+DIAGNOSES: Non-Small Cell Lung Cancer
+BIOMARKERS & LABS: ECOG = 0, PD_L1_expression = 80, systolic_bp = 118
+MEDICATIONS: Pembrolizumab
+ALLERGIES: No known drug allergies (NKDA)
+SMOKING HISTORY: never
+NARRATIVE: 56-year-old female with Non-Small Cell Lung Cancer. ECOG status 0. High PD-L1 expression at 80%. Fully meets inclusion criteria for NCT-NSCLC-002. Contact: Claire Dupont (Patient), Phone: +1-555-0122, Email: cdupont.pat122@example.org. Preferred contact: portal.
+RECRUITMENT CONTACT:
+  - Contact Person: Claire Dupont (patient)
+  - Phone: +1-555-0122
+  - Email: cdupont.pat122@example.org
+  - Preferred Method: portal
+  - Availability: Anytime
+  - Outreach Status: Contacted
+  - Clinical Notes: Strong candidate with high PD-L1 TPS expression.
+

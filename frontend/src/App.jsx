@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { CheckCircle2, AlertCircle, X, Sparkles, Database } from 'lucide-react';
 import Header from './components/Header';
 import MetricCards from './components/MetricCards';
 import TrialSelector from './components/TrialSelector';
@@ -11,6 +12,7 @@ import {
   fetchHealth,
   fetchPatients,
   fetchTrials,
+  fetchBatches,
   evaluateMatch,
   resetSeedData
 } from './services/api';
@@ -24,6 +26,14 @@ export default function App() {
   const [isImportOpen, setIsImportOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('matching'); // 'matching' | 'analytics'
 
+  // Dataset Isolation State
+  const [activeDataset, setActiveDataset] = useState('demo'); // 'demo' | 'imported' | 'all'
+  const [selectedBatchId, setSelectedBatchId] = useState('');
+  const [batches, setBatches] = useState([]);
+  const [demoCount, setDemoCount] = useState(25);
+  const [importedCount, setImportedCount] = useState(0);
+  const [importSummary, setImportSummary] = useState(null);
+
   const [evaluationData, setEvaluationData] = useState(null);
   const [backendConnected, setBackendConnected] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -31,8 +41,8 @@ export default function App() {
   const [resetting, setResetting] = useState(false);
   const [error, setError] = useState(null);
 
-  // Load initial dataset
-  const loadInitialData = useCallback(async () => {
+  // Load cohort data for specific dataset & batch
+  const loadCohortData = useCallback(async (dataset = activeDataset, batchId = selectedBatchId) => {
     setLoading(true);
     setError(null);
     try {
@@ -45,43 +55,75 @@ export default function App() {
         console.warn('Backend currently offline:', err.message);
       }
 
-      // 2. Fetch Patients & Trials
-      const [patientsRes, trialsRes] = await Promise.all([
-        fetchPatients(),
-        fetchTrials()
+      // 2. Fetch Batches, Patients for active dataset, and All trials
+      const [batchesRes, patientsRes, trialsRes, allDemoRes, allImportedRes] = await Promise.all([
+        fetchBatches().catch(() => ({ batches: [] })),
+        fetchPatients({ dataset, batch_id: batchId }),
+        fetchTrials(),
+        fetchPatients({ dataset: 'demo' }).catch(() => ({ patients: [] })),
+        fetchPatients({ dataset: 'imported' }).catch(() => ({ patients: [] }))
       ]);
 
+      const loadedBatches = batchesRes.batches || [];
       const loadedPatients = patientsRes.patients || [];
       const loadedTrials = trialsRes.trials || [];
 
+      setBatches(loadedBatches);
       setPatients(loadedPatients);
       setTrials(loadedTrials);
+      setDemoCount(allDemoRes.patients?.length ?? 25);
+      setImportedCount(allImportedRes.patients?.length ?? 0);
 
-      const firstTrial = loadedTrials[0] || null;
-      const firstPatient = loadedPatients[0] || null;
+      // Default selection if current selection is not in list
+      const targetTrial = selectedTrial || loadedTrials[0] || null;
+      if (!selectedTrial && loadedTrials.length > 0) {
+        setSelectedTrial(loadedTrials[0]);
+      }
 
-      setSelectedTrial(firstTrial);
-      setSelectedPatient(firstPatient);
+      if (loadedPatients.length > 0) {
+        // Keep selected patient if still in active dataset, else select first
+        const exists = loadedPatients.find((p) => p.patient_id === selectedPatient?.patient_id);
+        setSelectedPatient(exists || loadedPatients[0]);
+      } else {
+        setSelectedPatient(null);
+      }
 
-      // 3. Run initial cohort evaluation if trial exists
-      if (firstTrial) {
+      // Re-evaluate if trial is selected
+      if (targetTrial) {
         try {
-          const evalRes = await evaluateMatch({ trial_id: firstTrial.trial_id });
+          const evalRes = await evaluateMatch({
+            trial_id: targetTrial.trial_id,
+            dataset,
+            batch_id: batchId
+          });
           setEvaluationData(evalRes);
         } catch (evalErr) {
-          console.warn('Initial evaluation failed:', evalErr.message);
+          console.warn('Evaluation failed:', evalErr.message);
         }
       }
     } catch (err) {
-      setError(err.message || 'Failed to load initial clinical data.');
+      setError(err.message || 'Failed to load clinical data.');
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [activeDataset, selectedBatchId, selectedTrial, selectedPatient]);
 
   useEffect(() => {
-    loadInitialData();
-  }, [loadInitialData]);
+    loadCohortData();
+  }, []);
+
+  // Handle Dataset Switch
+  const handleDatasetChange = async (newDataset) => {
+    setActiveDataset(newDataset);
+    setSelectedBatchId('');
+    await loadCohortData(newDataset, '');
+  };
+
+  // Handle Specific Batch Switch
+  const handleBatchChange = async (newBatchId) => {
+    setSelectedBatchId(newBatchId);
+    await loadCohortData('imported', newBatchId);
+  };
 
   // Handle Match Evaluation
   const handleEvaluate = async (patientId = null) => {
@@ -91,6 +133,8 @@ export default function App() {
     try {
       const payload = {
         trial_id: selectedTrial.trial_id,
+        dataset: activeDataset,
+        batch_id: selectedBatchId || null,
         ...(patientId ? { patient_id: patientId } : {})
       };
       const res = await evaluateMatch(payload);
@@ -102,12 +146,27 @@ export default function App() {
     }
   };
 
+  // Handle Trial Protocol Selection Change
+  const handleSelectTrial = (trial) => {
+    setSelectedTrial(trial);
+    evaluateMatch({
+      trial_id: trial.trial_id,
+      dataset: activeDataset,
+      batch_id: selectedBatchId || null
+    })
+      .then(setEvaluationData)
+      .catch((err) => console.error('Evaluation on trial change failed:', err));
+  };
+
   // Reset Demo Seed Data
   const handleResetSeed = async () => {
     setResetting(true);
     try {
       await resetSeedData();
-      await loadInitialData();
+      setActiveDataset('demo');
+      setSelectedBatchId('');
+      setImportSummary(null);
+      await loadCohortData('demo', '');
     } catch (err) {
       setError(`Reset failed: ${err.message}`);
     } finally {
@@ -116,8 +175,53 @@ export default function App() {
   };
 
   // Handle Import Success
-  const handleImportSuccess = async () => {
-    await loadInitialData();
+  const handleImportSuccess = async (result) => {
+    // Requirement 2: After importing, automatically switch to Imported Dataset view
+    const newBatchId = result?.import_batch_id || '';
+    setActiveDataset('imported');
+    setSelectedBatchId(newBatchId);
+
+    setImportSummary({
+      batch_id: newBatchId,
+      accepted_count: result?.imported_count || result?.batch_record?.record_count || 0,
+      rejected_count: result?.skipped_count || 0,
+      filename: result?.batch_record?.filename || 'Imported File',
+      format: result?.batch_record?.format || 'Clinical Data',
+      timestamp: new Date().toLocaleTimeString()
+    });
+
+    await loadCohortData('imported', newBatchId);
+  };
+
+  // Handle Patient Recruitment Contact Update
+  const handlePatientUpdated = (updatedPatient) => {
+    setPatients((prev) =>
+      prev.map((p) => (p.patient_id === updatedPatient.patient_id ? updatedPatient : p))
+    );
+    if (selectedPatient?.patient_id === updatedPatient.patient_id) {
+      setSelectedPatient(updatedPatient);
+    }
+    if (detailPatient?.patient_id === updatedPatient.patient_id) {
+      setDetailPatient(updatedPatient);
+    }
+
+    if (evaluationData?.results) {
+      setEvaluationData((prev) => ({
+        ...prev,
+        results: prev.results.map((r) => {
+          if (r.patient_id === updatedPatient.patient_id) {
+            return {
+              ...r,
+              patient_summary: {
+                ...r.patient_summary,
+                recruitment_contact: updatedPatient.recruitment_contact
+              }
+            };
+          }
+          return r;
+        })
+      }));
+    }
   };
 
   return (
@@ -134,6 +238,40 @@ export default function App() {
 
       {/* Main Container */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-6">
+        {/* Import Confirmation Banner */}
+        {importSummary && (
+          <div className="bg-emerald-50 border border-emerald-300 rounded-xl p-4 flex items-start justify-between shadow-sm animate-in fade-in duration-200">
+            <div className="flex items-start space-x-3">
+              <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+              <div className="text-sm">
+                <div className="flex items-center space-x-2">
+                  <h4 className="font-bold text-emerald-950">
+                    Import Succeeded · Switched to Isolated Imported Dataset
+                  </h4>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-200 text-emerald-900 uppercase tracking-wider">
+                    Active View
+                  </span>
+                </div>
+                <p className="text-emerald-900 text-xs mt-1">
+                  Accepted <span className="font-semibold">{importSummary.accepted_count} patient records</span> from <code className="bg-emerald-200/70 px-1 py-0.5 rounded text-emerald-950 font-mono text-xs">{importSummary.filename}</code> ({importSummary.format})
+                  {importSummary.rejected_count > 0 && <span className="text-amber-800 font-semibold"> · {importSummary.rejected_count} skipped/rejected</span>}
+                  &nbsp;· Batch ID: <span className="font-mono text-emerald-950 font-bold bg-emerald-100 px-1.5 py-0.5 rounded border border-emerald-300">{importSummary.batch_id}</span>
+                </p>
+                <p className="text-[11px] text-emerald-800 mt-1">
+                  ✓ Clinical matching evaluation is now strictly isolated to this imported dataset cohort. Demo seed patients are excluded.
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={() => setImportSummary(null)}
+              className="text-emerald-700 hover:text-emerald-950 p-1 rounded hover:bg-emerald-100 transition-colors"
+              title="Dismiss notification"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        )}
+
         {activeTab === 'matching' ? (
           <>
             {/* Metric Summary Cards */}
@@ -149,18 +287,12 @@ export default function App() {
             <TrialSelector
               trials={trials}
               selectedTrial={selectedTrial}
-              onSelectTrial={(trial) => {
-                setSelectedTrial(trial);
-                // Re-evaluate automatically for newly selected trial
-                evaluateMatch({ trial_id: trial.trial_id })
-                  .then(setEvaluationData)
-                  .catch(console.error);
-              }}
+              onSelectTrial={handleSelectTrial}
             />
 
             {/* Core Workspace Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-              {/* Left Column: Patient Cohort Explorer (5 cols) */}
+              {/* Left Column: Patient Cohort Explorer with Dataset Selector (5 cols) */}
               <div className="lg:col-span-5 space-y-6">
                 <PatientExplorer
                   patients={patients}
@@ -169,6 +301,13 @@ export default function App() {
                   onViewDetails={(p) => setDetailPatient(p)}
                   onOpenImport={() => setIsImportOpen(true)}
                   loading={loading}
+                  activeDataset={activeDataset}
+                  onChangeDataset={handleDatasetChange}
+                  selectedBatchId={selectedBatchId}
+                  onChangeBatchId={handleBatchChange}
+                  batches={batches}
+                  demoCount={demoCount}
+                  importedCount={importedCount}
                 />
               </div>
 
@@ -181,6 +320,9 @@ export default function App() {
                   evaluationData={evaluationData}
                   loading={evaluating}
                   error={error}
+                  activeDataset={activeDataset}
+                  selectedBatchId={selectedBatchId}
+                  onViewPatientDetails={(p) => setDetailPatient(p)}
                 />
               </div>
             </div>
@@ -190,6 +332,10 @@ export default function App() {
           <DiversityAnalyticsView
             trials={trials}
             defaultTrialId={selectedTrial?.trial_id}
+            activeDataset={activeDataset}
+            selectedBatchId={selectedBatchId}
+            onChangeDataset={handleDatasetChange}
+            batches={batches}
           />
         )}
       </main>
@@ -201,10 +347,11 @@ export default function App() {
         onImportSuccess={handleImportSuccess}
       />
 
-      {/* Full Patient EHR Modal */}
+      {/* Full Patient EHR & Recruitment Contact Outreach Modal */}
       <PatientDetailModal
         patient={detailPatient}
         onClose={() => setDetailPatient(null)}
+        onUpdatePatient={handlePatientUpdated}
       />
 
       {/* Footer */}
