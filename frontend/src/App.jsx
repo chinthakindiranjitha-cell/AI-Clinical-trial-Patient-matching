@@ -6,6 +6,7 @@ import PatientExplorer from './components/PatientExplorer';
 import MatchResultsView from './components/MatchResultsView';
 import PatientDetailModal from './components/PatientDetailModal';
 import PatientImportModal from './components/PatientImportModal';
+import DiversityAnalyticsView from './components/DiversityAnalyticsView';
 import {
   fetchHealth,
   fetchPatients,
@@ -21,6 +22,7 @@ export default function App() {
   const [selectedPatient, setSelectedPatient] = useState(null);
   const [detailPatient, setDetailPatient] = useState(null);
   const [isImportOpen, setIsImportOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('matching'); // 'matching' | 'analytics'
 
   const [evaluationData, setEvaluationData] = useState(null);
   const [backendConnected, setBackendConnected] = useState(false);
@@ -114,7 +116,7 @@ export default function App() {
   };
 
   // Handle Import Success
-  const handleImportSuccess = async (importResult) => {
+  const handleImportSuccess = async () => {
     await loadInitialData();
   };
 
@@ -126,58 +128,70 @@ export default function App() {
         onResetSeed={handleResetSeed}
         resetting={resetting}
         onOpenImport={() => setIsImportOpen(true)}
+        activeTab={activeTab}
+        onSelectTab={setActiveTab}
       />
 
       {/* Main Container */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-6">
-        {/* Metric Summary Cards */}
-        <MetricCards
-          totalPatients={patients.length}
-          totalTrials={trials.length}
-          eligibleCount={evaluationData?.eligible_count || 0}
-          pendingCount={evaluationData?.pending_count || 0}
-          evaluatedCount={evaluationData?.evaluated_count || 0}
-        />
-
-        {/* Clinical Trial Protocol Banner */}
-        <TrialSelector
-          trials={trials}
-          selectedTrial={selectedTrial}
-          onSelectTrial={(trial) => {
-            setSelectedTrial(trial);
-            // Re-evaluate automatically for newly selected trial
-            evaluateMatch({ trial_id: trial.trial_id })
-              .then(setEvaluationData)
-              .catch(console.error);
-          }}
-        />
-
-        {/* Core Workspace Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* Left Column: Patient Cohort Explorer (5 cols) */}
-          <div className="lg:col-span-5 space-y-6">
-            <PatientExplorer
-              patients={patients}
-              selectedPatient={selectedPatient}
-              onSelectPatient={(p) => setSelectedPatient(p)}
-              onViewDetails={(p) => setDetailPatient(p)}
-              onOpenImport={() => setIsImportOpen(true)}
-              loading={loading}
+        {activeTab === 'matching' ? (
+          <>
+            {/* Metric Summary Cards */}
+            <MetricCards
+              totalPatients={patients.length}
+              totalTrials={trials.length}
+              eligibleCount={evaluationData?.eligible_count || 0}
+              pendingCount={evaluationData?.pending_count || 0}
+              evaluatedCount={evaluationData?.evaluated_count || 0}
             />
-          </div>
 
-          {/* Right Column: Deterministic Match & Explainability (7 cols) */}
-          <div className="lg:col-span-7 space-y-6">
-            <MatchResultsView
-              selectedPatient={selectedPatient}
+            {/* Clinical Trial Protocol Banner */}
+            <TrialSelector
+              trials={trials}
               selectedTrial={selectedTrial}
-              onEvaluate={handleEvaluate}
-              evaluationData={evaluationData}
-              loading={evaluating}
-              error={error}
+              onSelectTrial={(trial) => {
+                setSelectedTrial(trial);
+                // Re-evaluate automatically for newly selected trial
+                evaluateMatch({ trial_id: trial.trial_id })
+                  .then(setEvaluationData)
+                  .catch(console.error);
+              }}
             />
-          </div>
-        </div>
+
+            {/* Core Workspace Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+              {/* Left Column: Patient Cohort Explorer (5 cols) */}
+              <div className="lg:col-span-5 space-y-6">
+                <PatientExplorer
+                  patients={patients}
+                  selectedPatient={selectedPatient}
+                  onSelectPatient={(p) => setSelectedPatient(p)}
+                  onViewDetails={(p) => setDetailPatient(p)}
+                  onOpenImport={() => setIsImportOpen(true)}
+                  loading={loading}
+                />
+              </div>
+
+              {/* Right Column: Deterministic Match & Explainability (7 cols) */}
+              <div className="lg:col-span-7 space-y-6">
+                <MatchResultsView
+                  selectedPatient={selectedPatient}
+                  selectedTrial={selectedTrial}
+                  onEvaluate={handleEvaluate}
+                  evaluationData={evaluationData}
+                  loading={evaluating}
+                  error={error}
+                />
+              </div>
+            </div>
+          </>
+        ) : (
+          /* Diversity & Demographic Analytics View */
+          <DiversityAnalyticsView
+            trials={trials}
+            defaultTrialId={selectedTrial?.trial_id}
+          />
+        )}
       </main>
 
       {/* Multi-Format Patient Import Modal */}
@@ -202,9 +216,11 @@ export default function App() {
             <span>•</span>
             <span>Tailwind CSS</span>
             <span>•</span>
+            <span>Recharts Analytics</span>
+            <span>•</span>
             <span>Express.js</span>
             <span>•</span>
-            <span>Multi-Format Ingestion (CSV, TXT, DOCX, PDF)</span>
+            <span>Deterministic Rule Engine</span>
           </div>
         </div>
       </footer>

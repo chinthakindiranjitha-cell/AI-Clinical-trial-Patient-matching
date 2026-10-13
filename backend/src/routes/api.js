@@ -231,9 +231,11 @@ router.post('/match/evaluate', (req, res) => {
 
 // Diversity Analytics API
 router.get('/analytics/diversity', (req, res) => {
+  const { trial_id } = req.query;
   const patients = store.getPatients();
   const total = patients.length;
 
+  // Cohort distributions
   const genderDist = {};
   const raceDist = {};
   const ethnicityDist = {};
@@ -243,10 +245,10 @@ router.get('/analytics/diversity', (req, res) => {
     const g = p.demographics?.gender || 'unknown';
     genderDist[g] = (genderDist[g] || 0) + 1;
 
-    const r = p.demographics?.race || 'Unspecified / Missing';
+    const r = p.demographics?.race || 'Undisclosed / Missing';
     raceDist[r] = (raceDist[r] || 0) + 1;
 
-    const e = p.demographics?.ethnicity || 'Unspecified / Missing';
+    const e = p.demographics?.ethnicity || 'Undisclosed / Missing';
     ethnicityDist[e] = (ethnicityDist[e] || 0) + 1;
 
     const age = p.demographics?.age;
@@ -255,6 +257,115 @@ router.get('/analytics/diversity', (req, res) => {
       else if (age < 50) ageGroups['30-49']++;
       else if (age < 65) ageGroups['50-64']++;
       else ageGroups['65+']++;
+    } else {
+      ageGroups['Undisclosed / Missing'] = (ageGroups['Undisclosed / Missing'] || 0) + 1;
+    }
+  }
+
+  // Trial-specific comparison
+  let targetTrialId = trial_id;
+  const allTrials = store.getTrials();
+  if (!targetTrialId && allTrials.length > 0) {
+    targetTrialId = allTrials[0].trial_id;
+  }
+
+  let trialSummary = null;
+  const comparison = {
+    gender: [],
+    race: [],
+    ethnicity: [],
+    age_groups: []
+  };
+  const representationGaps = [];
+
+  if (targetTrialId) {
+    const targetTrial = store.getTrialById(targetTrialId);
+    if (targetTrial) {
+      const matchEval = evaluateMatching({ trial_id: targetTrialId });
+      // Filter candidates who are confirmed ELIGIBLE or POTENTIALLY_ELIGIBLE_PENDING_INFO
+      const eligibleResults = matchEval.results.filter(
+        (r) => r.match_status === 'ELIGIBLE' || r.match_status === 'POTENTIALLY_ELIGIBLE_PENDING_INFO'
+      );
+      const strictlyEligibleResults = matchEval.results.filter((r) => r.match_status === 'ELIGIBLE');
+
+      trialSummary = {
+        trial_id: targetTrial.trial_id,
+        title: targetTrial.title,
+        therapeutic_area: targetTrial.therapeutic_area,
+        evaluated_count: matchEval.evaluated_count,
+        strictly_eligible_count: strictlyEligibleResults.length,
+        potential_eligible_count: eligibleResults.length, // eligible + pending
+        ineligible_count: matchEval.ineligible_count
+      };
+
+      const eligiblePatients = eligibleResults.map((r) => store.getPatientById(r.patient_id)).filter(Boolean);
+      const eligibleTotal = eligiblePatients.length;
+
+      // Helper to compute comparison table
+      const computeGroupComparison = (cohortDist, extractor, categoryName) => {
+        const eligibleDist = {};
+        for (const p of eligiblePatients) {
+          const key = extractor(p);
+          eligibleDist[key] = (eligibleDist[key] || 0) + 1;
+        }
+
+        const keys = Array.from(new Set([...Object.keys(cohortDist), ...Object.keys(eligibleDist)]));
+        return keys.map((key) => {
+          const cCount = cohortDist[key] || 0;
+          const eCount = eligibleDist[key] || 0;
+          const cPct = total > 0 ? Number(((cCount / total) * 100).toFixed(1)) : 0;
+          const ePct = eligibleTotal > 0 ? Number(((eCount / eligibleTotal) * 100).toFixed(1)) : 0;
+
+          // Flag representation gap if group in cohort has 0 eligible candidates or significantly reduced representation
+          if (cCount > 0 && eCount === 0) {
+            representationGaps.push({
+              category: categoryName,
+              group: key,
+              cohort_count: cCount,
+              cohort_pct: cPct,
+              eligible_count: 0,
+              eligible_pct: 0,
+              note: `Zero candidates from '${key}' met eligibility criteria for ${targetTrial.trial_id}.`
+            });
+          }
+
+          return {
+            name: key,
+            cohort_count: cCount,
+            cohort_pct: cPct,
+            eligible_count: eCount,
+            eligible_pct: ePct
+          };
+        });
+      };
+
+      comparison.gender = computeGroupComparison(
+        genderDist,
+        (p) => p.demographics?.gender || 'unknown',
+        'Gender'
+      );
+      comparison.race = computeGroupComparison(
+        raceDist,
+        (p) => p.demographics?.race || 'Undisclosed / Missing',
+        'Race'
+      );
+      comparison.ethnicity = computeGroupComparison(
+        ethnicityDist,
+        (p) => p.demographics?.ethnicity || 'Undisclosed / Missing',
+        'Ethnicity'
+      );
+      comparison.age_groups = computeGroupComparison(
+        ageGroups,
+        (p) => {
+          const a = p.demographics?.age;
+          if (a === undefined || a === null) return 'Undisclosed / Missing';
+          if (a < 30) return '<30';
+          if (a < 50) return '30-49';
+          if (a < 65) return '50-64';
+          return '65+';
+        },
+        'Age Group'
+      );
     }
   }
 
@@ -263,7 +374,12 @@ router.get('/analytics/diversity', (req, res) => {
     gender_distribution: genderDist,
     race_distribution: raceDist,
     ethnicity_distribution: ethnicityDist,
-    age_groups: ageGroups
+    age_groups: ageGroups,
+    trial_summary: trialSummary,
+    comparison,
+    representation_gaps: representationGaps,
+    disclaimer:
+      'These analytics describe the available synthetic dataset and do not establish population-level epidemiological representativeness or verify that a clinical trial is demographically diverse.'
   });
 });
 

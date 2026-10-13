@@ -1,7 +1,14 @@
 import React from 'react';
-import { Activity, Database, RefreshCw, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Activity, Database, RefreshCw, BarChart3, Users } from 'lucide-react';
 
-export default function Header({ backendConnected, onResetSeed, resetting, onOpenImport }) {
+export default function Header({
+  backendConnected,
+  onResetSeed,
+  resetting,
+  onOpenImport,
+  activeTab = 'matching',
+  onSelectTab
+}) {
   return (
     <header className="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -17,15 +24,45 @@ export default function Header({ backendConnected, onResetSeed, resetting, onOpe
                 MVP
               </span>
             </div>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-500 hidden sm:block">
               Deterministic Patient-to-Trial Eligibility & Explainability
             </p>
           </div>
         </div>
 
+        {/* Center Navigation Tabs */}
+        {onSelectTab && (
+          <nav className="flex items-center p-1 bg-slate-100 rounded-xl space-x-1 border border-slate-200 text-xs">
+            <button
+              type="button"
+              onClick={() => onSelectTab('matching')}
+              className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all ${
+                activeTab === 'matching'
+                  ? 'bg-white text-slate-900 shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <Activity className="w-3.5 h-3.5 text-sky-600" />
+              <span>Trial Matching</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => onSelectTab('analytics')}
+              className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all ${
+                activeTab === 'analytics'
+                  ? 'bg-white text-slate-900 shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <BarChart3 className="w-3.5 h-3.5 text-indigo-600" />
+              <span>Diversity Analytics</span>
+            </button>
+          </nav>
+        )}
+
         {/* Status & Actions */}
-        <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-medium border bg-slate-50">
+        <div className="flex items-center space-x-3">
+          <div className="hidden md:flex items-center space-x-1.5 px-2.5 py-1 rounded-full text-xs font-medium border bg-slate-50">
             {backendConnected ? (
               <>
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -34,7 +71,7 @@ export default function Header({ backendConnected, onResetSeed, resetting, onOpe
             ) : (
               <>
                 <span className="w-2 h-2 rounded-full bg-rose-500"></span>
-                <span className="text-rose-600 font-semibold">API Disconnected</span>
+                <span className="text-rose-600 font-semibold">API Offline</span>
               </>
             )}
           </div>
@@ -44,7 +81,7 @@ export default function Header({ backendConnected, onResetSeed, resetting, onOpe
             className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-sky-600 rounded-md hover:bg-sky-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-500 transition-colors"
           >
             <Database className="w-3.5 h-3.5" />
-            <span>Import Data</span>
+            <span className="hidden sm:inline">Import Data</span>
           </button>
 
           <button
@@ -54,7 +91,7 @@ export default function Header({ backendConnected, onResetSeed, resetting, onOpe
             className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-300 rounded-md hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-500 transition-colors disabled:opacity-50"
           >
             <RefreshCw className={`w-3.5 h-3.5 ${resetting ? 'animate-spin text-sky-600' : 'text-slate-500'}`} />
-            <span>Reset Demo Data</span>
+            <span className="hidden sm:inline">Reset Demo</span>
           </button>
         </div>
       </div>
