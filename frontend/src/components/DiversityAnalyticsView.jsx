@@ -203,11 +203,10 @@ export default function DiversityAnalyticsView({
             key={tab.key}
             type="button"
             onClick={() => setActiveCategory(tab.key)}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
-              activeCategory === tab.key
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-colors ${activeCategory === tab.key
                 ? 'bg-sky-600 text-white shadow-sm'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-            }`}
+              }`}
           >
             {tab.label}
           </button>
